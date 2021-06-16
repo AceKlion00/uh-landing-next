@@ -13,7 +13,7 @@ export function Navbar() {
         "fixed xl:relative duration-300 transition-transform h-screen xl:h-auto xl:flex flex-col xl:flex-row xl:flex-grow w-full md:w-96 bg-secondary left-0 top-0 xl:bg-transparent ml-0 xl:ml-16 px-5 xl: px-0 justify-start xl:justify-between items-start xl:items-center" +
         (navbarOpen ? " flex" : " hidden")
       }>
-        <div className="flex w-full xl:hidden justify-between py-9">
+        <div className="flex w-full xl:hidden justify-between py-8">
           <Link href="/"><a className="flex xl:hidden items-center"><Image src="/assets/images/logo.svg" height={44} width={152} alt="UH logo" /></a></Link>
           <button onClick={() => setNavbarOpen(false)}><Image src="/assets/images/icons/close.svg" width={19} height={18} alt="Close" /></button>
         </div>
