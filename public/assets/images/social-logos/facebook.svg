@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="16px" viewBox="0 0 8 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>5C6094E1-A8F2-44F3-B529-BDE812BFB39F</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.611765 0 0 0 0 0.650980 0 0 0 0 0.694118 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-1080.000000, -7204.000000)" id="footer/desktop">
+            <g transform="translate(0.000000, 6822.000000)" filter="url(#filter-1)" id="icon/socialMedia/facebook">
+                <g transform="translate(1080.000000, 382.000000)" id="icon_Facebook" fill="#FFFFFF" fill-rule="nonzero">
+                    <path d="M5.59480988,2.85937701 L7.53048335,2.85937701 L7.53048335,-1.89478063e-15 L5.25504619,-1.89478063e-15 L5.25504619,0.010311493 C2.49795918,0.107961332 1.93288937,1.65777873 1.88308485,3.28555102 L1.87741353,3.28555102 L1.87741353,4.71338346 L3.9316698e-14,4.71338346 L3.9316698e-14,7.5135725 L1.87741353,7.5135725 L1.87741353,15.0196176 L4.7067841,15.0196176 L4.7067841,7.5135725 L7.02449839,7.5135725 L7.47222342,4.71338346 L4.70771214,4.71338346 L4.70771214,3.85072395 C4.70771214,3.3006058 5.07377014,2.85937701 5.59480988,2.85937701 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
