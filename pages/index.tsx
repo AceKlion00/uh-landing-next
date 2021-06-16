@@ -1,6 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Layout } from '../components/layout/layout';
+
+import { Layout } from '../components/layout/layout'
+import { PopularKitsSection } from '../components/landing/popular-kits-section';
+import { HowItWorksSection } from '../components/landing/how-it-works-section';
+import { WhyUhKitsSection } from '../components/landing/why-uh-kits-section';
+import { GallerySection } from '../components/landing/gallery-section';
+import { TestimonialSection } from '../components/landing/testimonial-section';
 
 export default function Home() {
   return (
@@ -24,7 +30,7 @@ export default function Home() {
             </div>
           </div>
           <div className="absolute left-0 top-0"><Image src="/assets/images/landing-pages/home-page/blue-bg-shape.svg" width={1059} height={854} layout="fixed" alt="blue-bg" /></div>
-          <div className="absolute left-0 top-0 right-0 lg:right-40 xl:right-60 2xl:right-80 2xl:mr-96 bottom-0">
+          <div className="absolute left-0 top-0 right-0 lg:right-40 xl:right-60 2xl:right-80 2xl:mr-80 bottom-0">
             <div className="relative w-full h-full">
               <div className="absolute bottom-0 right-0 mb-6 xl:mb-32"><Image src="/assets/images/landing-pages/home-page/primary-ellipse.svg" width={538} height={538} layout="fixed" alt="ellipse" /></div>
               <div className="absolute bottom-0 right-0 mb-52 mr-20"><Image src="/assets/images/landing-pages/home-page/icon-set.svg" width={507} height={377} layout="fixed" alt="ellipse" /></div>
@@ -37,6 +43,11 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <HowItWorksSection />
+        <WhyUhKitsSection />
+        <PopularKitsSection />
+        <GallerySection />
+        <TestimonialSection />
       </Layout>
     </>
   )
