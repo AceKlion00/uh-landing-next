@@ -34,7 +34,7 @@ export default function Home() {
             <div className="relative w-full h-full">
               <div className="absolute bottom-0 right-0 mb-6 xl:mb-32"><Image src="/assets/images/landing-pages/home-page/primary-ellipse.svg" width={538} height={538} layout="fixed" alt="ellipse" /></div>
               <div className="absolute bottom-0 right-0 mb-52 mr-20"><Image src="/assets/images/landing-pages/home-page/icon-set.svg" width={507} height={377} layout="fixed" alt="ellipse" /></div>
-              <div className="absolute bottom-0 mb-56 xl:mb-72 rounded-3xl pt-7 pr-6 pb-6 pl-6 xl:pl-36 w-96 right-10 lg:-right-20 xl:-right-56 bg-white">
+              <div className="absolute bottom-0 mb-20 md:mb-56 xl:mb-72 rounded-3xl pt-7 pr-6 pb-6 pl-6 xl:pl-36 w-96 right-10 lg:-right-20 xl:-right-56 bg-white">
                 <p className="text-warning-300 text-lg font-medium mb-4 leading-6">“We had no idea where to start, but you made it so simple.”</p>
                 <p className="text-light-500 mb-3 leading-5">We just chose the kit we wanted, made some minor changes, and clicked 'Order'. We quickly found a contractor to install it, our kit was delivered and we had a new patio in days. Such a great experience.</p>
                 <p className="text-primary">Valerie & Jon Petersson</p>
