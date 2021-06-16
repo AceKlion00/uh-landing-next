@@ -49,7 +49,20 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <HowItWorksSection />
+
+        <section className="my-90">
+          <div className="container mx-auto">
+            <p className="px-0 xl:px-150 text-center text-24">Get started with a Hardscape Architect to design your patio, walkway, poolscape, retaining wall, or stair project - <span className="text-warning">for free.</span></p>
+          </div>
+        </section>
+
+        <section className="pb-80">
+          <HowItWorksSection />
+          <div className="flex justify-center mt-70">
+            <button className="btn-warning btn-md">Schedule A Free Consultation</button>
+          </div>
+        </section>
+
         <WhyUhKitsSection />
         <PopularKitsSection />
         <GallerySection />
