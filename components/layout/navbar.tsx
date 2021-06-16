@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  return (<nav className="navbar z-10 relative flex items-center sticky text-white filter drop-shadow-lg py-5">
+  return (<nav className="navbar z-20 relative flex items-center sticky text-white filter drop-shadow-lg py-5">
     <div className="container mx-auto flex justify-between xl:justify-left">
       <Link href="/"><a className="flex items-center"><Image src="/assets/images/logo.svg" height={38} width={130} alt="UH logo" /></a></Link>
       <button className="xl:hidden px-3" onClick={() => setNavbarOpen(!navbarOpen)}><Image src="/assets/images/icons/menu.svg" width={27} height={25} alt="Menu" /></button>
@@ -14,7 +14,7 @@ export function Navbar() {
       }>
         <div className="flex w-full xl:hidden justify-between py-8">
           <Link href="/"><a className="flex xl:hidden items-center"><Image src="/assets/images/logo.svg" height={44} width={152} alt="UH logo" /></a></Link>
-          <button onClick={() => setNavbarOpen(false)}><Image src="/assets/images/icons/close.svg" width={19} height={18} alt="Close" /></button>
+          <button className="px-3" onClick={() => setNavbarOpen(false)}><Image src="/assets/images/icons/close.svg" width={19} height={18} alt="Close" /></button>
         </div>
         <ul className="flex flex-col xl:flex-row font-medium text-lg xl:text-base pl-8 xl:pl-0">
           <li className="py-5 nav-link"><Link href="/kits"><a className="relative xl:px-7 xl:py-4">Hardscape Kits</a></Link></li>
