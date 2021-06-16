@@ -66,24 +66,24 @@ export default function ThemeDemo() {
           <h1 className="pb-4 text-5xl font-medium">Buttons</h1>
           <div>
             <div className="mb-4">
-              <button className="bg-gradient-to-r from-primary to-primary-75 focus:outline-none focus:ring focus:ring-primary-75 px-7 text-lg py-4 text-white font-medium rounded-lg mr-8">Primary Button</button>
-              <button className="bg-gradient-to-r from-primary to-primary-75 focus:outline-none focus:ring focus:ring-primary-75 px-7 text-base py-3 text-white font-medium rounded-lg mr-8">Primary Button</button>
-              <button className="bg-gradient-to-r from-primary to-primary-75 focus:outline-none focus:ring focus:ring-primary-75 px-4 text-sm py-2 text-white font-medium rounded-lg mr-8">Primary Button</button>
+              <button className="btn-primary btn-lg mr-3">Primary Button</button>
+              <button className="btn-primary btn-md mr-3">Primary Button</button>
+              <button className="btn-primary btn-sm">Primary Button</button>
             </div>
             <div className="mb-4">
-              <button className="bg-gradient-to-r from-warning to-warning-75 focus:outline-none focus:ring focus:ring-warning-75 px-7 text-lg py-4 text-white font-medium rounded-lg mr-8">Warning Button</button>
-              <button className="bg-gradient-to-r from-warning to-warning-75 focus:outline-none focus:ring focus:ring-warning-75 px-7 text-base py-3 text-white font-medium rounded-lg mr-8">Warning Button</button>
-              <button className="bg-gradient-to-r from-warning to-warning-75 focus:outline-none focus:ring focus:ring-warning-75 px-4 text-sm py-2 text-white font-medium rounded-lg mr-8">Warning Button</button>
+              <button className="btn-warning btn-lg mr-3">Warning Button</button>
+              <button className="btn-warning btn-md mr-3">Warning Button</button>
+              <button className="btn-warning btn-sm">Warning Button</button>
             </div>
             <div className="mb-4">
-              <button className="bg-danger hover:bg-danger-200 focus:outline-none focus:ring focus:ring-danger-75 px-7 text-lg py-4 text-white font-medium rounded-lg mr-8">Danger Button</button>
-              <button className="bg-danger hover:bg-danger-200 focus:outline-none focus:ring focus:ring-danger-75 px-7 text-base py-3 text-white font-medium rounded-lg mr-8">Danger Button</button>
-              <button className="bg-danger hover:bg-danger-200 focus:outline-none focus:ring focus:ring-danger-75 px-4 text-sm py-2 text-white font-medium rounded-lg mr-8">Danger Button</button>
+              <button className="btn-danger btn-lg mr-3">Danger Button</button>
+              <button className="btn-danger btn-md mr-3">Danger Button</button>
+              <button className="btn-danger btn-sm">Danger Button</button>
             </div>
             <div className="mb-4">
-              <button className="bg-light hover:bg-light-200 focus:outline-none focus:ring focus:ring-light-75 px-7 text-lg py-4 text-light-500 font-medium rounded-lg mr-8">Light Button</button>
-              <button className="bg-light hover:bg-light-200 focus:outline-none focus:ring focus:ring-light-75 px-7 text-base py-3 text-light-500 font-medium rounded-lg mr-8">Light Button</button>
-              <button className="bg-light hover:bg-light-200 focus:outline-none focus:ring focus:ring-light-75 px-4 text-sm py-2 text-light-500 font-medium rounded-lg mr-8">Light Button</button>
+              <button className="btn-light btn-lg mr-3">Light Button</button>
+              <button className="btn-light btn-md mr-3">Light Button</button>
+              <button className="btn-light btn-sm">Light Button</button>
             </div>
           </div>
         </section>
