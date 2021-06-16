@@ -23,19 +23,15 @@ html {
     @apply bg-light hover:bg-light-200 focus:outline-none focus:ring focus:ring-light-75 text-light-500 font-bold rounded-lg;
 }
 
-.btn-lg {
-    @apply px-7 py-4 text-lg rounded-lg;
-}
-
 .btn-md {
-    @apply px-7 py-4 text-sm rounded-lg;
+    @apply px-25 py-15 text-12 rounded-lg;
 }
 
 .btn-sm {
-    @apply px-4 py-2 text-sm rounded;
+    @apply px-25 py-10 text-10 rounded;
 }
 
 .btn-mini {
     height: 30px;
-    @apply px-5 py-0 text-xs rounded-lg;
+    @apply px-20 py-5 text-10 rounded-lg;
 }

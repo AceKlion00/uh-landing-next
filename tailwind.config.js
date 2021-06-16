@@ -1,3 +1,15 @@
+function range(start, end, increment = 1) {
+  const count = Math.floor((end - start + 1) / increment);
+  return Array(count).fill(0).map((_, idx) => start + idx * increment);
+}
+
+const minFontSize = 5;
+const maxFontSize = 90;
+
+const minSpacingPixel = 0;
+const maxSpacingPixel = 1000;
+const spacingPixelIncrement = 5;
+
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
@@ -61,17 +73,10 @@ module.exports = {
       },
     },
     fontSize: {
-      xs: '.75rem',
-      sm: '.875rem',
-      base: '1rem',
-      lg: '1.15rem',
-      xl: '1.7rem',
-      '2xl': '2rem',
-      '3xl': '2.25rem',
-      '4xl': '3.25rem',
-      '5xl': '4.25rem',
-      '6xl': '5.25rem',
-      '7xl': '6.25rem',
+      ...range(minFontSize, maxFontSize).reduce((merged, f) => ({ ...merged, [f]: `${f}px`}), {})
+    },
+    spacing: {
+      ...range(minSpacingPixel, maxSpacingPixel, spacingPixelIncrement).reduce((merged, f) => ({ ...merged, [f]: `${f}px` }), {})
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],

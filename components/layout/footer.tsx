@@ -16,7 +16,7 @@ export function Footer() {
         <div className="lg:col-span-2 text-white">
           <div className="grid lg:grid-cols-4">
             <div>
-              <p className="nav-title text-xl font-medium mb-6 mt-9 lg:mt-0">Services</p>
+              <p className="nav-title text-18 font-medium mb-6 mt-9 lg:mt-0">Services</p>
               <ul className="flex flex-col">
                 <li className="py-2.5"><Link href="kits"><a>Hardscape Kits</a></Link></li>
                 <li className="py-2.5"><Link href="kits/custom-design-request"><a>Custom Designed Kits</a></Link></li>
@@ -24,7 +24,7 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <p className="nav-title text-xl font-medium mb-6 mt-9 lg:mt-0">Company</p>
+              <p className="nav-title text-18 font-medium mb-6 mt-9 lg:mt-0">Company</p>
               <ul className="flex flex-col">
                 <li className="py-2.5"><Link href="our-story"><a>Our Story</a></Link></li>
                 <li className="py-2.5"><Link href="why-uh"><a>Why UH Kits</a></Link></li>
@@ -33,14 +33,14 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <p className="nav-title text-xl font-medium mb-6 mt-9 lg:mt-0">Resources</p>
+              <p className="nav-title text-18 font-medium mb-6 mt-9 lg:mt-0">Resources</p>
               <ul className="flex flex-col">
                 <li className="py-2.5"><Link href="blog"><a>Blog</a></Link></li>
                 <li className="py-2.5"><Link href="faqs"><a>FAQs</a></Link></li>
               </ul>
             </div>
             <div>
-              <p className="nav-title text-xl font-medium mb-6 mt-9 lg:mt-0">Follow us</p>
+              <p className="nav-title text-18 font-medium mb-6 mt-9 lg:mt-0">Follow us</p>
               <div className="d-flex justify-center lg:justify-start">
                 <a className="mr-9" href="https://www.facebook.com/UnitedHardscapes" target="_blank"><Image src="/assets/images/social-logos/facebook.svg" width={18} height={18} alt="Facebook" /></a>
                 <a className="mr-9" href="https://www.instagram.com/unitedhardscapes" target="_blank"><Image src="/assets/images/social-logos/instagram.svg" width={18} height={18} alt="Instagram" /></a>

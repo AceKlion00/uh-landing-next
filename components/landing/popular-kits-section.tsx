@@ -7,7 +7,7 @@ export function PopularKitsSection() {
   const kitSeries = homeContent.kitSeries;
 
   return (<section className="py-36 bg-secondary">
-    <h1 className="text-white text-3xl text-center">Looking for a ready-to-go solution?</h1>
+    <h1 className="text-white text-32 text-center">Looking for a ready-to-go solution?</h1>
     <div className="px-12">
       <Swiper spaceBetween={20} slidesPerView={3}>
         {kitSeries.map((kitSerie, i) => (<SwiperSlide key={i}>

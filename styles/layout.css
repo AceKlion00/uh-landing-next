@@ -1,7 +1,3 @@
-.navbar {
-    height: 80px;
-}
-
 .nav-link a:after {
     content: '';
     display: block;
@@ -17,10 +13,6 @@
 
 .nav-link:hover a:after {
     width: 20px;
-}
-
-footer .nav-title {
-    font-size: 18px;
 }
 
 .main-content-wrapper {
