@@ -1,6 +1,5 @@
 import { usePlacesWidget } from 'react-google-autocomplete';
-import { noop } from '../../core/types';
-import { environment } from '../../environment/environment';
+import { noop } from '../../../core/types';
 
 interface Props {
   id: string;
@@ -14,7 +13,7 @@ interface Props {
 
 export function AddressInput({ id, name, label, placeholder, value, onChange, onLatLngChange }: Props) {
   const { ref } = usePlacesWidget<HTMLInputElement>({
-    apiKey: environment.googleApiKey,
+    apiKey: process.env.googleApiKey,
     options: {
       componentRestrictions: { country: 'US' }
     },

@@ -13,3 +13,14 @@ export const modalCustomStyles = {
     zIndex: 1000,
   }
 };
+
+export enum DialogResult {
+  Ok = 'OK',
+  Yes = 'YES',
+  No = 'NO',
+}
+
+export enum DialogType {
+  Alert = 'ALERT',
+  Confirmation = 'CONFIRMATION',
+}

@@ -27,6 +27,10 @@ html {
     @apply bg-light hover:bg-light-200 focus:ring-light-75 text-light-500;
 }
 
+.btn-info {
+    @apply bg-primary hover:bg-primary-200 focus:ring-primary-75 text-white;
+}
+
 .btn-md {
     @apply px-25 py-15 text-12 rounded-lg;
 }
@@ -52,4 +56,36 @@ html {
 
 .ReactModal__Overlay--before-close{
     opacity: 0;
+}
+
+.ReactModal__Content {
+    @apply shadow;
+}
+
+/* spinner */
+.spinner .path {
+    stroke: #07A39D;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
 }

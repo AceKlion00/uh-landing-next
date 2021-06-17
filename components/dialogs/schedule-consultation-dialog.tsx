@@ -1,15 +1,25 @@
+import { useState } from 'react';
 import Image from 'next/image';
 import { useFormik } from 'formik';
+import { useRouter } from 'next/router';
 import * as Yup from 'yup';
-import { Input } from '../ui-kit/input';
-import { PhoneInput } from '../ui-kit/phone-input';
-import { AddressInput } from '../ui-kit/address-input';
+
+import { Input } from '../ui-kit/input/input';
+import { PhoneInput } from '../ui-kit/input/phone-input';
+import { AddressInput } from '../ui-kit/input/address-input';
+import Spinner from '../ui-kit/common/spinner';
+import { consultationService } from '../../core/services/consultation.service';
+import useAlert from '../ui-kit/dialog/use-alert';
 
 interface Props {
   onClose: () => void,
+  closeDialog: () => void, // DO NOT USE THIS. INTERNAL USE ONLY
 }
 
-export function ScheduleConsultationDialog({ onClose }: Props) {
+export function ScheduleConsultationDialog({ onClose, closeDialog }: Props) {
+  const alertService = useAlert();
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const schema = Yup.object().shape({
     fullName: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
@@ -28,14 +38,26 @@ export function ScheduleConsultationDialog({ onClose }: Props) {
       longitude: null,
     },
     validationSchema: schema,
-    onSubmit: values => {
-      console.log(values);
+    onSubmit: async values => {
+      try {
+        setIsLoading(true);
+        await consultationService.requestConsultation(values as any);
+        alertService.alert('Thank You!', 'One of our Hardscape Consultants will be in touch soon to schedule the consultation.', 'View Our Signature Kits')
+          .then(() => {
+            closeDialog();
+            router.push('/kits');
+          });
+      } catch (e) {
+        alertService.alert('Request Failed', e.message || 'Request failed. Please try again.', 'Ok');
+      } finally {
+        setIsLoading(false);
+      }
     },
   });
 
   return (<div className="w-410">
     <div className="flex justify-end">
-      <button className="px-5 pt-5" onClick={onClose}><Image src="/assets/images/icons/close-dark.svg" width={14} height={14} alt="close"/></button>
+      <button className="px-5 pt-5" onClick={() => { onClose(); closeDialog(); }}><Image src="/assets/images/icons/close-dark.svg" width={14} height={14} alt="close"/></button>
     </div>
     <h5 className="text-primary text-center text-22 font-medium mb-15">Book A Free Consultation</h5>
     <p className="text-light-500 text-16 font-normal text-center mb-30">We will contact you to confirm the day and the time of the consultation.</p>
@@ -51,7 +73,6 @@ export function ScheduleConsultationDialog({ onClose }: Props) {
         value={form.values.address}
         onChange={form.handleChange}
         onLatLngChange={(latitude, longitude) => {
-          console.log('lat lng update: ', latitude, longitude);
           form.setFieldValue('latitude', latitude);
           form.setFieldValue('longitude', longitude);
         }} />
@@ -59,9 +80,11 @@ export function ScheduleConsultationDialog({ onClose }: Props) {
         <button className="btn btn-warning btn-md" disabled={!(form.isValid && form.dirty)}>Submit</button>
       </div>
     </form>
+    <Spinner isLoading={isLoading} />
   </div>);
 }
 
 ScheduleConsultationDialog.defaultProps = {
   onClose: () => {},
+  closeDialog: () => {},
 }

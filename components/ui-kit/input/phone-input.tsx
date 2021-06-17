@@ -1,5 +1,5 @@
 import InputMask from 'react-input-mask';
-import { noop } from '../../core/types';
+import { noop } from '../../../core/types';
 
 interface Props {
   id: string;

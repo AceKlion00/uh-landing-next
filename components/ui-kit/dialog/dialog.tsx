@@ -1,13 +1,12 @@
 import { ReactNode, Children, cloneElement, isValidElement } from 'react';
 import Modal from 'react-modal'
-
-import { modalCustomStyles } from './consts';
+import { modalCustomStyles } from './types';
 
 Modal.setAppElement('#__next');
 
 interface Props {
   isOpen: boolean;
-  onClose: () => void;
+  closeDialog: () => void;
   children: ReactNode;
 }
 
@@ -17,12 +16,12 @@ export function Dialog(props: Props) {
     style={modalCustomStyles}
     shouldCloseOnOverlayClick={true}
     shouldCloseOnEsc={true}
-    onRequestClose={props.onClose}
+    onRequestClose={props.closeDialog}
     closeTimeoutMS={300}
   >
     {Children.map(props.children, child => {
       if (isValidElement(child)) {
-        return cloneElement(child, { onClose: props.onClose });
+        return cloneElement(child, { closeDialog: props.closeDialog });
       }
       return child;
     })}

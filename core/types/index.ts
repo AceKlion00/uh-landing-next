@@ -13,7 +13,11 @@ export enum HomePageType {
   Consultation = 'CONSULTATION'
 }
 
-export enum ConsultationFormat {
-  Virtual = 'VIRTUAL',
-  Onsite = 'ONSITE',
+export interface RequestConsultation {
+  fullName: string;
+  email: string;
+  phone: string;
+  address: string;
+  latitude: number;
+  longitude: number;
 }
