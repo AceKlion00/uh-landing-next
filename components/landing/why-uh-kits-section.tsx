@@ -19,7 +19,7 @@ export function WhyUhKitsSection() {
       <div className="text-24 text-center mt-20">
         <p>We’ll help you turn your ideas into a plan.<br className="invisible lg:visible" /><span className="text-warning">Get a free consultation</span> with a Hardscape Architect.</p>
         <p className="mb-30 lg:mb-80">No commitment. Just excitement to finally get the yard you’ve always dreamed of!</p>
-        <button className="btn-warning btn-md">Schedule A Free Consultation</button>
+        <button className="btn btn-warning btn-md">Schedule A Free Consultation</button>
       </div>
     </div>
   </section>);

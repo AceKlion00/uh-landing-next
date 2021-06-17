@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import { homeWorkFlows } from '../../core/data/home'
+import Image from 'next/image';
+import { homeWorkFlows } from '../../core/data/home';
 
 export function HowItWorksSection() {
   return (<section className="text-center">

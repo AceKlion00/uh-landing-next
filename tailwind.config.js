@@ -80,10 +80,22 @@ module.exports = {
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
-    }
+    },
+    boxShadow: {
+      primary: '0 5px 24px -10px rgba(0, 0, 0, 0.15)',
+      DEFAULT: '0 5px 24px -10px rgba(0, 0, 0, 0.15)',
+      secondary: '0 5px 20px rgba(0, 0, 0, 0.07)',
+      warning: '0 10px 20px -5px rgba(211, 113, 0, 0.4)',
+      light: '0 4px 20px -14px rgba(38, 50, 56, 0.35)',
+      inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+      none: 'none',
+    },
   },
   variants: {
-    extend: {},
+    extend: {
+      opacity: ['disabled'],
+      cursor: ['disabled']
+    },
   },
   plugins: [],
 }

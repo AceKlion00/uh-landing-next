@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from 'next/link';
+import Image from 'next/image';
 
 export function Footer() {
   return (<footer className="bg-secondary z-10 text-center lg:text-left text-light pt-80 pb-15">

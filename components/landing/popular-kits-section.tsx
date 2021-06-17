@@ -1,8 +1,8 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import Image from 'next/image';
+import Link from 'next/link';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { homeContent, popularKitsDescription, popularKitsTitle } from '../../core/data/home'
+import { homeContent, popularKitsDescription, popularKitsTitle } from '../../core/data/home';
 import { HomePageType } from '../../core/types';
 
 export function PopularKitsSection({ homepageType = HomePageType.Home }) {
@@ -21,7 +21,7 @@ export function PopularKitsSection({ homepageType = HomePageType.Home }) {
       <Swiper spaceBetween={20} slidesPerView={3}>
         {kitSeries.map((kitSerie, i) => (<SwiperSlide key={i}>
           <div className="rounded-lg p-10 shadow-md bg-white">
-            <Image className="rounded-lg overflow-hidden cursor-pointer" src={kitSerie.image} width={kitSerie.width} height={kitSerie.height} layout="responsive" alt={kitSerie.name}></Image>
+            <Image className="rounded-lg overflow-hidden cursor-pointer" src={kitSerie.image} width={kitSerie.width} height={kitSerie.height} layout="responsive" alt={kitSerie.name} />
             <div className="flex justify-between text-light-400 pt-15 pb-10 font-medium">
               <span>{kitSerie.name}</span>
               <span>{kitSerie.price}</span>
@@ -31,7 +31,7 @@ export function PopularKitsSection({ homepageType = HomePageType.Home }) {
       </Swiper>
     </div>
     <div className="flex justify-center mt-100">
-      <Link href="/kits"><button className="btn-warning btn-md">View Signature Kits</button></Link>
+      <Link href="/kits"><button className="btn btn-warning btn-md">View Signature Kits</button></Link>
     </div>
   </section>);
 }
