@@ -31,6 +31,10 @@ html {
     @apply bg-primary hover:bg-primary-200 focus:ring-primary-75 text-white;
 }
 
+.btn-lg {
+    @apply px-25 py-15 text-14 rounded-lg;
+}
+
 .btn-md {
     @apply px-25 py-15 text-12 rounded-lg;
 }

@@ -1,6 +1,8 @@
+const apiUrl = (url: string): string => `${process.env.api}${url}`;
+
 export function doPost<T>(url: string, payload: any): Promise<T> {
   return new Promise((resolve, reject) => {
-    fetch(url, {
+    fetch(apiUrl(url), {
       body: JSON.stringify(payload),
       headers: {
         'Content-Type': 'application/json'
@@ -18,5 +20,5 @@ export function doPost<T>(url: string, payload: any): Promise<T> {
 }
 
 export function doGet<T>(url: string): Promise<T> {
-  return fetch(url).then(res => res.json());
+  return fetch(apiUrl(url)).then(res => res.json());
 }

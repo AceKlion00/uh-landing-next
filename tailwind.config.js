@@ -94,7 +94,9 @@ module.exports = {
   variants: {
     extend: {
       opacity: ['disabled'],
-      cursor: ['disabled']
+      cursor: ['disabled'],
+      backgroundColor: ['active'],
+      textColor: ['active'],
     },
   },
   plugins: [],
