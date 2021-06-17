@@ -108,7 +108,12 @@ export default function Kits({ kits }: Props) {
 }
 
 export async function getStaticProps() {
-  const kits = await doGet<KitType[]>('/kits');
+  let kits: KitType[] = [];
+  try {
+    kits = await doGet<KitType[]>('/kits');
+  } catch (e) {
+    console.log('unable to fetch kits data.', e);
+  }
 
   return {
     props: { kits }, // will be passed to the page component as props

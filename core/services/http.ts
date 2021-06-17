@@ -20,5 +20,16 @@ export function doPost<T>(url: string, payload: any): Promise<T> {
 }
 
 export function doGet<T>(url: string): Promise<T> {
-  return fetch(apiUrl(url)).then(res => res.json());
+  return new Promise((resolve, reject) => {
+    fetch(apiUrl(url)).then(res => res.json())
+      .then(async res => {
+        const result = await res.json();
+        if (res.ok) {
+          resolve(result);
+        } else {
+          reject(result);
+        }
+      })
+  })
+
 }
