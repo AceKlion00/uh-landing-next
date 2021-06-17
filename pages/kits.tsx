@@ -107,7 +107,7 @@ export default function Kits({ kits }: Props) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let kits: KitType[] = [];
   try {
     kits = await doGet<KitType[]>('/kits');
