@@ -5,7 +5,11 @@ import { Input } from '../ui-kit/input';
 import { PhoneInput } from '../ui-kit/phone-input';
 import { AddressInput } from '../ui-kit/address-input';
 
-export function ScheduleConsultationDialog() {
+interface Props {
+  onClose: () => void,
+}
+
+export function ScheduleConsultationDialog({ onClose }: Props) {
   const schema = Yup.object().shape({
     fullName: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
@@ -29,9 +33,9 @@ export function ScheduleConsultationDialog() {
     },
   });
 
-  return (<div className="w-410 pt-10">
+  return (<div className="w-410">
     <div className="flex justify-end">
-      <a><Image src="/assets/images/icons/close-dark.svg" width={14} height={14} alt="close"/></a>
+      <button className="px-5 pt-5" onClick={onClose}><Image src="/assets/images/icons/close-dark.svg" width={14} height={14} alt="close"/></button>
     </div>
     <h5 className="text-primary text-center text-22 font-medium mb-15">Book A Free Consultation</h5>
     <p className="text-light-500 text-16 font-normal text-center mb-30">We will contact you to confirm the day and the time of the consultation.</p>
@@ -56,4 +60,8 @@ export function ScheduleConsultationDialog() {
       </div>
     </form>
   </div>);
+}
+
+ScheduleConsultationDialog.defaultProps = {
+  onClose: () => {},
 }

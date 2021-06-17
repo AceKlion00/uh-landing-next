@@ -6,6 +6,7 @@ export const modalCustomStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    boxShadow: '',
   },
   overlay: {
     backgroundColor: 'rgba(7, 163, 157, 0.9)',

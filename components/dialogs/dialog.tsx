@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, Children, cloneElement, isValidElement } from 'react';
 import Modal from 'react-modal'
 
 import { modalCustomStyles } from './consts';
@@ -20,6 +20,11 @@ export function Dialog(props: Props) {
     onRequestClose={props.onClose}
     closeTimeoutMS={300}
   >
-    {props.children}
+    {Children.map(props.children, child => {
+      if (isValidElement(child)) {
+        return cloneElement(child, { onClose: props.onClose });
+      }
+      return child;
+    })}
   </Modal>);
 }
