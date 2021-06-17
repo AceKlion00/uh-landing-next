@@ -7,28 +7,19 @@ import { HowItWorksSection } from '../components/landing/how-it-works-section';
 import { WhyUhKitsSection } from '../components/landing/why-uh-kits-section';
 import { GallerySection } from '../components/landing/gallery-section';
 import { TestimonialSection } from '../components/landing/testimonial-section';
+import { useDialog } from '../core/contexts/dialog-context';
 
 export default function Home() {
+  const dialog = useDialog();
   return (
     <>
       <Head>
         <title>United Hardscapes: Hardscape Kits</title>
         <meta name="description" content="Choose from a variety of patio, walkway, driveway, retaining wall, and stair kits for any budget and taste to create the perfect outdoor living space." />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
         <section className="h-855 relative overflow-hidden">
           <div><Image src="/assets/images/landing-pages/home-page/background.jpg" objectFit="cover" layout="fill" alt="background" /></div>
-          <div className="absolute left-0 top-0 w-full h-full z-10">
-            <div className="container mx-auto text-white h-full flex flex-col justify-start lg:justify-center font-medium mt-130 lg:mt-0">
-              <h4 className="text-24 mb-10 text-center lg:text-left">Hardscaping is Hard.</h4>
-              <h1 className="text-40 mb-30 text-center lg:text-left font-normal">We make it Simple.</h1>
-              <p className="text-18 mb-25 lg:max-w-md text-center lg:text-left">Plan your project, find a contractor, and buy your materials - all with the help of the industry experts.</p>
-              <div className="text-center lg:text-left">
-                <button className="btn-warning btn-md">Schedule a Free Consultation</button>
-              </div>
-            </div>
-          </div>
           <div className="absolute left-0 top-0">
             <Image src="/assets/images/landing-pages/home-page/blue-bg-shape.svg" width={1059} height={854} layout="fixed" alt="blue-bg" />
           </div>
@@ -48,6 +39,16 @@ export default function Home() {
               <Image src="/assets/images/landing-pages/home-page/valerie-and-john.png" width={626} height={723} layout="fixed" alt="ellipse" />
             </div>
           </div>
+          <div className="absolute left-0 top-0 w-full h-full">
+            <div className="container mx-auto text-white h-full flex flex-col justify-start lg:justify-center font-medium mt-130 lg:mt-0">
+              <h4 className="text-24 mb-10 text-center lg:text-left">Hardscaping is Hard.</h4>
+              <h1 className="text-40 mb-30 text-center lg:text-left font-normal">We make it Simple.</h1>
+              <p className="text-18 mb-25 lg:max-w-md text-center lg:text-left">Plan your project, find a contractor, and buy your materials - all with the help of the industry experts.</p>
+              <div className="text-center lg:text-left">
+                <button className="btn-warning btn-md" onClick={() => dialog.openDialog()}>Schedule a Free Consultation</button>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section className="my-90">
@@ -59,7 +60,7 @@ export default function Home() {
         <section className="pb-80">
           <HowItWorksSection />
           <div className="flex justify-center mt-70">
-            <button className="btn-warning btn-md">Schedule A Free Consultation</button>
+            <button className="btn-warning btn-md" onClick={() => dialog.openDialog()}>Schedule A Free Consultation</button>
           </div>
         </section>
 

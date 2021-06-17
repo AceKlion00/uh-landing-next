@@ -9,7 +9,7 @@ export function HowItWorksSection() {
         <Image src="/assets/images/how-it-works/primary-dotted-line.svg" width={1397} height={124} layout="responsive" alt="Dotted Line" />
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3">
-        {homeWorkFlows.map((workflow, i) => (<div className="text-light-500">
+        {homeWorkFlows.map((workflow, i) => (<div className="text-light-500" key={i}>
             <div className="h-280" key={i}>
               <Image src={workflow.image} width={workflow.width} height={workflow.height} alt={workflow.title} />
             </div>

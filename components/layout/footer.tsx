@@ -18,25 +18,25 @@ export function Footer() {
             <div>
               <p className="text-18 font-medium text-white mb-20 mt-30 lg:mt-0">Services</p>
               <ul className="flex flex-col">
-                <li className="py-10"><Link href="kits"><a>Hardscape Kits</a></Link></li>
-                <li className="py-10"><Link href="kits/custom-design-request"><a>Custom Designed Kits</a></Link></li>
-                <li className="py-10"><Link href="contact-us"><a>Contact Us</a></Link></li>
+                <li className="py-10"><Link href="/kits"><a>Hardscape Kits</a></Link></li>
+                <li className="py-10"><Link href="/kits/custom-design-request"><a>Custom Designed Kits</a></Link></li>
+                <li className="py-10"><Link href="/contact-us"><a>Contact Us</a></Link></li>
               </ul>
             </div>
             <div>
               <p className="text-18 font-medium text-white mb-20 mt-30 lg:mt-0">Company</p>
               <ul className="flex flex-col">
-                <li className="py-10"><Link href="our-story"><a>Our Story</a></Link></li>
-                <li className="py-10"><Link href="why-uh"><a>Why UH Kits</a></Link></li>
-                <li className="py-10"><Link href="how-it-works"><a>How It Works</a></Link></li>
-                <li className="py-10"><Link href="partners"><a>Partners</a></Link></li>
+                <li className="py-10"><Link href="/our-story"><a>Our Story</a></Link></li>
+                <li className="py-10"><Link href="/why-uh"><a>Why UH Kits</a></Link></li>
+                <li className="py-10"><Link href="/how-it-works"><a>How It Works</a></Link></li>
+                <li className="py-10"><Link href="/partners"><a>Partners</a></Link></li>
               </ul>
             </div>
             <div>
               <p className="text-18 font-medium text-white mb-20 mt-30 lg:mt-0">Resources</p>
               <ul className="flex flex-col">
-                <li className="py-10"><Link href="blog"><a>Blog</a></Link></li>
-                <li className="py-10"><Link href="faqs"><a>FAQs</a></Link></li>
+                <li className="py-10"><Link href="/blog"><a>Blog</a></Link></li>
+                <li className="py-10"><Link href="/faqs"><a>FAQs</a></Link></li>
               </ul>
             </div>
             <div>

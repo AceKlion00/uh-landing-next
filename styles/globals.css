@@ -35,3 +35,17 @@ html {
     height: 30px;
     @apply px-20 py-5 text-10 rounded-lg;
 }
+
+/* react modal transition animation */
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity .4s cubic-bezier(.25,.8,.25,1);
+}
+
+.ReactModal__Overlay--after-open{
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+    opacity: 0;
+}
