@@ -8,6 +8,7 @@ export const modalCustomStyles = {
     transform: 'translate(-50%, -50%)',
   },
   overlay: {
-    backgroundColor: 'rgba(7, 163, 157, 0.9)'
+    backgroundColor: 'rgba(7, 163, 157, 0.9)',
+    zIndex: 1000,
   }
 };

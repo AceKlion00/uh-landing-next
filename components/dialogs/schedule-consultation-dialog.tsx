@@ -6,7 +6,7 @@ export function ScheduleConsultationDialog() {
         form content
       </div>
       <div className="flex justify-center">
-        <button className="btn-warning btn-md">Submit</button>
+        <button type="button" className="btn-warning btn-md">Submit</button>
       </div>
     </form>
   </>);
