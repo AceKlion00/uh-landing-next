@@ -8,6 +8,7 @@ import { WhyUhKitsSection } from '../components/landing/why-uh-kits-section';
 import { GallerySection } from '../components/landing/gallery-section';
 import { TestimonialSection } from '../components/landing/testimonial-section';
 import { useDialog } from '../core/contexts/dialog-context';
+import { ScheduleConsultationDialog } from '../components/dialogs/schedule-consultation-dialog';
 
 export default function Home() {
   const dialog = useDialog();
@@ -35,7 +36,7 @@ export default function Home() {
               <p className="text-light-500 text-13 mb-10 leading-5">We just chose the kit we wanted, made some minor changes, and clicked 'Order'. We quickly found a contractor to install it, our kit was delivered and we had a new patio in days. Such a great experience.</p>
               <p className="text-primary text-13">Valerie & Jon Petersson</p>
             </div>
-            <div className="relative invisible xl:visible">
+            <div className="relative invisible xl:visible -mb-10">
               <Image src="/assets/images/landing-pages/home-page/valerie-and-john.png" width={626} height={723} layout="fixed" alt="ellipse" />
             </div>
           </div>
@@ -45,7 +46,7 @@ export default function Home() {
               <h1 className="text-40 mb-30 text-center lg:text-left font-normal">We make it Simple.</h1>
               <p className="text-18 mb-25 lg:max-w-md text-center lg:text-left">Plan your project, find a contractor, and buy your materials - all with the help of the industry experts.</p>
               <div className="text-center lg:text-left">
-                <button className="btn-warning btn-md" onClick={() => dialog.openDialog()}>Schedule a Free Consultation</button>
+                <button className="btn-warning btn-md" onClick={() => dialog.openDialog(<ScheduleConsultationDialog />)}>Schedule a Free Consultation</button>
               </div>
             </div>
           </div>
@@ -60,7 +61,7 @@ export default function Home() {
         <section className="pb-80">
           <HowItWorksSection />
           <div className="flex justify-center mt-70">
-            <button className="btn-warning btn-md" onClick={() => dialog.openDialog()}>Schedule A Free Consultation</button>
+            <button className="btn-warning btn-md" onClick={() => dialog.openDialog(<ScheduleConsultationDialog />)}>Schedule A Free Consultation</button>
           </div>
         </section>
 

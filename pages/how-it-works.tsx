@@ -8,7 +8,7 @@ export default function HowItWorks() {
         <meta name="description" content="<description here>" />
       </Head>
       <Layout>
-        <div className="mt-80">How It Works page works!</div>
+        <div>How It Works page works!</div>
       </Layout>
     </>
   );

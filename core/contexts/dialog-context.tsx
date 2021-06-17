@@ -1,18 +1,13 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
 
 import { Dialog } from '../../components/dialogs/dialog';
-import { ScheduleConsultationDialog } from '../../components/dialogs/schedule-consultation-dialog';
 
 type dialogContextType = {
-  dialogOpened: boolean,
-  openDialog: () => any,
-  closeDialog: () => any,
+  openDialog: (dialog: ReactNode) => void,
 };
 
 const dialogContextDefaultValues: dialogContextType = {
-  dialogOpened: false,
-  openDialog: () => {},
-  closeDialog: () => {},
+  openDialog: (_: ReactNode) => {},
 };
 
 const DialogContext = createContext<dialogContextType>(dialogContextDefaultValues);
@@ -26,16 +21,24 @@ type Props = {
 }
 
 export function DialogProvider({ children }: Props) {
-  const [dialogOpened, setDialogOpened] = useState(false);
-  const openDialog = () => setDialogOpened(true);
-  const closeDialog = () => setDialogOpened(false);
-  const value = { dialogOpened, openDialog, closeDialog };
+  const [openStatus, setOpenStatus] = useState<boolean[]>([]);
+  const [dialogs, setDialogs] = useState<ReactNode[]>([]);
+  const openDialog = (dialog: ReactNode) => {
+    setDialogs([...dialogs, dialog]);
+    setOpenStatus([...openStatus, true]);
+  }
+  const closeDialog = (index: number) => {
+    const newOpenStatus = [...openStatus];
+    newOpenStatus[index] = false;
+    setOpenStatus(newOpenStatus);
+  };
+  const value = { openDialog };
 
   return (
     <>
       <DialogContext.Provider value={value}>
         {children}
-        <Dialog isOpen={dialogOpened} children={<ScheduleConsultationDialog />} />
+        {dialogs.map((dialog, index) => <Dialog key={index} isOpen={openStatus[index]} onClose={() => closeDialog(index)} children={dialog} />)}
       </DialogContext.Provider>
     </>
   )

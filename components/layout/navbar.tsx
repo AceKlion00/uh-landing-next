@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  return (<nav className="h-80 z-20 bg-secondary flex px-15 sticky text-white filter drop-shadow-lg">
+  return (<nav className="h-80 bg-secondary flex px-15 sticky text-white filter drop-shadow-lg">
     <div className="container px-0 mx-auto flex justify-between xl:justify-left">
       <Link href="/"><a className="flex items-center"><Image src="/assets/images/logo.svg" height={38} width={130} alt="UH logo" /></a></Link>
       <button className="xl:hidden px-10" onClick={() => setNavbarOpen(!navbarOpen)}><Image src="/assets/images/icons/menu.svg" width={27} height={25} alt="Menu" /></button>

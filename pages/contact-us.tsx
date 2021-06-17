@@ -8,7 +8,7 @@ export default function ContactUs() {
         <meta name="description" content="<description here>" />
       </Head>
       <Layout>
-        <div className="mt-80">Contact Us page works!</div>
+        <div>Contact Us page works!</div>
       </Layout>
     </>
   );

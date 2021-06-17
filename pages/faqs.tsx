@@ -8,7 +8,7 @@ export default function Faqs() {
         <meta name="description" content="<description here>" />
       </Head>
       <Layout>
-        <div className="mt-80">FAQs page works!</div>
+        <div>FAQs page works!</div>
       </Layout>
     </>
   );

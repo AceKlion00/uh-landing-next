@@ -8,7 +8,7 @@ export default function Kits() {
       <meta name="description" content="<description here>" />
     </Head>
     <Layout>
-      <div className="mt-80">Kits page works!</div>
+      <div>Kits page works!</div>
     </Layout>
     </>
   );

@@ -8,7 +8,7 @@ export default function OurStory() {
         <meta name="description" content="<description here>" />
       </Head>
       <Layout>
-        <div className="mt-80">Our Story page works!</div>
+        <div>Our Story page works!</div>
       </Layout>
     </>
   );

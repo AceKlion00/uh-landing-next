@@ -8,7 +8,7 @@ export default function Blog() {
         <meta name="description" content="<description here>" />
       </Head>
       <Layout>
-        <div className="mt-80">Blog page works!</div>
+        <div>Blog page works!</div>
       </Layout>
     </>
   );
