@@ -3,17 +3,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
 import Router from 'next/router';
-import { Layout } from '../components/layout/layout';
-import { doGet } from '../core/services/http';
-import { KitType } from '../core/types';
-import useWindowDimensions from '../components/ui-kit/hooks/use-window';
-import { CustomDesignRequestSection } from '../components/landing/custom-design-request-section';
+import { Layout } from '../../components/layout/layout';
+import { doGet } from '../../core/api-services/http';
+import { KitType } from '../../core/types';
+import useWindowDimensions from '../../components/ui-kit/hooks/use-window';
+import { CustomDesignRequestSection } from '../../components/landing/custom-design-request-section';
+import useImagePreview from '../../components/ui-kit/dialog/use-image-preview';
+import { shimmerUrl } from '../../components/ui-kit/common/blur-image';
 
 interface Props {
   kits: KitType[];
 }
 
 export default function Kits({ kits }: Props) {
+  const imagePreviewService = useImagePreview();
   const [seriesSelection, setSeriesSelection] = useState(kits.map(kit => {
     const index = kit.kitSeries.findIndex(k => k.isBestSeller);
     return Math.max(index, 0);
@@ -92,9 +95,21 @@ export default function Kits({ kits }: Props) {
                     </div>
                   </div>
                   <div className="flex flex-col-reverse lg:flex-col pl-0 lg:pl-60">
-                    <Image className="rounded-lg overflow-hidden" src={kit.kitSeries[seriesSelection[kitIndex]].image} width={560} height={379} layout="responsive" alt={kit.name} />
+                    <Image
+                      className="rounded-lg overflow-hidden cursor-pointer"
+                      src={kit.kitSeries[seriesSelection[kitIndex]].image}
+                      width={560}
+                      height={379}
+                      layout="responsive"
+                      alt={kit.name}
+                      placeholder="blur"
+                      blurDataURL={shimmerUrl}
+                      onClick={() => imagePreviewService.preview(kit.kitSeries[seriesSelection[kitIndex]].image, kit.name)}
+                    />
                     <div className="hidden lg:flex justify-center lg:justify-end mt-0 mb-30 lg:mt-40 lg:mb-0">
-                      <Link href={`/kits/${kit.kitTypeId}/${kit.kitSeries[seriesSelection[kitIndex]].kitSeriesId}`}><button className="btn btn-warning btn-md">Explore Kits</button></Link>
+                      <Link href={`/kits/${kit.kitTypeId}/${kit.kitSeries[seriesSelection[kitIndex]].kitSeriesId}`}>
+                        <button className="btn btn-warning btn-md">Explore Kits</button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -111,7 +126,7 @@ export default function Kits({ kits }: Props) {
 export async function getServerSideProps() {
   let kits: KitType[] = [];
   try {
-    kits = await doGet<KitType[]>('/kits');
+    kits = await doGet<KitType[]>('/v2/kits');
   } catch (e) {
     console.log('unable to fetch kits data.', e);
   }

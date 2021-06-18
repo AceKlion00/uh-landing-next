@@ -1,4 +1,7 @@
+import useConsultationService from '../../core/app-services/consultation-service';
+
 export function WhyUhKitsSection() {
+  const consultationService = useConsultationService();
   return (<section className="bg-light-50 py-50 lg:py-80">
     <div className="container mx-auto">
       <h3 className="text-primary text-32 font-normal text-center mb-50">Why United Hardscapes?</h3>
@@ -19,7 +22,7 @@ export function WhyUhKitsSection() {
       <div className="text-24 text-center mt-20">
         <p>We’ll help you turn your ideas into a plan.<br className="invisible lg:visible" /><span className="text-warning">Get a free consultation</span> with a Hardscape Architect.</p>
         <p className="mb-30 lg:mb-80">No commitment. Just excitement to finally get the yard you’ve always dreamed of!</p>
-        <button className="btn btn-warning btn-md">Schedule A Free Consultation</button>
+        <button className="btn btn-warning btn-md" onClick={consultationService.showConsultationDialog}>Schedule A Free Consultation</button>
       </div>
     </div>
   </section>);

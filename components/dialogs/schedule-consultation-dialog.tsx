@@ -8,7 +8,7 @@ import { Input } from '../ui-kit/input/input';
 import { PhoneInput } from '../ui-kit/input/phone-input';
 import { AddressInput } from '../ui-kit/input/address-input';
 import Spinner from '../ui-kit/common/spinner';
-import { consultationService } from '../../core/services/consultation.service';
+import { consultationApiService } from '../../core/api-services/consultationApiService';
 import useAlert from '../ui-kit/dialog/use-alert';
 
 interface Props {
@@ -41,7 +41,7 @@ export function ScheduleConsultationDialog({ onClose, closeDialog }: Props) {
     onSubmit: async values => {
       try {
         setIsLoading(true);
-        await consultationService.requestConsultation(values as any);
+        await consultationApiService.requestConsultation(values as any);
         alertService.alert('Thank You!', 'One of our Hardscape Consultants will be in touch soon to schedule the consultation.', 'View Our Signature Kits')
           .then(() => {
             closeDialog();
@@ -55,7 +55,7 @@ export function ScheduleConsultationDialog({ onClose, closeDialog }: Props) {
     },
   });
 
-  return (<div className="w-410">
+  return (<div className="w-410 p-20">
     <div className="flex justify-end">
       <button className="px-5 pt-5" onClick={() => { onClose(); closeDialog(); }}><Image src="/assets/images/icons/close-dark.svg" width={14} height={14} alt="close"/></button>
     </div>

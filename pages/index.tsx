@@ -7,11 +7,10 @@ import { HowItWorksSection } from '../components/landing/how-it-works-section';
 import { WhyUhKitsSection } from '../components/landing/why-uh-kits-section';
 import { GallerySection } from '../components/landing/gallery-section';
 import { TestimonialSection } from '../components/landing/testimonial-section';
-import { useDialog } from '../components/ui-kit/dialog/dialog-context';
-import { ScheduleConsultationDialog } from '../components/dialogs/schedule-consultation-dialog';
+import useConsultationService from '../core/app-services/consultation-service';
 
 export default function Home() {
-  const dialog = useDialog();
+  const consultationService = useConsultationService();
   return (
     <>
       <Head>
@@ -48,7 +47,7 @@ export default function Home() {
               <h1 className="text-40 mb-30 text-center lg:text-left font-normal">We make it Simple.</h1>
               <p className="text-18 mb-25 lg:max-w-md text-center lg:text-left">Plan your project, find a contractor, and buy your materials - all with the help of the industry experts.</p>
               <div className="text-center lg:text-left">
-                <button className="btn btn-warning btn-md" onClick={() => dialog.openDialog(<ScheduleConsultationDialog/>)}>Schedule a Free Consultation </button>
+                <button className="btn btn-warning btn-md" onClick={consultationService.showConsultationDialog}>Schedule a Free Consultation </button>
               </div>
             </div>
           </div>
@@ -63,7 +62,7 @@ export default function Home() {
         <section className="pb-80">
           <HowItWorksSection/>
           <div className="flex justify-center mt-70">
-            <button className="btn btn-warning btn-md" onClick={() => dialog.openDialog(<ScheduleConsultationDialog/>)}>Schedule A Free Consultation </button>
+            <button className="btn btn-warning btn-md" onClick={consultationService.showConsultationDialog}>Schedule A Free Consultation </button>
           </div>
         </section>
 

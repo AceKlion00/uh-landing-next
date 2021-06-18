@@ -1,7 +1,7 @@
 import { RequestConsultation } from '../types';
 import { doPost } from './http';
 
-export const consultationService = {
+export const consultationApiService = {
   requestConsultation: (body: RequestConsultation) => {
     return doPost('/consultation', body);
   }

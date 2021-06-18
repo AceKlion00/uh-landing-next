@@ -7,6 +7,7 @@ export const modalCustomStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     boxShadow: '',
+    padding: 0,
   },
   overlay: {
     backgroundColor: 'rgba(7, 163, 157, 0.9)',
