@@ -3,11 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
 import Router from 'next/router';
-import { Layout } from '../../components/layout/layout';
-import { doGet } from '../../core/services/http';
-import { KitType } from '../../core/types';
-import useWindowDimensions from '../../components/ui-kit/hooks/use-window';
-import { CustomDesignRequestSection } from '../../components/landing/custom-design-request-section';
+import { Layout } from '../components/layout/layout';
+import { doGet } from '../core/services/http';
+import { KitType } from '../core/types';
+import useWindowDimensions from '../components/ui-kit/hooks/use-window';
+import { CustomDesignRequestSection } from '../components/landing/custom-design-request-section';
 
 interface Props {
   kits: KitType[];
