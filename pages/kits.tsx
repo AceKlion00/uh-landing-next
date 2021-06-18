@@ -57,12 +57,13 @@ export default function Kits({ kits }: Props) {
         </section>
 
         <section>
-          <div className="bg-light-50 pt-110">
+          <div className="bg-light-50 pt-110 pb-30">
             <div className="container mx-auto">
               <h3 className="text-primary text-center font-light text-32">Hardscaping Simplified &trade;</h3>
               <p className="text-center text-light-500 px-0 lg:px-150 mt-35 mb-0 text-18">United Hardscapes is the Hardscape Kit company that offers a large selection of unique patio, walkway, and retaining wall kits that are both <b>Do It Yourself and contractor friendly</b>. It is simple, just choose a kit, select your materials and enjoy the outdoors.</p>
             </div>
           </div>
+          {!kits.length && <h5 className="text-center text-24 text-warning font-bold py-40">No available kits found.</h5>}
           {kits.map((kit, kitIndex) => {
             const odd = kitIndex % 2;
             return (<div key={kitIndex} className={"py-70" + (odd ? "" : " bg-light-50")}>
