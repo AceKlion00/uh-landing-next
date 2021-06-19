@@ -1,13 +1,40 @@
 const apiUrl = (url: string): string => `${process.env.api}${url}`;
 
+/**
+ * Request URL data with POST method
+ * @param url
+ * @param payload
+ *
+ * @return
+ *    resolves response object
+ *    rejects { statusCode: "number", message: "string" }
+ */
 export function doPost<T>(url: string, payload: any): Promise<T> {
   return doFetch<T>(url, 'POST', payload);
 }
 
+/**
+ * Request URL data with PUT method
+ * @param url
+ * @param payload
+ *
+ * @return
+ *    resolves response object
+ *    rejects { statusCode: "number", message: "string" }
+ */
 export function doPut<T>(url: string, payload: any): Promise<T> {
   return doFetch<T>(url, 'PUT', payload);
 }
 
+/**
+ * Request URL data with GET method
+ * @param url
+ * @param payload
+ *
+ * @return
+ *    resolves response object
+ *    rejects { statusCode: "number", message: "string" }
+ */
 export function doGet<T>(url: string): Promise<T> {
   return doFetch<T>(url);
 }

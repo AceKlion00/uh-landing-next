@@ -23,9 +23,14 @@ export default function KitSeries({ kitType, kitTypeId, seriesTypeId }: Props) {
   );
 }
 
-export async function getServerSideProps(context: any) {
-  const { kitTypeId, seriesTypeId } = context.query;
-  const kitType = await doGet<KitType>(`/kits/${kitTypeId}/render-props?seriesTypeId=${seriesTypeId}`);
+export async function getServerSideProps({ res, query }: any) {
+  const { kitTypeId, seriesTypeId } = query;
+  let kitType;
+  try {
+    kitType = await doGet<KitType>(`/kits/${kitTypeId}/render-props?seriesTypeId=${seriesTypeId}`);
+  } catch (error) {
+    return { props: { error } };
+  }
   return {
     props: { kitType, kitTypeId, seriesTypeId }
   };
