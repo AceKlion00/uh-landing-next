@@ -71,8 +71,9 @@ export default function KitDesignDetailsSection({ design }: Props) {
             <Image className="rounded-lg overflow-hidden" src={design.normalImages[designImageIndex]} width={560} height={465} alt={design.name} />
             <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-6 mt-20 px-10 md:px-0">
               {design.thumbnailImages.map((designImage, index) => (<div
-                className={"rounded-lg overflow-hidden cursor-pointer" + (designImageIndex === index ? " border-primary" : " border-white")}
-                onClick={() => setDesignImageIndex(index)}
+                  key={index}
+                  className={"rounded-lg overflow-hidden cursor-pointer" + (designImageIndex === index ? " border-primary" : " border-white")}
+                  onClick={() => setDesignImageIndex(index)}
                 >
                   <Image src={designImage} width={91} height={82} />
                 </div>

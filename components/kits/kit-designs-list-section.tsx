@@ -8,7 +8,7 @@ interface Props {
   selected: number;
 }
 
-export default function KitDesignListSection({ kitTypeName, kitDesigns, selected }: Props) {
+export default function KitDesignsListSection({ kitTypeName, kitDesigns, selected }: Props) {
   const [selectedIndex, setSelectedIndex] = useState<number>(selected);
   return (<section className="pt-110 pb-80 bg-light-50">
     <div className="container mx-auto">

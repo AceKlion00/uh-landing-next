@@ -5,7 +5,7 @@ interface Props {
   seriesId: string;
 }
 
-export default function({ seriesId, kitSeries }: Props) {
+export default function ChangeKitSeriesSection({ seriesId, kitSeries }: Props) {
   return (<section className="py=80 bg-light-50">
     <div className="container mx-auto">
       <div className="flex flex-col md:flex-row justify-center items-center">
@@ -15,9 +15,10 @@ export default function({ seriesId, kitSeries }: Props) {
         </div>
         <div className="flex flex-col sm:flex-row">
           {kitSeries.map((series, index) => (<div
-            className={"relative flex items-center px-20 py-15 border-light shadow secondary rounded-lg cursor-pointer text-center mb-30 sm:mb-0" + (series.kitSeriesId === seriesId ? " bg-white border-primary" : " bg-primary border-white")}
+            className={"relative flex items-center px-20 py-15 border-light shadow secondary rounded-lg cursor-pointer text-center mb-30 sm:mb-0" + (series.kitSeriesId === seriesId ? " bg-primary border-white text-white" : " bg-white border-primary")}
             key={index}
           >
+            {series.name}
             <span className="-bottom-20 absolute text-12 text-primary w-100 left-0">Best seller</span>
           </div>))}
         </div>
