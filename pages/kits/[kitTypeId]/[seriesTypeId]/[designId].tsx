@@ -7,32 +7,33 @@ import KitSeriesPage from '../../../../components/kits/kit-series-page';
 interface Props {
   kitType: KitType;
   seriesTypeId: string;
+  designId: string;
 }
 
-export default function KitSeries({ kitType, seriesTypeId }: Props) {
+export default function DesignDetails({ kitType, seriesTypeId, designId }: Props) {
   const series = kitType.kitSeries.find(s => s.kitSeriesId === seriesTypeId) as any;
-  const design = series.kitDesigns[0];
+  const design = series.kitDesigns.find((s: any) => s.designId === designId) as any;
   return (<>
       <Head>
         <title>{design.seoTitle}</title>
         <meta name="description" content={design.seoDescription} />
       </Head>
       <Layout>
-        <KitSeriesPage kitType={kitType} kitSeriesId={seriesTypeId} kitDesignId={design.designId} />
+        <KitSeriesPage kitType={kitType} kitSeriesId={seriesTypeId} kitDesignId={designId} />
       </Layout>
     </>
   );
 }
 
 export async function getServerSideProps({ query }: any) {
-  const { kitTypeId, seriesTypeId } = query;
+  const { kitTypeId, seriesTypeId, designId } = query;
   let kitType;
   try {
-    kitType = await doGet<KitType>(`/kits/${kitTypeId}/render-props?seriesTypeId=${seriesTypeId}`);
+    kitType = await doGet<KitType>(`/kits/${kitTypeId}/render-props?seriesTypeId=${seriesTypeId}&designId=${designId}`);
   } catch (error) {
     return { props: { error } };
   }
   return {
-    props: { kitType, seriesTypeId }
+    props: { kitType, seriesTypeId, designId }
   };
 }

@@ -126,7 +126,7 @@ export default function Kits({ kits }: Props) {
 export async function getServerSideProps() {
   let kits: KitType[] = [];
   try {
-    kits = await doGet<KitType[]>('/v2/kits');
+    kits = await doGet<KitType[]>('/kits');
   } catch (e) {
     console.log('unable to fetch kits data.', e);
   }

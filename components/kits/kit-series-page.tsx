@@ -16,8 +16,8 @@ export default function KitSeriesPage({ kitType, kitSeriesId, kitDesignId }: Pro
   const kitDesign = kitSeries.kitDesigns[selectedDesignIndex];
   return (<>
     <KitsJumbotronSection kitTypeName={kitType.name} kitSeriesName={kitSeries.name} seriesComment={kitSeries.comment} image={kitSeries.image} />
-    <KitDesignsListSection kitTypeName={kitType.name} kitDesigns={kitSeries.kitDesigns} selected={selectedDesignIndex} />
+    <KitDesignsListSection kitTypeId={kitType.kitTypeId} kitTypeName={kitType.name} kitSeriesId={kitSeriesId} kitDesigns={kitSeries.kitDesigns} designId={kitDesign.designId} />
     <KitDesignDetailsSection design={kitDesign} />
-    <ChangeKitSeriesSection kitSeries={kitType.kitSeries} seriesId={kitSeriesId} />
+    <ChangeKitSeriesSection kitTypeId={kitType.kitTypeId} kitSeries={kitType.kitSeries} seriesId={kitSeriesId} />
   </>);
 }
