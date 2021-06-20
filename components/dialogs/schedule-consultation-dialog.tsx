@@ -10,6 +10,7 @@ import { AddressInput } from '../ui-kit/input/address-input';
 import Spinner from '../ui-kit/common/spinner';
 import { consultationApiService } from '../../core/api-services/consultationApiService';
 import useAlert from '../ui-kit/dialog/use-alert';
+import { CheckBox } from '../ui-kit/input/checkbox';
 
 interface Props {
   onClose: () => void,
@@ -36,6 +37,7 @@ export function ScheduleConsultationDialog({ onClose, closeDialog }: Props) {
       address: '',
       latitude: null,
       longitude: null,
+      agree: false,
     },
     validationSchema: schema,
     onSubmit: async values => {
@@ -76,6 +78,7 @@ export function ScheduleConsultationDialog({ onClose, closeDialog }: Props) {
           form.setFieldValue('latitude', latitude);
           form.setFieldValue('longitude', longitude);
         }} />
+      <CheckBox name="agree" value={form.values.agree} onChange={form.handleChange} label="Agree Terms" />
       <div className="flex justify-center pt-10">
         <button className="btn btn-warning btn-md" disabled={!(form.isValid && form.dirty)}>Submit</button>
       </div>
