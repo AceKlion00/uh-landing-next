@@ -3,6 +3,6 @@ import { doPost } from './http';
 
 export const consultationApiService = {
   requestConsultation: (body: RequestConsultation) => {
-    return doPost('/consultation', body);
+    return doPost('/request-consultation', body);
   }
 };
