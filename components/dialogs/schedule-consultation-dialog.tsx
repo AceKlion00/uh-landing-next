@@ -78,7 +78,6 @@ export function ScheduleConsultationDialog({ onClose, closeDialog }: Props) {
           form.setFieldValue('latitude', latitude);
           form.setFieldValue('longitude', longitude);
         }} />
-      <CheckBox name="agree" value={form.values.agree} onChange={form.handleChange} label="Agree Terms" />
       <div className="flex justify-center pt-10">
         <button className="btn btn-warning btn-md" disabled={!(form.isValid && form.dirty)}>Submit</button>
       </div>
