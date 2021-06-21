@@ -29,7 +29,7 @@ export default function KitDesignDetailsSection({ design }: Props) {
   const components = parseComponent(design);
   const [designImageIndex, setDesignImageIndex] = useState<number>(0);
 
-  return (<section id="details" className="py-80">
+  return (<section className="py-80">
     <div className="container mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <h3 className="text-primary font-light mb-30 md:mb-0 text-32">{design.name}</h3>

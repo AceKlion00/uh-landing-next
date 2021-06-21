@@ -1,5 +1,5 @@
 function range(start, end, increment = 1) {
-  const count = Math.floor((end - start + increment) / increment);
+  const count = Math.floor((end - start + 1) / increment);
   return Array(count).fill(0).map((_, idx) => start + idx * increment);
 }
 
@@ -81,9 +81,6 @@ module.exports = {
     maxWidth: {
       ...range(minSpacingPixel, maxSpacingPixel, spacingPixelIncrement).reduce((merged, f) => ({ ...merged, [f]: `${f}px` }), {})
     },
-    minWidth: {
-      ...range(minSpacingPixel, maxSpacingPixel, spacingPixelIncrement).reduce((merged, f) => ({ ...merged, [f]: `${f}px` }), {})
-    },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
     },
@@ -105,7 +102,5 @@ module.exports = {
       textColor: ['active'],
     },
   },
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-  ],
+  plugins: [],
 }

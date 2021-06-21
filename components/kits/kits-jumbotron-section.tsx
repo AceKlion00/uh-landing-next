@@ -21,7 +21,7 @@ export default function KitsJumbotronSection({ kitTypeName, kitSeriesName, serie
         </div>
         <div className="relative">
           <div className="invisible lg:visible absolute w-full bottom-40 xl:-bottom-25">
-            <Image className="rounded-lg overflow-hidden" src={image} width={655} height={426} objectFit="cover" alt="kits" />
+            <Image className="rounded-lg overflow-hidden" src={image} width={655} height={426} alt="kits" />
           </div>
         </div>
       </div>
