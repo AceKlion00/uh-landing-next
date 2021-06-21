@@ -7,6 +7,7 @@ import { HomePageType, Idea, ProjectAccessoryType } from '../../core/types';
 import { ideaBoardApiService } from '../../core/api-services/idea-board-api.service';
 import Spinner from '../ui-kit/common/spinner';
 import useImagePreview from '../ui-kit/dialog/use-image-preview';
+import Icon from '../ui-kit/icon';
 
 const imageCountPerDisplay = 9;
 const projectAccessoryTypes = [
@@ -98,6 +99,7 @@ export function GallerySection({ initialIdeas, homepageType }: Props) {
         {ideas.map((idea, index) => (<div className="mb-20 cursor-pointer aspect-w-8 aspect-h-6 relative" key={index}>
           <div className="absolute w-full h-full rounded-xl overflow-hidden" onClick={() => imagePreviewService.preview(idea.url, 'Idea')}>
             <Image src={idea.url} layout="fill" objectFit="cover" />
+            <Icon name="external_link" color="white" size={24} className="absolute bottom-20 right-20 cursor-pointer" />
           </div>
         </div>))}
       </div>

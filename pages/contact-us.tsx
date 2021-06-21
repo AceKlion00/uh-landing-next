@@ -53,8 +53,8 @@ export default function ContactUs() {
 
   return (<>
       <Head>
-        <title>United Hardscapes: --sub title here-- </title>
-        <meta name="description" content="<description here>" />
+        <title>Contact Us - United Hardscapes</title>
+        <meta name="description" content="Choose from a variety of patio, walkway, driveway, retaining wall, and stair kits for any budget and taste to create the perfect outdoor living space." />
       </Head>
       <Layout>
         <section className="pt-65 pb-80">

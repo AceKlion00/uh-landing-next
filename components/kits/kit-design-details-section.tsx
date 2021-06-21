@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { KitDesign } from '../../core/types';
 import { useState } from 'react';
 import Currency from '../ui-kit/misc/currency';
+import Icon from '../ui-kit/icon';
+import useImagePreview from '../ui-kit/dialog/use-image-preview';
 
 interface Props {
   design: KitDesign;
@@ -27,6 +29,7 @@ function parseComponent(design: KitDesign): ComponentType[] {
 
 export default function KitDesignDetailsSection({ design }: Props) {
   const components = parseComponent(design);
+  const imagePreviewService = useImagePreview();
   const [designImageIndex, setDesignImageIndex] = useState<number>(0);
 
   return (<section id="details" className="py-80">
@@ -69,7 +72,10 @@ export default function KitDesignDetailsSection({ design }: Props) {
 
         <div className="w-full lg:w-7/12 order-1 lg:order-2 pl-0 lg:pl-15">
           <div className="sticky top-0 pt-20">
-            <Image className="rounded-lg overflow-hidden" src={design.normalImages[designImageIndex]} width={560} height={465} layout="responsive" alt={design.name} />
+            <div className="relative cursor-pointer" onClick={() => imagePreviewService.preview(design.normalImages[designImageIndex], design.name)}>
+              <Image className="rounded-lg overflow-hidden" src={design.normalImages[designImageIndex]} width={560} height={465} layout="responsive" alt={design.name} />
+              <Icon name="external_link" color="white" size={24} className="absolute bottom-20 right-20 cursor-pointer" />
+            </div>
             <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-6 mt-20 gap-20">
               {design.thumbnailImages.map((designImage, index) => (
                 <div

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { homeContent, popularKitsDescription, popularKitsTitle } from '../../core/data/home';
 import { HomePageType } from '../../core/types';
+import Currency from '../ui-kit/misc/currency';
 
 const swiperBreakPoints = {
   640: {
@@ -48,7 +49,7 @@ export function PopularKitsSection({ homepageType = HomePageType.Home }) {
             </Link>
             <div className="flex justify-between text-light-400 pt-15 pb-10 font-medium">
               <span>{kitSerie.name}</span>
-              <span>{kitSerie.price}</span>
+              <span><Currency value={kitSerie.price}/></span>
             </div>
           </div>
         </SwiperSlide>))}
