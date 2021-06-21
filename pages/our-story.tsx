@@ -47,10 +47,11 @@ export default function OurStory() {
               <h3 className="text-primary text-32 font-normal mb-45">How to get the yard of your dreams?</h3>
               <p className="lg:px-80">Work with a company like United Hardscapes. We take pride in each kit we design and sell. <br className="hidden lg:block" />From the minor details like border and cap colors to major decisions like what material is best for your project, we are here to help and guide you every step of the way.</p>
             </div>
-            <div className="flex flex-col lg:flex-row overflow-hidden">
+
+            <div className="grid md:grid-cols-5 overflow-hidden">
               {dreamImages.map((image, index) => {
-                return (<div className="flex-grow-1" key={index}>
-                  <Image src={image} width={1090} height={817} layout="responsive" alt="dream-image" />
+                return (<div key={index}>
+                  <Image src={image} width={1090} height={817} alt="dream-image" />
                 </div>);
               })}
             </div>
@@ -62,10 +63,9 @@ export default function OurStory() {
             <p className="mb-20">The problem is, Hardscaping is Hard, there is a lot to think about. From planning the design, choosing the materials and ensuring the project will be done right. Contactors don’t always have the time to give customers the proper attention to plan their project. So, many homeowners are left struggling and have to figure out their design for themselves.</p>
             <p className="mb-60">That’s where United Hardscapes comes in. We are different. Having been in the shoes of a contractor and designing thousands of projects first hand, we know exactly what goes into each project to make it complete and what it really takes to plan a project correctly. From ideas to design and material kits - we have everything you or your contractor will need to <span className="font-bold">get your project completed sooner, with less expense</span>, and <span className="font-bold">done right the first time</span>.</p>
 
-
-            <div className="flex flex-col lg:flex-row overflow-hidden mb-60 rounded-lg">
+            <div className="grid md:grid-cols-4 overflow-hidden mb-60 rounded-lg">
               {workStepImages.map((image, index) => {
-                return (<div className="flex-grow-1" key={index}>
+                return (<div key={index}>
                   <Image src={image} width={273} height={165} layout="responsive" alt="work-step" />
                 </div>);
               })}
