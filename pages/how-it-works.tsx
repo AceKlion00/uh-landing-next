@@ -36,28 +36,32 @@ export default function HowItWorks() {
           </div>
         </section>
 
-        <section className="mt-130 mb-90">
+        <section className="mt-60 md:mt-130 mb-90 mx-15">
           <div className="container px-0 mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 relative">
+            <div className="grid grid-cols-2 relative">
               {howItWorkTypes.map((type: HowItWorksType, index: number) => (
                 <div
-                  className={'relative flex justify-center py-20 cursor-pointer rounded-t-xl ' + (workType === type ? 'bg-light-50 border border-light-75 border-b-0 z-10 shadow-primary' : 'border-b border-light-75 z-0')}
+                  key={index}
+                  className={
+                    'relative flex justify-center py-20 cursor-pointer rounded-t-xl ' +
+                    (workType === type ? 'bg-light-50 border border-light-75 border-b-0 z-10 shadow-primary' : 'lg:border-b border-light-75 z-0')
+                  }
                   onClick={() => setWorkType(type)}>
-                  <span className="text-32 text-primary">{howItWorksContents[type].title}</span>
+                  <span className="text-15 lg:text-32 text-primary">{howItWorksContents[type].title}</span>
                 </div>
               ))}
-              <div className="absolute bg-warning rounded-xl text-white font-bold text-12 z-30 px-15 py-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="hidden sm:block absolute bg-warning rounded-xl text-white font-bold text-12 z-30 px-15 py-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <span>OR</span>
               </div>
             </div>
           </div>
-          <div className="container shadow-primary bg-light-50 mx-auto border border-light-75 border-t-0 rounded-b-xl pb-90 z-20 relative">
+          <div className="container shadow-primary bg-light-50 mx-auto border border-light-75 border-t-0 rounded-b-xl pb-60 md:pb-90 z-20 relative">
             {howItWorksContents[workType].items.map((item: any, itemIndex: number) => (
               <div className="grid grid-cols-1 lg:grid-cols-2 py-45" key={itemIndex}>
-                <div className={itemIndex % 2 ? 'order-2' : 'order-1'}>
+                <div className={'order-0 ' + (itemIndex % 2 ? 'lg:order-2' : 'lg:order-1')}>
                   <h5 className="text-24 font-normal text-warning mb-30">{item.title}</h5>
                   <h6 className="text-18 font-normal text-light-500 mb-30">{item.comment}</h6>
-                  <ul className="list-disc text-primary">
+                  <ul className="list-disc text-primary pl-25 md:pl-0">
                     {item.steps.map((step: any, stepIndex: number) => (
                       <li className="mb-30" key={stepIndex}>
                         <p className="text-18 font-bold text-primary">{step.title}</p>
@@ -67,7 +71,11 @@ export default function HowItWorks() {
                   </ul>
                 </div>
                 <div className={itemIndex % 2 ? 'order-1' : 'order-2'}>
-                  <div className={'max-w-500 shadow-primary rounded-lg bg-white mt-50 ' + (itemIndex % 2 ? 'ml-0 mr-auto' : 'mr-0 ml-auto')}>
+                  <div
+                    className={
+                      'max-w-full lg:max-w-400 xl:max-w-500 shadow-primary rounded-lg bg-white mt-50 lg:mt-100 xl:mt-50 ' +
+                      (itemIndex % 2 ? 'ml-0 mr-auto' : 'mr-0 ml-auto')
+                    }>
                     <Swiper spaceBetween={20} slidesPerView={1} navigation>
                       {item.images.map((image: string, imageIndex: number) => (
                         <SwiperSlide key={imageIndex}>
@@ -81,10 +89,10 @@ export default function HowItWorks() {
                 </div>
               </div>
             ))}
-            <div className="flex justify-center mt-70">
-              <button className="btn btn-warning btn-lg mr-20" onClick={consultationService.showConsultationDialog}>Book A Free Consultation</button>
+            <div className="flex flex-col md:flex-row justify-center mt-10 md:mt-70">
+              <button className="btn btn-warning btn-lg w-full md:w-auto mr-0 md:mr-20" onClick={consultationService.showConsultationDialog}>Book A Free Consultation</button>
               <Link href={'/kits'}>
-                <button className="btn btn-primary btn-lg">View Our Signature Kits</button>
+                <button className="btn btn-primary btn-lg w-full md:w-auto mt-15 md:mt-0">View Our Signature Kits</button>
               </Link>
             </div>
           </div>
