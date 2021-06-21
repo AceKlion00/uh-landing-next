@@ -14,14 +14,14 @@ export function WhyUhKitsSection() {
           </div>
           <div className="w-full lg:w-1/2 py-20 lg:pl-20">
             <div className="shadow-secondary rounded-xl overflow-hidden">
-              <Image src="/assets/images/landing-pages/home-page/why-uh/customers-with-computer.png" width={690} height={449} layout="responsive" />
+              <Image src="/assets/images/landing-pages/home-page/why-uh/customers-with-computer.png" width={690} height={449} objectFit="cover" layout="responsive" />
             </div>
           </div>
         </div>
         <div className="flex flex-col lg:flex-row">
           <div className="w-full lg:w-1/2 py-20 lg:pr-20">
             <div className="shadow-secondary rounded-xl overflow-hidden">
-              <Image src="/assets/images/landing-pages/home-page/why-uh/brands.png" width={690} height={449} layout="responsive" />
+              <Image src="/assets/images/landing-pages/home-page/why-uh/brands.png" width={690} height={449} objectFit="cover" layout="responsive" />
             </div>
           </div>
           <div className="w-full lg:w-1/2 py-20 flex flex-col justify-center lg:pl-20">
@@ -38,7 +38,7 @@ export function WhyUhKitsSection() {
           </div>
           <div className="w-full lg:w-1/2 py-20 lg:pl-20">
             <div className="shadow-secondary rounded-xl overflow-hidden">
-              <Image src="/assets/images/landing-pages/home-page/why-uh/contractors-wearing-white-clothes.png" width={690} height={449} layout="responsive" />
+              <Image src="/assets/images/landing-pages/home-page/why-uh/contractors-wearing-white-clothes.png" width={690} height={449} objectFit="cover" layout="responsive" />
             </div>
           </div>
         </div>
