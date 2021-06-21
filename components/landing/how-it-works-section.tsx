@@ -14,7 +14,7 @@ export function HowItWorksSection() {
               <Image src={workflow.image} width={workflow.width} height={workflow.height} alt={workflow.title} />
             </div>
             <p className="text-18 font-bold mb-35">{workflow.title}</p>
-            <p className="mx-auto max-w-md text-16">{workflow.description}</p>
+            <p className="mx-auto max-w-390 text-16">{workflow.description}</p>
           </div>
         ))}
       </div>
