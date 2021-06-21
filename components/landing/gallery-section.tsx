@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
 import { galleryDescription } from '../../core/data/home';
 import { HomePageType, Idea, ProjectAccessoryType } from '../../core/types';
-import { doGet } from '../../core/api-services/http';
 import { ideaBoardApiService } from '../../core/api-services/idea-board-api.service';
 import Spinner from '../ui-kit/common/spinner';
+import useImagePreview from '../ui-kit/dialog/use-image-preview';
 
+const imageCountPerDisplay = 9;
 const projectAccessoryTypes = [
   { label: 'All', value: null },
   {
@@ -41,15 +44,17 @@ interface Props {
 }
 
 export function GallerySection({ initialIdeas, homepageType }: Props) {
+  const imagePreviewService = useImagePreview();
   const [ideas, setIdeas] = useState<Idea[]>(initialIdeas);
   const [category, setCategory] = useState<ProjectAccessoryType|null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [ideasInitialized, setIdeasInitialized] = useState<boolean>(false);
 
   const loadIdeas = async (isMore: boolean) => {
     try {
       setIsLoading(true);
-      const res = await ideaBoardApiService.getIdeas(category, isMore ? ideas.length : 0, 9);
-      setIdeas(res);
+      const res = await ideaBoardApiService.getIdeas(category, isMore ? ideas.length : 0, imageCountPerDisplay);
+      setIdeas(isMore ? [...ideas, ...res] : res);
     } catch (e) {
       console.log(e);
       // TODO: show error toast
@@ -59,9 +64,10 @@ export function GallerySection({ initialIdeas, homepageType }: Props) {
   };
 
   useEffect(() => {
-    if (category) {
+    if (ideasInitialized) {
       loadIdeas(false);
     }
+    setIdeasInitialized(true);
   }, [category]);
 
   return (<section className="py-90 relative">
@@ -69,8 +75,8 @@ export function GallerySection({ initialIdeas, homepageType }: Props) {
       <h3 className="text-primary text-32 font-normal mb-35">Gallery</h3>
       <p className="text-18 text-light-500">{galleryDescription[homepageType]}</p>
       <div className="mt-45">
-        <div className="hidden md:block">
-          <div className="grid grid-cols-6 gap-20">
+        <div className="hidden md:block overflow-x-scroll pretty-scroll">
+          <div className="grid grid-cols-6 min-w-1000 gap-20">
             {projectAccessoryTypes.map(
               (projectAccessoryType, index) => {
                 return (<div
@@ -89,9 +95,15 @@ export function GallerySection({ initialIdeas, homepageType }: Props) {
       </div>
       <Spinner isLoading={isLoading} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
-        {ideas.map((idea, index) => (<div className="mb-20 cursor-pointer" key={index}>
-          <Image className="rounded-xl overflow-hidden" src={idea.url} width={idea.width} height={idea.height} layout="responsive" />
+        {ideas.map((idea, index) => (<div className="mb-20 cursor-pointer aspect-w-8 aspect-h-6 relative" key={index}>
+          <div className="absolute w-full h-full rounded-xl overflow-hidden" onClick={() => imagePreviewService.preview(idea.url, 'Idea')}>
+            <Image src={idea.url} layout="fill" objectFit="cover" />
+          </div>
         </div>))}
+      </div>
+      <div className="flex justify-center mt-30">
+        <button className="btn btn-primary btn-md mr-20" onClick={() => loadIdeas(true)}>See more</button>
+        <Link href="/kits"><button className="btn btn-warning btn-md">View Our Signature Kits</button></Link>
       </div>
     </div>
   </section>);
