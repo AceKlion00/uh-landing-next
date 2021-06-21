@@ -8,8 +8,9 @@ import { Input } from '../ui-kit/input/input';
 import { PhoneInput } from '../ui-kit/input/phone-input';
 import { AddressInput } from '../ui-kit/input/address-input';
 import Spinner from '../ui-kit/common/spinner';
-import { consultationApiService } from '../../core/api-services/consultationApiService';
+import { consultationApiService } from '../../core/api-services/consultation-api.service';
 import useAlert from '../ui-kit/dialog/use-alert';
+import { CheckBox } from '../ui-kit/input/checkbox';
 
 interface Props {
   onClose: () => void,
@@ -36,6 +37,7 @@ export function ScheduleConsultationDialog({ onClose, closeDialog }: Props) {
       address: '',
       latitude: null,
       longitude: null,
+      agree: false,
     },
     validationSchema: schema,
     onSubmit: async values => {
