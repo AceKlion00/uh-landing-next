@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { KitDesign } from '../../core/types';
 import { useState } from 'react';
-import Currency from '../ui-kit/misc/currency';
 
 interface Props {
   design: KitDesign;
@@ -82,7 +81,7 @@ export default function KitDesignDetailsSection({ design }: Props) {
             </div>
 
             <div className="mt-30 md:mt-50 flex flex-col md:flex-row justify-between items-center">
-              <p className="text-24 text-primary mb-20 md:mb-0"><Currency value={design.price} /></p>
+              <p className="text-24 text-primary mb-20 md:mb-0">{design.price}</p>
               <div className="mb-30 md:mb-0">
                 <button className="btn btn-primary btn-md mr-20">Customize Kit</button>
                 <button className="btn btn-warning btn-md">Buy Now</button>
