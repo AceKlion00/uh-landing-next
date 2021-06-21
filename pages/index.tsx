@@ -10,6 +10,7 @@ import { TestimonialSection } from '../components/landing/testimonial-section';
 import useConsultationService from '../core/app-services/consultation-service';
 import { Idea } from '../core/types';
 import { doGet } from '../core/api-services/http';
+import JoinCustomerSection from '../components/landing/join-customer-section';
 
 interface Props {
   ideas: Idea[];
@@ -76,6 +77,7 @@ export default function Home({ ideas }: Props) {
         <PopularKitsSection/>
         <GallerySection initialIdeas={ideas} />
         <TestimonialSection/>
+        <JoinCustomerSection/>
       </Layout>
     </>
   );
