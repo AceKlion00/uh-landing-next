@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Image from "next/image";
+import Image from 'next/image';
 
 import { Layout } from '../components/layout/layout';
 
@@ -63,7 +63,7 @@ export default function OurStory() {
             <p className="mb-20">The problem is, Hardscaping is Hard, there is a lot to think about. From planning the design, choosing the materials and ensuring the project will be done right. Contactors don’t always have the time to give customers the proper attention to plan their project. So, many homeowners are left struggling and have to figure out their design for themselves.</p>
             <p className="mb-60">That’s where United Hardscapes comes in. We are different. Having been in the shoes of a contractor and designing thousands of projects first hand, we know exactly what goes into each project to make it complete and what it really takes to plan a project correctly. From ideas to design and material kits - we have everything you or your contractor will need to <span className="font-bold">get your project completed sooner, with less expense</span>, and <span className="font-bold">done right the first time</span>.</p>
 
-            <div className="grid md:grid-cols-4 overflow-hidden mb-60 rounded-lg">
+            <div className="grid md:grid-cols-4 overflow-hidden mb-60 rounded-2xl">
               {workStepImages.map((image, index) => {
                 return (<div key={index}>
                   <Image src={image} width={273} height={165} layout="responsive" alt="work-step" />
