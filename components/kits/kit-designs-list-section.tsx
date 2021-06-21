@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { KitDesign } from '../../core/types';
+import Currency from '../ui-kit/misc/currency';
 
 interface Props {
   kitTypeId: string;
@@ -26,7 +27,7 @@ export default function KitDesignsListSection({ kitTypeId, kitSeriesId, kitTypeN
                 <span className="font-medium text-light-400 text-14">{kitTypeName}</span>
                 <span className="text-18">Kit #{design.name}</span>
               </div>
-              <span className="text-24 text-primary">{design.price}</span>
+              <span className="text-24 text-primary"><Currency value={design.price} /></span>
             </div>
           </div>
         </Link>))}
