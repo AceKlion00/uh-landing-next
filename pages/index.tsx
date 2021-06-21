@@ -8,15 +8,8 @@ import { WhyUhKitsSection } from '../components/landing/why-uh-kits-section';
 import { GallerySection } from '../components/landing/gallery-section';
 import { TestimonialSection } from '../components/landing/testimonial-section';
 import useConsultationService from '../core/app-services/consultation-service';
-import { Idea } from '../core/types';
-import { doGet } from '../core/api-services/http';
-import JoinCustomerSection from '../components/landing/join-customer-section';
 
-interface Props {
-  ideas: Idea[];
-}
-
-export default function Home({ ideas }: Props) {
+export default function Home() {
   const consultationService = useConsultationService();
   return (
     <>
@@ -52,7 +45,7 @@ export default function Home({ ideas }: Props) {
               className="container mx-auto text-white h-full flex flex-col justify-start lg:justify-center font-medium mt-130 lg:mt-0">
               <h4 className="text-24 mb-10 text-center lg:text-left">Hardscaping is Hard.</h4>
               <h1 className="text-40 mb-30 text-center lg:text-left font-normal">We make it Simple.</h1>
-              <p className="text-18 mb-25 lg:max-w-390 text-center lg:text-left">Plan your project, find a contractor, and buy your materials - all with the help of the industry experts.</p>
+              <p className="text-18 mb-25 lg:max-w-md text-center lg:text-left">Plan your project, find a contractor, and buy your materials - all with the help of the industry experts.</p>
               <div className="text-center lg:text-left">
                 <button className="btn btn-warning btn-md" onClick={consultationService.showConsultationDialog}>Schedule a Free Consultation </button>
               </div>
@@ -75,23 +68,9 @@ export default function Home({ ideas }: Props) {
 
         <WhyUhKitsSection/>
         <PopularKitsSection/>
-        <GallerySection initialIdeas={ideas} />
+        <GallerySection/>
         <TestimonialSection/>
-        <JoinCustomerSection/>
       </Layout>
     </>
   );
-}
-
-export async function getServerSideProps() {
-  let ideas: Idea[] = [];
-  try {
-    ideas = await doGet<Idea[]>('/idea-board/all?skip=0&take=9');
-  } catch (e) {
-    console.log('unable to fetch ideas data.', e);
-  }
-
-  return {
-    props: { ideas }, // will be passed to the page component as props
-  }
 }
