@@ -36,7 +36,16 @@ export function PopularKitsSection({ homepageType = HomePageType.Home }) {
       <Swiper className="w-full" spaceBetween={20} breakpoints={swiperBreakPoints}>
         {kitSeries.map((kitSerie, i) => (<SwiperSlide className="flex-grow" key={i}>
           <div className="rounded-lg p-10 shadow-md bg-white">
-            <Image className="rounded-lg overflow-hidden cursor-pointer" src={kitSerie.image} width={kitSerie.width} height={kitSerie.height} layout="responsive" alt={kitSerie.name} />
+            <Link href={`${kitSerie.link}/${kitSerie.id}`}>
+              <Image
+                className="rounded-lg overflow-hidden cursor-pointer"
+                src={kitSerie.image}
+                width={kitSerie.width}
+                height={kitSerie.height}
+                layout="responsive"
+                alt={kitSerie.name}
+              />
+            </Link>
             <div className="flex justify-between text-light-400 pt-15 pb-10 font-medium">
               <span>{kitSerie.name}</span>
               <span>{kitSerie.price}</span>
