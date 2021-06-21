@@ -66,6 +66,18 @@ html {
     @apply shadow;
 }
 
+
+/* pretty scroll */
+.pretty-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.pretty-scroll::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgba(102, 102, 102, 0.5);
+}
+
 /* spinner */
 .spinner .path {
     stroke: #07A39D;
