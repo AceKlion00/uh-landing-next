@@ -78,9 +78,6 @@ module.exports = {
     spacing: {
       ...range(minSpacingPixel, maxSpacingPixel, spacingPixelIncrement).reduce((merged, f) => ({ ...merged, [f]: `${f}px` }), {})
     },
-    maxWidth: {
-      ...range(minSpacingPixel, maxSpacingPixel, spacingPixelIncrement).reduce((merged, f) => ({ ...merged, [f]: `${f}px` }), {})
-    },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
     },
