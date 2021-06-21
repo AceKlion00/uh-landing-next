@@ -7,7 +7,7 @@ import { Input } from '../ui-kit/input/input';
 import { PhoneInput } from '../ui-kit/input/phone-input';
 import { AddressInput } from '../ui-kit/input/address-input';
 import Spinner from '../ui-kit/common/spinner';
-import { consultationApiService } from '../../core/api-services/consultation-api.service';
+import { leadApiService } from '../../core/api-services/lead-api.service';
 import useAlert from '../ui-kit/dialog/use-alert';
 import Icon from '../ui-kit/icon';
 
@@ -42,7 +42,7 @@ export function ScheduleConsultationDialog({ onClose, closeDialog }: Props) {
     onSubmit: async values => {
       try {
         setIsLoading(true);
-        await consultationApiService.requestConsultation(values as any);
+        await leadApiService.requestConsultation(values as any);
         alertService.alert('Thank You!', 'One of our Hardscape Consultants will be in touch soon to schedule the consultation.', 'View Our Signature Kits')
           .then(() => {
             closeDialog();
