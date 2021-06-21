@@ -1,4 +1,4 @@
-export function getColor(color: string | null | undefined): string {
+export function getColor(color: string): string {
   if (color === 'primary') {
     return '#07A39D';
   } else if (color === 'secondary') {
@@ -16,7 +16,7 @@ export function getColor(color: string | null | undefined): string {
   } else if (color === 'gray') {
     return '#2C2C2C';
   } else {
-    return color || '';
+    return color;
   }
 }
 
@@ -262,7 +262,6 @@ export const hardscapesIcons = {
     <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M3 8H21" stroke="${ getColor(color) || '#07A39D' }" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M3 16H17" stroke="${ getColor(color) || '#07A39D' }" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M3 23H21" stroke="${ getColor(color) || '#07A39D' }" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   `,
   money: (size = 24, color?: string) => `
@@ -317,3 +316,4 @@ export const hardscapesIcons = {
     </svg>
   `
 };
+

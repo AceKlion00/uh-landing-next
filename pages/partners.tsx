@@ -1,11 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { Layout } from '../components/layout/layout';
-import usePartnerRequestService from '../core/app-services/partner-request-service';
 
 export default function Partners() {
-  const partnerRequestService = usePartnerRequestService();
-
   return (
     <>
       <Head>
@@ -23,11 +20,11 @@ export default function Partners() {
                   <h5 className="text-24 font-medium mb-40">Are you the owner or manager of a Hardscape supply center?</h5>
                   <p className="text-14 mb-20">Would you like to generate more online sales for your business?</p>
                   <p className="text-14 mb-50"><b>Reach out</b> to United Hardscapes to see how your company can join our network as a local supplier. </p>
-                  <button className="btn btn-warning btn-lg" onClick={partnerRequestService.showSupplierRequestDialog}>Join Now</button>
+                  <button className="btn btn-warning btn-lg">Join Now</button>
                 </div>
                 <div className="absolute top-0 left-0 right-0 bottom-0 z-0">
                   <div className="absolute top-0 left-0 right-0 bottom-0 bg-primary bg-opacity-90 z-10">{/* Overlay */}</div>
-                  <Image src="/assets/images/landing-pages/partners/contractor-background.jpg" objectFit="cover" layout="fill" alt="background" />
+                  <Image src="/assets/images/landing-pages/partners/contractor-background.jpg" objectFit="cover" layout="fill" alt="background"/>
                 </div>
               </div>
               <div className="relative p-40 text-center lg:text-right">
@@ -41,7 +38,7 @@ export default function Partners() {
                 </div>
                 <div className="absolute top-0 left-0 right-0 bottom-0 z-0">
                   <div className="absolute top-0 left-0 right-0 bottom-0 bg-secondary bg-opacity-90 z-10">{/* Overlay */}</div>
-                  <Image src="/assets/images/landing-pages/partners/contractor-background.jpg" objectFit="cover" layout="fill" alt="background" />
+                  <Image src="/assets/images/landing-pages/partners/contractor-background.jpg" objectFit="cover" layout="fill" alt="background"/>
                 </div>
               </div>
             </div>

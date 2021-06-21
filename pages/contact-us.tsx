@@ -12,11 +12,8 @@ import { SourceFoundUs } from '../core/types/marketing';
 import { TextArea } from '../components/ui-kit/input/textarea';
 import { enumToOptions } from '../components/ui-kit/utils';
 import { PhoneInput } from '../components/ui-kit/input/phone-input';
-import { leadApiService } from '../core/api-services/lead-api.service';
-import useAlert from '../components/ui-kit/dialog/use-alert';
 
 export default function ContactUs() {
-  const alertService = useAlert();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const sourceFoundUsOptions = enumToOptions<SourceFoundUs>(SourceFoundUs);
 
@@ -36,8 +33,8 @@ export default function ContactUs() {
       email: '',
       phone: '',
       address: '',
-      latitude: 0,
-      longitude: 0,
+      latitude: null,
+      longitude: null,
       sourceFoundUs: '',
       message: '',
     },
@@ -45,10 +42,9 @@ export default function ContactUs() {
     onSubmit: async values => {
       try {
         setIsLoading(true);
-        await leadApiService.contactUs(values);
-        alertService.alert('Thank You!', 'Thank you for contacting United Hardscapes, we will respond to your inquiry within 24 hours. Thank you for your patience.', 'Ok');
+        // TODO: do the API call, show success message box
       } catch (e) {
-        alertService.alert('Message not sent!', `We are unable to connect to customer service at this moment. Please try again later.`, 'Ok');
+        // TODO: show error message box
       } finally {
         setIsLoading(false);
       }
@@ -57,15 +53,15 @@ export default function ContactUs() {
 
   return (<>
       <Head>
-        <title>Contact Us - United Hardscapes</title>
-        <meta name="description" content="Choose from a variety of patio, walkway, driveway, retaining wall, and stair kits for any budget and taste to create the perfect outdoor living space." />
+        <title>United Hardscapes: --sub title here-- </title>
+        <meta name="description" content="<description here>" />
       </Head>
       <Layout>
         <section className="pt-65 pb-80">
           <div className="container mx-auto">
             <h2 className="text-secondary font-normal mb-70 text-45 text-center">Contact Us</h2>
             <Spinner isLoading={isLoading} />
-            <form className="w-full md:w-3/5 mx-auto" onSubmit={form.handleSubmit}>
+            <form className="w-full md:w-3/5 mx-auto">
               <Input name="fullName" placeholder="Walter White" label="Full Name" value={form.values.fullName} onChange={form.handleChange} />
               <Input type="email" name="email" placeholder="someone@example.com" value={form.values.email} label="Email Address" onChange={form.handleChange} />
               <PhoneInput name="phone" placeholder="(123) 456 7890" label="Phone Number" value={form.values.phone} onChange={form.handleChange} />

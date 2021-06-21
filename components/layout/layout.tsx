@@ -5,6 +5,7 @@ import { Navbar } from './navbar';
 export function Layout(props: any) {
   return (<>
     <Head>
+      <title>United Hardscapes Kits</title>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet" />
     </Head>
     <Navbar />
