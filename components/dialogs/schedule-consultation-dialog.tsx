@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Image from 'next/image';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
 import * as Yup from 'yup';
@@ -10,7 +9,7 @@ import { AddressInput } from '../ui-kit/input/address-input';
 import Spinner from '../ui-kit/common/spinner';
 import { consultationApiService } from '../../core/api-services/consultation-api.service';
 import useAlert from '../ui-kit/dialog/use-alert';
-import { CheckBox } from '../ui-kit/input/checkbox';
+import Icon from '../ui-kit/icon';
 
 interface Props {
   onClose: () => void,
@@ -59,7 +58,7 @@ export function ScheduleConsultationDialog({ onClose, closeDialog }: Props) {
 
   return (<div className="w-410 p-20">
     <div className="flex justify-end">
-      <button className="px-5 pt-5" onClick={() => { onClose(); closeDialog(); }}><Image src="/assets/images/icons/close-dark.svg" width={14} height={14} alt="close"/></button>
+      <button className="px-5 pt-5" onClick={() => { onClose(); closeDialog(); }}><Icon name="close" color="#2c2c2c" size={14} /></button>
     </div>
     <h5 className="text-primary text-center text-22 font-medium mb-15">Book A Free Consultation</h5>
     <p className="text-light-500 text-16 font-normal text-center mb-30">We will contact you to confirm the day and the time of the consultation.</p>

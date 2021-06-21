@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import * as Yup from 'yup';
 
 import { Input } from '../ui-kit/input/input';
 import { PhoneInput } from '../ui-kit/input/phone-input';
 import Spinner from '../ui-kit/common/spinner';
 import useAlert from '../ui-kit/dialog/use-alert';
+import Icon from '../ui-kit/icon';
 
 interface Props {
   onClose: () => void,
@@ -59,7 +59,7 @@ export function SupplierRequestDialog({ onClose, closeDialog }: Props) {
       <button className="px-5 pt-5" onClick={() => {
         onClose();
         closeDialog();
-      }}><Image src="/assets/images/icons/close-dark.svg" width={14} height={14} alt="close"/></button>
+      }}><Icon name="close" color="#2c2c2c" size={14} /></button>
     </div>
     <h5 className="text-primary text-center text-22 font-medium mb-35">Please fill in your contact details below</h5>
     <p className="text-light-500 text-16 font-normal text-center mb-50">Reach out to United Hardscapes to see how your
