@@ -47,7 +47,7 @@ export default function Faqs() {
                   <div className="hidden lg:block">
                     <h5 className="text-secondary text-24 font-medium mb-30">Categories</h5>
                     <div className="ml-20 mb-30">
-                      {faqCategory.map((category, index) => {
+                      {faqCategory.map((category, index: number) => {
                         return (<div key={index}>
                           <p className={'font-normal text-18 cursor-pointer mb-20 ' + (index === currentCategory ? 'text-primary' : 'text-light-400')}
                              onClick={() => {
@@ -61,12 +61,12 @@ export default function Faqs() {
                 </div>
               </div>
               <div className="w-full lg:w-3/4 lg:pl-20">
-                {faqCategory.map((category, index) => {
+                {faqCategory.map((category, index: number) => {
                   return (<div key={index}>
                     <p className="text-24 text-primary mb-20" id={category.value}>{category.label}</p>
                     <div className="rounded-2xl border border-b-0 border-light bg-white mb-30 overflow-hidden">
-                      {faqs[category.value].map(faq => {
-                        return (<Accordion content={faq.content} name={faq.title} />);
+                      {faqs[category.value].map((faq: { content: string; title: string; }, i: number) => {
+                        return (<Accordion key={i} content={faq.content} name={faq.title} />);
                       })}
                     </div>
                   </div>);

@@ -90,8 +90,8 @@ export default function WhyUH() {
           <div className="container mx-auto">
             <h3 className="text-32 text-primary text-center mb-50">FAQs</h3>
             <div className="rounded-2xl border border-b-0 border-light mb-60 overflow-hidden mx-0 lg:mx-50 xl:mx-200">
-              {kitsFaqs.map(faq => {
-                return (<Accordion content={faq.content} name={faq.title} />);
+              {kitsFaqs.map((faq: { content: string; title: string }, index: number) => {
+                return (<Accordion key={index} content={faq.content} name={faq.title} />);
               })}
             </div>
             <div className="flex justify-center">
