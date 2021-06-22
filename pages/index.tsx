@@ -1,16 +1,14 @@
 import Head from 'next/head';
 import Image from 'next/image';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Layout } from '../components/layout/layout';
 import { GallerySection } from '../components/landing/gallery-section';
 import { TestimonialSection } from '../components/landing/testimonial-section';
-import useConsultationService from '../core/app-services/consultation-service';
 import { HomePageType, Idea } from '../core/types';
 import { doGet } from '../core/api-services/http';
 import JoinCustomerSection from '../components/landing/join-customer-section';
 import BlueOval from '../components/misc/blue-oval';
 import HowItWorks3DDesignStepsSection from '../components/landing/how-it-works-3d-design-steps-section';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { shimmerUrl } from '../components/ui-kit/common/blur-image';
 
 const carouselImages = [
