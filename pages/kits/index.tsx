@@ -53,7 +53,7 @@ export default function Kits({ kits }: Props) {
               </div>
               <div className="relative">
                 <div className="invisible lg:visible lg:-bottom-55 xl:-bottom-70 absolute w-full px-0 xl:px-30">
-                  <Image src="/assets/images/landing-pages/kits/main.png" width="571" height="495" layout="responsive" alt="kits" />
+                  <Image src="/assets/images/landing-pages/kits/main.png" width="571" height="495" layout="responsive" alt="kits" placeholder="blur" blurDataURL={shimmerUrl} />
                 </div>
               </div>
             </div>
