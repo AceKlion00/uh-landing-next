@@ -52,8 +52,7 @@ export function DialogProvider({ children }: Props) {
             key={index}
             isOpen={openStatus[index]}
             closeDialog={() => closeDialog(index)}
-            children={dialog}
-          />;
+          >{dialog}</Dialog>;
         })}
       </DialogContext.Provider>
     </>

@@ -78,7 +78,7 @@ export default function Kits({ kits }: Props) {
                     <p className="mt-30 text-center text-14 lg:text-left">{kit.comment}</p>
                     <div className="ml-0 lg:ml-30 mt-30">
                       <p className="text-18 font-medium mb-10 text-center lg:text-left">Series</p>
-                      <p className="text-14 text-warning-100 mb-30 text-center lg:text-left">Select one of the series to learn more and click on the 'Explore Kits' button.</p>
+                      <p className="text-14 text-warning-100 mb-30 text-center lg:text-left">Select one of the series to learn more and click on the &apos;Explore Kits&apos; button.</p>
                       <div className="flex flex-col sm:flex-row justify-center lg:justify-start">
                         {kit.kitSeries.map((serial, serialIndex) => {
                           return (<div
@@ -101,7 +101,7 @@ export default function Kits({ kits }: Props) {
                       <Icon name="external_link" color="white" size={24} className="absolute bottom-20 right-20 cursor-pointer" />
                     </div>
                     <div className="hidden lg:flex justify-center lg:justify-end mt-0 mb-30 lg:mt-40 lg:mb-0">
-                      <Link href={`/kits/${kit.kitTypeId}/${kit.kitSeries[seriesSelection[kitIndex]].kitSeriesId}`}>
+                      <Link href={`/kits/${kit.kitTypeId}/${kit.kitSeries[seriesSelection[kitIndex]].kitSeriesId}`} passHref>
                         <button className="btn btn-warning btn-md">Explore Kits</button>
                       </Link>
                     </div>

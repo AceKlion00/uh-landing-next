@@ -48,7 +48,7 @@ export function WhyUhKitsSection() {
                   'max-w-500 mx-auto lg:mx-0 shadow-secondary rounded-xl overflow-hidden ' +
                   (index % 2 ? 'lg:ml-0 lg:mr-auto' : 'lg:mr-0 lg:ml-auto')
                 }>
-                <Image src={item.image} width={690} height={449} objectFit="cover" layout="responsive" />
+                <Image src={item.image} width={690} height={449} objectFit="cover" layout="responsive" alt={item.title} />
               </div>
             </div>
           </div>

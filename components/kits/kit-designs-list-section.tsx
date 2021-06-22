@@ -20,7 +20,7 @@ export default function KitDesignsListSection({ kitTypeId, kitSeriesId, kitTypeN
         <button className="btn btn-warning btn-md shadow-warning mt-10 sm:mt-0">How To Choose The Right Kit</button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-30">
-        {kitDesigns.map((design, index) => (<Link href={`/kits/${kitTypeId}/${kitSeriesId}/${design.designId}`} key={index}>
+        {kitDesigns.map((design, index) => (<Link href={`/kits/${kitTypeId}/${kitSeriesId}/${design.designId}`} key={index} passHref>
           <div className={"border-4 bg0white rounded-lg p-10 mb-30 cursor-pointer shadow-secondary " + (design.designId === designId ? "border-primary" : "border-white")}>
             <Image
               className="rounded-md overflow-hidden"

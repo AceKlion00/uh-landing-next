@@ -39,7 +39,7 @@ export default function Home({ ideas }: Props) {
             <div
               className="absolute bg-light-50 w-345 rounded-3xl pt-25 pr-20 pb-20 pl-20 xl:pl-120 mt-230 md:mt-250 ml-500">
               <p className="text-warning-300 text-16 font-medium mb-15 leading-6">“We had no idea where to start, but you made it so simple.”</p>
-              <p className="text-light-500 text-13 mb-10 leading-5">We just chose the kit we wanted, made some minor changes, and clicked 'Order'. We quickly found a contractor to install it, our kit was delivered and we had a new patio in days. Such a great experience.</p>
+              <p className="text-light-500 text-13 mb-10 leading-5">We just chose the kit we wanted, made some minor changes, and clicked &apos;Order&apos;. We quickly found a contractor to install it, our kit was delivered and we had a new patio in days. Such a great experience.</p>
               <p className="text-primary text-13">Valerie & Jon Petersson</p>
             </div>
             <div className="relative invisible xl:visible -mb-10">

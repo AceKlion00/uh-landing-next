@@ -43,7 +43,7 @@ export default function KitDesignDetailsSection({ design }: Props) {
       <div className="flex flex-col lg:flex-row mt-40">
         <div className="w-full lg:w-5/12 order-2 lg:order-1 mb-30 lg:mb-0 pr-0 lg:pr-15">
           <p className="mb-30 text-center md:text-left">{design.comment}</p>
-          <p className="text-primary text-18 mb-20 text-center md:text-left">What's included in your kit</p>
+          <p className="text-primary text-18 mb-20 text-center md:text-left">What&apos;s included in your kit</p>
           <ul className="text-light-400 font-medium">
             {components.map((component, index) => (<li className="mb-15" key={index}>
               <p className="mb-0 font-bold">{component.title}</p>
@@ -84,7 +84,7 @@ export default function KitDesignDetailsSection({ design }: Props) {
                   className={"border-4 rounded-xl cursor-pointer overflow-hidden" + (designImageIndex === index ? " border-primary" : " border-white")}
                   onClick={() => setDesignImageIndex(index)}
                 >
-                  <Image src={designImage} width={91} height={82} layout="responsive" placeholder="blur" blurDataURL={shimmerUrl} /></div>
+                  <Image src={designImage} width={91} height={82} layout="responsive" placeholder="blur" blurDataURL={shimmerUrl} alt="design" /></div>
                 ))}
             </div>
 

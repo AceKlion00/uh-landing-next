@@ -35,7 +35,7 @@ export default function Partners() {
                   <h3 className="text-45 font-medium mb-40">Contractors</h3>
                   <h5 className="text-24 font-medium mb-40">Are you a hardscape business owner or entrepreneur?</h5>
                   <p className="text-14 mb-20">Do you have a passion for hardscaping, provide great customer service, and can handle more work?</p>
-                  <p className="text-14 mb-20">We are looking for passionate hard-working hardscapers to provide estimates and serve our customers' installation needs.</p>
+                  <p className="text-14 mb-20">We are looking for passionate hard-working hardscapers to provide estimates and serve our customers&apos; installation needs.</p>
                   <p className="text-14 mb-50">If you are interested in <b>learning more and applying</b>, check out our Authorized Contractors section.</p>
                   <button className="btn btn-warning btn-lg">Apply Now</button>
                 </div>

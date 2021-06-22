@@ -93,7 +93,7 @@ export default function HowItWorks() {
             ))}
             <div className="flex flex-col md:flex-row justify-center mt-10 md:mt-70">
               <button className="btn btn-warning btn-lg w-full md:w-auto mr-0 md:mr-20" onClick={consultationService.showConsultationDialog}>Book A Free Consultation</button>
-              <Link href={'/kits'}>
+              <Link href='/kits' passHref>
                 <button className="btn btn-primary btn-lg w-full md:w-auto mt-15 md:mt-0">View Our Signature Kits</button>
               </Link>
             </div>

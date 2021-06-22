@@ -31,7 +31,7 @@ export default function OurStory() {
             <div className="flex flex-col lg:flex-row">
               <div className="w-full lg:w-1/2 text-center lg:text-left">
                 <h2 className="text-45 text-secondary mb-60">Our Story</h2>
-                <p className="text-18 font-bold mb-15">Taking the 'Hard' out of Hardscaping since 2005 <br className="hidden lg:block" />and loving every second of it.</p>
+                <p className="text-18 font-bold mb-15">Taking the &apos;Hard&apos; out of Hardscaping since 2005 <br className="hidden lg:block" />and loving every second of it.</p>
                 <p className="text-18 text-light-400">Creating beautiful yards and functional solutions has been a passion of ours since the beginning and now more than ever we bring our passion for Hardscapes to life by providing homeowners a better way to plan, visualize and purchase materials for their projects.</p>
               </div>
               <div className="w-full lg:w-1/2 mt-20 lg:mt-0">
