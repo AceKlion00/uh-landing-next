@@ -2,33 +2,34 @@ import Image from 'next/image';
 import useConsultationService from '../../core/app-services/consultation-service';
 import { shimmerUrl } from '../ui-kit/common/blur-image';
 
+const whyUhKitsContent = [
+  {
+    title: 'Simple Online Process',
+    description: [
+      'From the initial consultation with a Hardscape Architect to receiving and reviewing your project designs and ordering materials - everything can be done online, through our easy-to-use Hardscape Hub.',
+    ],
+    image: '/assets/images/components/landing/why-uh/customers-with-computer.png'
+  },
+  {
+    title: 'Wide Range Of Materials',
+    description: [
+      'Access the largest selection of hardscape materials all in one place. From Pavers to Natural stone, granite to veneer, we work with all the major brands and local quarry\'s to provide you the largest selection of products guaranteed.',
+    ],
+    image: '/assets/images/components/landing/why-uh/brands.png'
+  },
+  {
+    title: 'Guidance You Can Trust',
+    description: [
+      'Work with hardscape professionals who care about your project success as much as you do.',
+      'Plan your project, get bids from contractors and buy your materials - all with the guidance of the industry experts.',
+      'We are like no other hardscape supplier around, putting the homeowner first and the sale second.'
+    ],
+    image: '/assets/images/components/landing/why-uh/contractors-wearing-white-clothes.png'
+  }
+];
+
 export function WhyUhKitsSection() {
   const consultationService = useConsultationService();
-  const whyUhKitsContent = [
-    {
-      title: 'Simple Online Process',
-      description: [
-        'From the initial consultation with a Hardscape Architect to receiving and reviewing your project designs and ordering materials - everything can be done online, through our easy-to-use Hardscape Hub.',
-      ],
-      image: '/assets/images/landing-pages/home-page/why-uh/customers-with-computer.png'
-    },
-    {
-      title: 'Wide Range Of Materials',
-      description: [
-        'Access the largest selection of hardscape materials all in one place. From Pavers to Natural stone, granite to veneer, we work with all the major brands and local quarry\'s to provide you the largest selection of products guaranteed.',
-      ],
-      image: '/assets/images/landing-pages/home-page/why-uh/brands.png'
-    },
-    {
-      title: 'Guidance You Can Trust',
-      description: [
-        'Work with hardscape professionals who care about your project success as much as you do.',
-        'Plan your project, get bids from contractors and buy your materials - all with the guidance of the industry experts.',
-        'We are like no other hardscape supplier around, putting the homeowner first and the sale second.'
-      ],
-      image: '/assets/images/landing-pages/home-page/why-uh/contractors-wearing-white-clothes.png'
-    }
-  ];
   return (
     <section className="bg-light-50 py-50 lg:py-80">
       <div className="container mx-auto">

@@ -4,7 +4,7 @@ export const homeContent = {
   kitSeries: [
     {
       name: 'Patio Kit - Ent15x20 Deluxe',
-      image: '/assets/images/landing-pages/home-page/popular-kits/patio.jpg',
+      image: '/assets/images/components/landing/popular-kits/patio.jpg',
       link: '/kits/patio/entertainment',
       id: 'ent-15x20-deluxe',
       width: 398,
@@ -13,7 +13,7 @@ export const homeContent = {
     },
     {
       name: 'Walkway Kit - WW50x4S',
-      image: '/assets/images/landing-pages/home-page/popular-kits/walkway.jpg',
+      image: '/assets/images/components/landing/popular-kits/walkway.jpg',
       link: '/kits/walkways/traditional',
       id: 'ww50x4s',
       width: 398,
@@ -22,7 +22,7 @@ export const homeContent = {
     },
     {
       name: 'Pool Patio Kit - REC18x36EC',
-      image: '/assets/images/landing-pages/home-page/popular-kits/pool-patio.jpg',
+      image: '/assets/images/components/landing/popular-kits/pool-patio.jpg',
       link: '/kits/pool-patio/economy',
       id: 'rec-18x36ec',
       width: 398,
@@ -31,7 +31,7 @@ export const homeContent = {
     },
     {
       name: 'Retaining Wall Kit - SU50x2Standard',
-      image: '/assets/images/landing-pages/home-page/popular-kits/retaining-wall.jpg',
+      image: '/assets/images/components/landing/popular-kits/retaining-wall.jpg',
       link: '/kits/retaining-wall/supporter',
       id: 'su50x2-standard',
       width: 398,
@@ -44,21 +44,21 @@ export const homeContent = {
 export const homeWorkFlows: Workflow[] = [
   {
     title: 'Book A Free Consultation',
-    image: '/assets/images/how-it-works/sit-man-with-mac.svg',
+    image: '/assets/images/components/landing/how-it-works/sit-man-with-mac.svg',
     description: `Discuss your outdoor project needs and budget with a Hardscape Architect.`,
     width: 350,
     height: 233,
   },
   {
     title: `Design Your Project`,
-    image: '/assets/images/how-it-works/man-with-laptop.svg',
+    image: '/assets/images/components/landing/how-it-works/man-with-laptop.svg',
     description: 'Get 2D blueprints, 3D designs, a video walkthrough, and the list of materials necessary for your project designed (your hardscape kit).',
     width: 350,
     height: 236,
   },
   {
     title: `Order Hardscape Materials Online`,
-    image: '/assets/images/how-it-works/man-with-vehicle.svg',
+    image: '/assets/images/components/landing/how-it-works/man-with-vehicle.svg',
     description: 'Get all the necessary materials delivered to your home along with the installation guidelines.',
     width: 350,
     height: 223,
