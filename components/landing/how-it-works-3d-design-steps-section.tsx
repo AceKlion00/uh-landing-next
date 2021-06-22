@@ -7,27 +7,27 @@ export default function HowItWorks3DDesignStepsSection() {
     {
       title: 'Tell us about your project',
       description: 'Tell us a bit more about the yard of your dreams.<br/> Attach some photos of how your yard looks like currently.',
-      image: '/assets/images/landing-pages/free-design/mobile-with-homes.jpg',
+      image: '/assets/images/landing-pages/home-page/3d-design-steps/mobile-with-homes.jpg',
     },
     {
       title: 'Talk to a Hardscape Architect',
       description: 'One of our Hardscape experts will get back to you to discuss your project.',
-      image: '/assets/images/landing-pages/free-design/man-doing-call.jpg',
+      image: '/assets/images/landing-pages/home-page/3d-design-steps/man-doing-call.jpg',
     },
     {
       title: 'Get a 3D Design Of Your Project - <span class="text-primary">FREE</span>',
       description: 'We will provide you with the 2D and 3D designs along with a video walkthrough.',
-      image: '/assets/images/landing-pages/free-design/3d-with-all-kits.jpg',
+      image: '/assets/images/landing-pages/home-page/3d-design-steps/3d-with-all-kits.jpg',
     },
     {
       title: 'Order Hardscape Materials',
       description: 'We will provide you with a list of materials necessary to complete your project. Order from us to get the best prices on the market.',
-      image: '/assets/images/landing-pages/free-design/materials-on-patio.jpg',
+      image: '/assets/images/landing-pages/home-page/3d-design-steps/materials-on-patio.jpg',
     },
     {
       title: 'Install Your Project',
       description: 'Install your project yourself based on our installation guides or find a contractor to do it for you.',
-      image: '/assets/images/landing-pages/free-design/work-with-materials.jpg',
+      image: '/assets/images/landing-pages/home-page/3d-design-steps/work-with-materials.jpg',
     },
   ];
   return (
