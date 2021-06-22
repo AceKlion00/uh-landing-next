@@ -7,7 +7,7 @@ const minFontSize = 5;
 const maxFontSize = 140;
 
 const minSpacingPixel = 0;
-const maxSpacingPixel = 1000;
+const maxSpacingPixel = 1200;
 const spacingPixelIncrement = 5;
 
 module.exports = {
