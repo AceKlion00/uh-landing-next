@@ -8,7 +8,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@tailwindcss/aspect-ratio": "^0.2.1",
     "formik": "^2.2.9",
     "next": "10.2.3",
     "next-images": "^1.8.1",

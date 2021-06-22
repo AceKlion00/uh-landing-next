@@ -1,11 +1,8 @@
 import Head from 'next/head';
-import { useEffect } from 'react';
-
 import { doGet } from '../../../../core/api-services/http';
 import { KitType } from '../../../../core/types';
 import { Layout } from '../../../../components/layout/layout';
 import KitSeriesPage from '../../../../components/kits/kit-series-page';
-import smoothScrollTo from '../../../../components/ui-kit/services/smooth-scroll-to';
 
 interface Props {
   kitType: KitType;
@@ -14,9 +11,6 @@ interface Props {
 }
 
 export default function DesignDetails({ kitType, seriesTypeId, designId }: Props) {
-  useEffect(() => {
-    smoothScrollTo('details', 300);
-  }, [designId]);
   const series = kitType.kitSeries.find(s => s.kitSeriesId === seriesTypeId) as any;
   const design = series.kitDesigns.find((s: any) => s.designId === designId) as any;
   return (<>

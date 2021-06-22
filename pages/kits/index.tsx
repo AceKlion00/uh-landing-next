@@ -10,7 +10,6 @@ import useWindowDimensions from '../../components/ui-kit/hooks/use-window';
 import { CustomDesignRequestSection } from '../../components/landing/custom-design-request-section';
 import useImagePreview from '../../components/ui-kit/dialog/use-image-preview';
 import { shimmerUrl } from '../../components/ui-kit/common/blur-image';
-import Icon from '../../components/ui-kit/icon';
 
 interface Props {
   kits: KitType[];
@@ -96,10 +95,17 @@ export default function Kits({ kits }: Props) {
                     </div>
                   </div>
                   <div className="flex flex-col-reverse lg:flex-col pl-0 lg:pl-60">
-                    <div className="relative" onClick={() => imagePreviewService.preview(kit.kitSeries[seriesSelection[kitIndex]].image, kit.name)}>
-                      <Image className="rounded-lg overflow-hidden cursor-pointer" src={kit.kitSeries[seriesSelection[kitIndex]].image} width={560} height={379} layout="responsive" alt={kit.name} placeholder="blur" blurDataURL={shimmerUrl} />
-                      <Icon name="external_link" color="white" size={24} className="absolute bottom-20 right-20 cursor-pointer" />
-                    </div>
+                    <Image
+                      className="rounded-lg overflow-hidden cursor-pointer"
+                      src={kit.kitSeries[seriesSelection[kitIndex]].image}
+                      width={560}
+                      height={379}
+                      layout="responsive"
+                      alt={kit.name}
+                      placeholder="blur"
+                      blurDataURL={shimmerUrl}
+                      onClick={() => imagePreviewService.preview(kit.kitSeries[seriesSelection[kitIndex]].image, kit.name)}
+                    />
                     <div className="hidden lg:flex justify-center lg:justify-end mt-0 mb-30 lg:mt-40 lg:mb-0">
                       <Link href={`/kits/${kit.kitTypeId}/${kit.kitSeries[seriesSelection[kitIndex]].kitSeriesId}`}>
                         <button className="btn btn-warning btn-md">Explore Kits</button>

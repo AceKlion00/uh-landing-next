@@ -4,7 +4,7 @@ import Image from 'next/image';
 export function Footer() {
   return (<footer className="bg-secondary z-10 text-center lg:text-left text-light pt-80 pb-15">
     <div className="container mx-auto">
-      <div className="grid lg:grid-cols-3 gap-20">
+      <div className="grid lg:grid-cols-3 gap-4">
         <div className="mb-40 lg:mb-0">
           <Link href="/"><a><Image src="/assets/images/logo-green.svg" height={37} width={130} alt="UH logo" /></a></Link>
           <div className="flex flex-col font-medium mt-30 lg:mt-65">

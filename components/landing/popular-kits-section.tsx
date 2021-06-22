@@ -4,22 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { homeContent, popularKitsDescription, popularKitsTitle } from '../../core/data/home';
 import { HomePageType } from '../../core/types';
-import Currency from '../ui-kit/misc/currency';
-
-const swiperBreakPoints = {
-  640: {
-    width: 640,
-    slidesPerView: 1,
-  },
-  768: {
-    width: 768,
-    slidesPerView: 2,
-  },
-  1024: {
-    width: 1024,
-    slidesPerView: 3,
-  }
-};
 
 export function PopularKitsSection({ homepageType = HomePageType.Home }) {
   const kitSeries = homeContent.kitSeries;
@@ -34,22 +18,13 @@ export function PopularKitsSection({ homepageType = HomePageType.Home }) {
       </p>
     </div>
     <div className="px-10 sm:px-50">
-      <Swiper className="w-full" spaceBetween={20} breakpoints={swiperBreakPoints}>
-        {kitSeries.map((kitSerie, i) => (<SwiperSlide className="flex-grow" key={i}>
+      <Swiper spaceBetween={20} slidesPerView={3}>
+        {kitSeries.map((kitSerie, i) => (<SwiperSlide key={i}>
           <div className="rounded-lg p-10 shadow-md bg-white">
-            <Link href={`${kitSerie.link}/${kitSerie.id}`}>
-              <Image
-                className="rounded-lg overflow-hidden cursor-pointer"
-                src={kitSerie.image}
-                width={kitSerie.width}
-                height={kitSerie.height}
-                layout="responsive"
-                alt={kitSerie.name}
-              />
-            </Link>
+            <Image className="rounded-lg overflow-hidden cursor-pointer" src={kitSerie.image} width={kitSerie.width} height={kitSerie.height} layout="responsive" alt={kitSerie.name} />
             <div className="flex justify-between text-light-400 pt-15 pb-10 font-medium">
               <span>{kitSerie.name}</span>
-              <span><Currency value={kitSerie.price}/></span>
+              <span>{kitSerie.price}</span>
             </div>
           </div>
         </SwiperSlide>))}
