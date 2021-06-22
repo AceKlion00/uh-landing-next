@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 
-import { FAQS, FAQCategory } from "../core/data/faqs";
+import { FAQS, FAQCategory } from '../core/data/faqs';
 import { Layout } from '../components/layout/layout';
 import { Accordion } from '../components/ui-kit/misc/accordion';
 import { enumToOptions } from '../components/ui-kit/utils';
-import { SearchInput } from '../components/ui-kit/input/search-input';
+import SearchInput from '../components/ui-kit/input/search-input';
 import smoothScrollTo from '../components/ui-kit/services/smooth-scroll-to';
 
 export default function Faqs() {
@@ -43,14 +43,13 @@ export default function Faqs() {
             <div className="flex flex-col lg:flex-row">
               <div className="w-full lg:w-1/4">
                 <div className="sticky top-100 border rounded-2xl border-light shadow-primary pt-20 px-20 mb-20">
-                  <SearchInput name="searchKey" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} onSearch={filterCategory} />
+                  <SearchInput id="searchKey" name="searchKey" label="Search" placeholder="Type Search Keyword" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} onSearch={filterCategory} />
                   <div className="hidden lg:block">
                     <h5 className="text-secondary text-24 font-medium mb-30">Categories</h5>
                     <div className="ml-20 mb-30">
                       {faqCategory.map((category, index) => {
-                        return (<div>
+                        return (<div key={index}>
                           <p className={'font-normal text-18 cursor-pointer mb-20 ' + (index === currentCategory ? 'text-primary' : 'text-light-400')}
-                             key={ index }
                              onClick={() => {
                                 setCurrentCategory(index);
                                 smoothScrollTo(category.value, 300);
@@ -62,8 +61,8 @@ export default function Faqs() {
                 </div>
               </div>
               <div className="w-full lg:w-3/4 lg:pl-20">
-                {faqCategory.map(category => {
-                  return (<>
+                {faqCategory.map((category, index) => {
+                  return (<div key={index}>
                     <p className="text-24 text-primary mb-20" id={category.value}>{category.label}</p>
                     <div className="rounded-2xl border border-light mb-30 overflow-hidden">
                       <div className="border-radius-12 border-gray overflow-hidden">
@@ -72,7 +71,7 @@ export default function Faqs() {
                         })}
                       </div>
                     </div>
-                  </>);
+                  </div>);
                 })}
               </div>
             </div>

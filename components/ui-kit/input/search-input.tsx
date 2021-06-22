@@ -6,7 +6,6 @@ import Icon from '../icon';
 interface Props {
   id: string;
   name: string;
-  type: string;
   label: string;
   placeholder: string;
   value: string;
@@ -14,7 +13,7 @@ interface Props {
   onSearch: (v: any) => void;
 }
 
-export function SearchInput({ id, name, type, label, placeholder, value, onChange, onSearch }: Props) {
+export default function SearchInput({ id, name, label, placeholder, value, onChange, onSearch }: Props) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
@@ -29,7 +28,6 @@ export function SearchInput({ id, name, type, label, placeholder, value, onChang
       <input
         id={id || name}
         name={name}
-        type={type}
         placeholder={placeholder}
         value={value}
         className="w-full text-12 leading-7 focus:outline-none"
@@ -38,13 +36,13 @@ export function SearchInput({ id, name, type, label, placeholder, value, onChang
           onChange(event);
         }}
       />
-      <Icon className="absolute right-10 bottom-10" name="search" color="primary" size={20}></Icon>
+      <Icon className="absolute right-10 bottom-10" name="search" color="primary" size={20} />
     </label>
   </div>);
 }
 
-function useDebounce(value: string, delay: number | undefined) {
-  const[debounceValue, setDebounceValue] = useState(value);
+function useDebounce(value: string, delay: number | undefined): string {
+  const [debounceValue, setDebounceValue] = useState(value);
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -60,7 +58,6 @@ function useDebounce(value: string, delay: number | undefined) {
 SearchInput.defaultProps = {
   id: '',
   name: '',
-  type: 'text',
   label: 'Search',
   value: '',
   placeholder: 'Type Search Keyword',
