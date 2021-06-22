@@ -51,7 +51,7 @@ export default function HowItWorks3DDesignStepsSection() {
                 <span className="rounded-full flex-none w-35 h-35 border-2 flex justify-center items-center mr-20">{stepNumber + 1}</span>
                 <div className="flex-1">
                   <div className="flex items-center">
-                    <p className="font-medium flex-none" dangerouslySetInnerHTML={{ __html: step.title }}>{/* InnerHTML rendering */}</p>
+                    <p className="font-medium md:flex-none" dangerouslySetInnerHTML={{ __html: step.title }}>{/* InnerHTML rendering */}</p>
                     <span
                       className={
                         'hidden xl:block bg-white ml-30 transition-width duration-300 ease-in-out ' +
