@@ -95,7 +95,7 @@ export default function Home({ ideas }: Props) {
             </div>
           </div>
         </section>
-        <TestimonialSection/>
+        <TestimonialSection showDesignAvatar={true} />
         <GallerySection initialIdeas={ideas} />
         <JoinCustomerSection/>
       </Layout>
