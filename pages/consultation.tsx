@@ -15,7 +15,7 @@ interface Props {
   ideas: Idea[];
 }
 
-export default function FreeDesign({ ideas }: Props) {
+export default function Consultation({ ideas }: Props) {
   const consultationService = useConsultationService();
   return (
     <>
@@ -27,14 +27,13 @@ export default function FreeDesign({ ideas }: Props) {
         <HeaderWithFeedbackSection/>
         <section className="py-80">
           <div className="container mx-auto mb-85">
-            <p className="text-24 text-light-500 text-center max-w-950 mx-auto">Get started with a Hardscape Architect to design your patio, walkway, poolscape, retaining wall, or stair project - <span className="text-warning">for free</span>.</p>
+            <p className="text-24 text-light-500 text-center max-w-950 mx-auto">Get started with a Hardscape Architect to design your patio, walkway, poolscape, retaining wall, or stair project.</p>
           </div>
           <HowItWorksSection/>
           <div className="flex justify-center mt-50">
             <button className="btn btn-warning btn-lg w-full sm:w-auto" onClick={consultationService.showConsultationDialog}>Schedule A Free Consultation</button>
           </div>
         </section>
-        <WhyUhKitsSection/>
         <PopularKitsSection/>
         <GallerySection initialIdeas={ideas}/>
         <TestimonialSection />
