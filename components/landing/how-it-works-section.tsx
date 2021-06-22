@@ -6,7 +6,7 @@ export function HowItWorksSection() {
     <div className="container mx-auto">
       <h3 className="text-primary text-32 font-normal mb-45">How It Works?</h3>
       <div className="absolute left-0 right-0">
-        <Image src="/assets/images/how-it-works/primary-dotted-line.svg" width={1397} height={124} layout="responsive" alt="Dotted Line" />
+        <Image src="/assets/images/components/landing/how-it-works/primary-dotted-line.svg" width={1397} height={124} layout="responsive" alt="Dotted Line" />
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3">
         {homeWorkFlows.map((workflow, i) => (<div className="text-light-500" key={i}>
