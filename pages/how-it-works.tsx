@@ -11,7 +11,8 @@ export default function HowItWorks() {
   const consultationService = useConsultationService();
   const howItWorkTypes = [HowItWorksType.Designing, HowItWorksType.Installing];
   const [workType, setWorkType] = useState(HowItWorksType.Designing);
-  return (<>
+  return (
+    <>
       <Head>
         <title>How It Works - United Hardscapes</title>
         <meta name="description" content="Learn how you can plan your hardscape project and get an outdoor space of your dreams in just a few steps steps." />
@@ -28,7 +29,7 @@ export default function HowItWorks() {
                 <p className="text-14 mb-20 pr-0 lg:pr-100">Learn how both of these processes work below.</p>
               </div>
               <div className="relative">
-                <div className="invisible lg:visible lg:-bottom-55 xl:-bottom-70 absolute w-full px-0 xl:px-30">
+                <div className="invisible lg:visible lg:-bottom-55 xl:-bottom-70 absolute w-full max-w-530 2xl:max-w-600 px-0 xl:px-30">
                   <Image src="/assets/images/landing-pages/how-it-works/main.png" width="551" height="495" layout="responsive" alt="kits" />
                 </div>
               </div>
