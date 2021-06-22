@@ -11,6 +11,7 @@ import useConsultationService from '../core/app-services/consultation-service';
 import { Idea } from '../core/types';
 import { doGet } from '../core/api-services/http';
 import JoinCustomerSection from '../components/landing/join-customer-section';
+import BlueOval from '../components/misc/blue-oval';
 import HowItWorks3DDesignStepsSection from '../components/landing/how-it-works-3d-design-steps-section';
 
 interface Props {
@@ -28,9 +29,7 @@ export default function Home({ ideas }: Props) {
       <Layout>
         <section className="h-855 relative overflow-hidden">
           <div><Image src="/assets/images/landing-pages/home-page/background.jpg" objectFit="cover" layout="fill" alt="background"/></div>
-          <div className="absolute left-0 top-0">
-            <Image src="/assets/images/landing-pages/home-page/blue-bg-shape.svg" width={1059} height={854} layout="fixed" alt="blue-bg"/>
-          </div>
+          <div className="absolute left-0 top-0"><BlueOval/></div>
           <div className="absolute bottom-0 right-0 -mb-150 lg:mb-0 mr-235 lg:mr-250 2xl:mr-450">
             <div className="absolute ml-75 mt-110">
               <Image src="/assets/images/landing-pages/home-page/primary-ellipse.svg" width={515} height={515} layout="fixed" alt="ellipse"/>
@@ -41,7 +40,7 @@ export default function Home({ ideas }: Props) {
             <div
               className="absolute bg-light-50 w-345 rounded-3xl pt-25 pr-20 pb-20 pl-20 xl:pl-120 mt-230 md:mt-250 ml-500">
               <p className="text-warning-300 text-16 font-medium mb-15 leading-6">“We had no idea where to start, but you made it so simple.”</p>
-              <p className="text-light-500 text-13 mb-10 leading-5">We just chose the kit we wanted, made some minor changes, and clicked 'Order'. We quickly found a contractor to install it, our kit was delivered and we had a new patio in days. Such a great experience.</p>
+              <p className="text-light-500 text-13 mb-10 leading-5">We just chose the kit we wanted, made some minor changes, and clicked &apos;Order&apos;. We quickly found a contractor to install it, our kit was delivered and we had a new patio in days. Such a great experience.</p>
               <p className="text-primary text-13">Valerie & Jon Petersson</p>
             </div>
             <div className="relative invisible xl:visible -mb-10">

@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { homeContent, popularKitsDescription, popularKitsTitle } from '../../core/data/home';
 import { HomePageType } from '../../core/types';
 import Currency from '../ui-kit/misc/currency';
+import { shimmerUrl } from '../ui-kit/common/blur-image';
 
 const swiperBreakPoints = {
   640: {
@@ -37,16 +38,17 @@ export function PopularKitsSection({ homepageType = HomePageType.Home }) {
       <Swiper className="w-full" spaceBetween={20} breakpoints={swiperBreakPoints}>
         {kitSeries.map((kitSerie, i) => (<SwiperSlide className="flex-grow" key={i}>
           <div className="rounded-lg p-10 shadow-md bg-white">
-            <Link href={`${kitSerie.link}/${kitSerie.id}`}>
-              <Image
-                className="rounded-lg overflow-hidden cursor-pointer"
-                src={kitSerie.image}
-                width={kitSerie.width}
-                height={kitSerie.height}
-                layout="responsive"
-                alt={kitSerie.name}
-              />
-            </Link>
+            <Image
+              className="rounded-lg overflow-hidden cursor-pointer"
+              src={kitSerie.image}
+              width={kitSerie.width}
+              height={kitSerie.height}
+              layout="responsive"
+              alt={kitSerie.name}
+              placeholder="blur"
+              blurDataURL={shimmerUrl}
+              onClick={() => location.href = `${kitSerie.link}/${kitSerie.id}`}
+            />
             <div className="flex justify-between text-light-400 pt-15 pb-10 font-medium">
               <span>{kitSerie.name}</span>
               <span><Currency value={kitSerie.price}/></span>
@@ -56,7 +58,7 @@ export function PopularKitsSection({ homepageType = HomePageType.Home }) {
       </Swiper>
     </div>
     <div className="flex justify-center mt-100">
-      <Link href="/kits"><button className="btn btn-warning btn-lg">View Signature Kits</button></Link>
+      <Link href="/kits" passHref><button className="btn btn-warning btn-lg">View Signature Kits</button></Link>
     </div>
   </section>);
 }

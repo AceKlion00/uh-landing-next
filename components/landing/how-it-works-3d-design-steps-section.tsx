@@ -49,8 +49,15 @@ export default function HowItWorks3DDesignStepsSection() {
                 }
                 onClick={() => setCurrentStep(stepNumber)}>
                 <span className="rounded-full flex-none w-35 h-35 border-2 flex justify-center items-center mr-20">{stepNumber + 1}</span>
-                <div className="">
-                  <p className="font-medium" dangerouslySetInnerHTML={{ __html: step.title }}>{/* InnerHTML rendering */}</p>
+                <div className="flex-1">
+                  <div className="flex items-center">
+                    <p className="font-medium flex-none" dangerouslySetInnerHTML={{ __html: step.title }}>{/* InnerHTML rendering */}</p>
+                    <span
+                      className={
+                        'hidden xl:block bg-white ml-30 transition-width duration-300 ease-in-out ' +
+                        (currentStep === stepNumber ? 'border w-full' : 'w-0')
+                      }>{/* Empty Content */}</span>
+                  </div>
                   <p
                     className={
                       'text-14 text-warning max-w-500 xl:max-w-380 2xl:max-w-500 pr-0 lg:pr-30 xl:pr-0  overflow-hidden transition-all duration-300 ease-in-out ' +

@@ -42,9 +42,9 @@ export function Footer() {
             <div>
               <p className="text-18 font-medium text-white mb-20 mt-30 lg:mt-0">Follow us</p>
               <div className="d-flex justify-center lg:justify-start">
-                <a className="mr-35" href="https://www.facebook.com/UnitedHardscapes" target="_blank"><Image src="/assets/images/social-logos/facebook.svg" width={18} height={18} alt="Facebook" /></a>
-                <a className="mr-35" href="https://www.instagram.com/unitedhardscapes" target="_blank"><Image src="/assets/images/social-logos/instagram.svg" width={18} height={18} alt="Instagram" /></a>
-                <a href="https://www.pinterest.com/UnitedHardscapes" target="_blank"><Image src="/assets/images/social-logos/pinterest.svg" width={18} height={18} alt="Pinterest" /></a>
+                <Link href="https://www.facebook.com/UnitedHardscapes" passHref><a className="mr-35"><Image src="/assets/images/social-logos/facebook.svg" width={18} height={18} alt="Facebook" /></a></Link>
+                <Link href="https://www.instagram.com/unitedhardscapes" passHref><a className="mr-35"><Image src="/assets/images/social-logos/instagram.svg" width={18} height={18} alt="Instagram" /></a></Link>
+                <Link href="https://www.pinterest.com/UnitedHardscapes" passHref><a><Image src="/assets/images/social-logos/pinterest.svg" width={18} height={18} alt="Pinterest" /></a></Link>
               </div>
               <p className="font-medium mb-15 mt-25">We accept</p>
               <div className="d-flex justify-center lg:justify-start">

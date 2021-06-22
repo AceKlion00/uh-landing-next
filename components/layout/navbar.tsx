@@ -23,7 +23,7 @@ export function Navbar() {
           <li className="py-15 nav-link"><Link href="/our-story"><a className="relative xl:px-25 xl:py-10">Our Story</a></Link></li>
           <li className="py-15 nav-link"><Link href="/contact-us"><a className="relative xl:px-25 xl:py-10">Contact Us</a></Link></li>
         </ul>
-        <Link href="/kits"><button className="hidden xl:block px-5 btn-primary btn-mini">Get Started</button></Link>
+        <Link href="/kits" passHref><button className="hidden xl:block px-5 btn-primary btn-mini">Get Started</button></Link>
       </div>
     </div>
   </nav>);

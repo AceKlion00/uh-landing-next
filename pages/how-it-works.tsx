@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Layout } from '../components/layout/layout';
 import { howItWorksContents, HowItWorksType } from '../core/data/how-it-works';
 import useConsultationService from '../core/app-services/consultation-service';
+import { shimmerUrl } from '../components/ui-kit/common/blur-image';
 
 export default function HowItWorks() {
   const consultationService = useConsultationService();
@@ -30,7 +31,7 @@ export default function HowItWorks() {
               </div>
               <div className="relative">
                 <div className="invisible lg:visible lg:-bottom-55 xl:-bottom-70 absolute w-full max-w-530 2xl:max-w-600 px-0 xl:px-30">
-                  <Image src="/assets/images/landing-pages/how-it-works/main.png" width="551" height="495" layout="responsive" alt="kits" />
+                  <Image src="/assets/images/landing-pages/how-it-works/main.png" width="551" height="495" layout="responsive" alt="kits" placeholder="blur" blurDataURL={shimmerUrl} />
                 </div>
               </div>
             </div>
@@ -81,7 +82,7 @@ export default function HowItWorks() {
                       {item.images.map((image: string, imageIndex: number) => (
                         <SwiperSlide key={imageIndex}>
                           <div className="">
-                            <Image className="rounded-lg overflow-hidden cursor-pointer" src={image} width="497" height="364" layout="responsive" alt="Carousel Image" />
+                            <Image className="rounded-lg overflow-hidden cursor-pointer" src={image} width="497" height="364" layout="responsive" alt="Carousel Image" placeholder="blur" blurDataURL={shimmerUrl} />
                           </div>
                         </SwiperSlide>
                       ))}
@@ -92,7 +93,7 @@ export default function HowItWorks() {
             ))}
             <div className="flex flex-col md:flex-row justify-center mt-10 md:mt-70">
               <button className="btn btn-warning btn-lg w-full md:w-auto mr-0 md:mr-20" onClick={consultationService.showConsultationDialog}>Book A Free Consultation</button>
-              <Link href={'/kits'}>
+              <Link href='/kits' passHref>
                 <button className="btn btn-primary btn-lg w-full md:w-auto mt-15 md:mt-0">View Our Signature Kits</button>
               </Link>
             </div>

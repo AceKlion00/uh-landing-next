@@ -1,11 +1,15 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { kitsFAQs } from '../core/data/faqs';
 import { Layout } from '../components/layout/layout';
 import useConsultationService from '../core/app-services/consultation-service';
+import { Accordion } from '../components/ui-kit/misc/accordion';
 
 export default function WhyUH() {
   const consultationService = useConsultationService();
+  const kitsFaqs = kitsFAQs;
   const features = [
     {
       image: '/assets/images/landing-pages/why-uh/features/onsite-consultation.svg',
@@ -50,7 +54,7 @@ export default function WhyUH() {
         <section className="pt-105 pb-90">
           <div className="container mx-auto text-center">
             <div className="mx-0 lg:mx-80 mb-50">
-              <p className="text-18 text-light-500 mb-30">Figuring out your Hardscape project is hard - you're not sure where to begin, what can be done, what it's going to cost, or even how to compare estimates and that's just before you hire a contractor.</p>
+              <p className="text-18 text-light-500 mb-30">Figuring out your Hardscape project is hard - you&apos;re not sure where to begin, what can be done, what it&apos;s going to cost, or even how to compare estimates and that&apos;s just before you hire a contractor.</p>
               <p className="text-18 text-light-500 mb-60">Then trying to visualize your project, wondering if you are choosing the right materials, and worrying about if everything will be delivered as promised keeps you up at night.</p>
               <h3 className="text-32 text-primary mb-20">There is a better way</h3>
               <p className="text-light-500 mb-30">United Hardscapes has simplified the entire hardscape process through our DIY and Contractor friendly kits.</p>
@@ -76,7 +80,7 @@ export default function WhyUH() {
             </div>
             <div className="flex flex-col md:flex-row justify-center mt-40 md:mt-80">
               <button className="btn btn-warning btn-lg w-full md:w-auto mr-0 md:mr-20" onClick={consultationService.showConsultationDialog}>Book A Free Consultation</button>
-              <Link href={'/kits'}>
+              <Link href='/kits' passHref>
                 <button className="btn btn-primary btn-lg w-full md:w-auto mt-15 md:mt-0">View Our Signature Kits</button>
               </Link>
             </div>
@@ -85,9 +89,13 @@ export default function WhyUH() {
         <section className="bg-light-50 py-80">
           <div className="container mx-auto">
             <h3 className="text-32 text-primary text-center mb-50">FAQs</h3>
-            {/* TODO: FAQ section */}
+            <div className="rounded-2xl border border-b-0 border-light mb-60 overflow-hidden mx-0 lg:mx-50 xl:mx-200">
+              {kitsFaqs.map((faq: { content: string; title: string }, index: number) => {
+                return (<Accordion key={index} content={faq.content} name={faq.title} />);
+              })}
+            </div>
             <div className="flex justify-center">
-              <Link href={'/faqs'}>
+              <Link href='/faqs' passHref>
                 <button className="btn btn-warning btn-lg w-full md:w-auto mt-15 md:mt-0">Go To FAQs</button>
               </Link>
             </div>
