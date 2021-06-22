@@ -1,4 +1,4 @@
-export function getColor(color: string | null | undefined): string {
+export function getColor(color: string): string {
   if (color === 'primary') {
     return '#07A39D';
   } else if (color === 'secondary') {
@@ -16,7 +16,7 @@ export function getColor(color: string | null | undefined): string {
   } else if (color === 'gray') {
     return '#2C2C2C';
   } else {
-    return color || '';
+    return color;
   }
 }
 
@@ -317,3 +317,4 @@ export const hardscapesIcons = {
     </svg>
   `
 };
+
