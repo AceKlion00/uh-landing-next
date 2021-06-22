@@ -11,6 +11,7 @@ import useConsultationService from '../core/app-services/consultation-service';
 import { Idea } from '../core/types';
 import { doGet } from '../core/api-services/http';
 import JoinCustomerSection from '../components/landing/join-customer-section';
+import BlueOval from '../components/misc/blue-oval';
 
 interface Props {
   ideas: Idea[];
@@ -27,9 +28,7 @@ export default function Home({ ideas }: Props) {
       <Layout>
         <section className="h-855 relative overflow-hidden">
           <div><Image src="/assets/images/landing-pages/home-page/background.jpg" objectFit="cover" layout="fill" alt="background"/></div>
-          <div className="absolute left-0 top-0">
-            <Image src="/assets/images/landing-pages/home-page/blue-bg-shape.svg" width={1059} height={854} layout="fixed" alt="blue-bg"/>
-          </div>
+          <div className="absolute left-0 top-0"><BlueOval/></div>
           <div className="absolute bottom-0 right-0 -mb-150 lg:mb-0 mr-235 lg:mr-250 2xl:mr-450">
             <div className="absolute ml-75 mt-110">
               <Image src="/assets/images/landing-pages/home-page/primary-ellipse.svg" width={515} height={515} layout="fixed" alt="ellipse"/>
@@ -54,7 +53,7 @@ export default function Home({ ideas }: Props) {
               <h1 className="text-40 mb-30 text-center lg:text-left font-normal">We make it Simple.</h1>
               <p className="text-18 mb-25 lg:max-w-390 text-center lg:text-left">Plan your project, find a contractor, and buy your materials - all with the help of the industry experts.</p>
               <div className="text-center lg:text-left">
-                <button className="btn btn-warning btn-md" onClick={consultationService.showConsultationDialog}>Schedule a Free Consultation </button>
+                <button className="btn btn-warning btn-lg" onClick={consultationService.showConsultationDialog}>Schedule a Free Consultation </button>
               </div>
             </div>
           </div>
@@ -62,14 +61,14 @@ export default function Home({ ideas }: Props) {
 
         <section className="my-90">
           <div className="container mx-auto">
-            <p className="px-0 xl:px-150 text-center text-24">Get started with a Hardscape Architect to design your patio, walkway, poolscape, retaining wall, or stair project - <span className="text-warning">for free.</span></p>
+            <p className="px-0 xl:px-150 text-center text-24 text-light-500">Get started with a Hardscape Architect to design your patio, walkway, poolscape, retaining wall, or stair project - <span className="text-warning">for free.</span></p>
           </div>
         </section>
 
         <section className="pb-80">
           <HowItWorksSection/>
           <div className="flex justify-center mt-70">
-            <button className="btn btn-warning btn-md" onClick={consultationService.showConsultationDialog}>Schedule A Free Consultation </button>
+            <button className="btn btn-warning btn-lg" onClick={consultationService.showConsultationDialog}>Schedule A Free Consultation </button>
           </div>
         </section>
 
