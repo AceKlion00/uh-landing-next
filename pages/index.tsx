@@ -11,7 +11,6 @@ import useConsultationService from '../core/app-services/consultation-service';
 import { Idea } from '../core/types';
 import { doGet } from '../core/api-services/http';
 import JoinCustomerSection from '../components/landing/join-customer-section';
-import BlueOval from '../components/misc/blue-oval';
 
 interface Props {
   ideas: Idea[];
@@ -28,7 +27,9 @@ export default function Home({ ideas }: Props) {
       <Layout>
         <section className="h-855 relative overflow-hidden">
           <div><Image src="/assets/images/landing-pages/home-page/background.jpg" objectFit="cover" layout="fill" alt="background"/></div>
-          <div className="absolute left-0 top-0"><BlueOval/></div>
+          <div className="absolute left-0 top-0">
+            <Image src="/assets/images/landing-pages/home-page/blue-bg-shape.svg" width={1059} height={854} layout="fixed" alt="blue-bg"/>
+          </div>
           <div className="absolute bottom-0 right-0 -mb-150 lg:mb-0 mr-235 lg:mr-250 2xl:mr-450">
             <div className="absolute ml-75 mt-110">
               <Image src="/assets/images/landing-pages/home-page/primary-ellipse.svg" width={515} height={515} layout="fixed" alt="ellipse"/>

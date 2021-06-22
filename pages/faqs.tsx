@@ -64,12 +64,10 @@ export default function Faqs() {
                 {faqCategory.map((category, index) => {
                   return (<div key={index}>
                     <p className="text-24 text-primary mb-20" id={category.value}>{category.label}</p>
-                    <div className="rounded-2xl border border-light mb-30 overflow-hidden">
-                      <div className="border-radius-12 border-gray overflow-hidden">
-                        {faqs[category.value].map(faq => {
-                          return (<Accordion content={faq.content} name={faq.title} />);
-                        })}
-                      </div>
+                    <div className="rounded-2xl border border-b-0 border-light bg-white mb-30 overflow-hidden">
+                      {faqs[category.value].map(faq => {
+                        return (<Accordion content={faq.content} name={faq.title} />);
+                      })}
                     </div>
                   </div>);
                 })}

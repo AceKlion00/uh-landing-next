@@ -14,7 +14,7 @@ export function Accordion({ name, content, expanded }: Props) {
       <div className="flex-grow px-15 md:px-30 py-25 text-18 text-light-400">{name}</div>
       <Icon className={"delay-300 transform transition ease-out " + (opened ? " rotate-180" : "")} name="chevron" color="#07a39d" size={24} />
     </div>
-    <div className={"px-10 overflow-hidden md:px-50 transform transition ease-out bg-white " + (opened ? " max-h-500 opacity-100 py-25" : "max-h-0 opacity-0")} dangerouslySetInnerHTML={{ __html: content }} />
+    <div className={"px-10 overflow-hidden md:px-50 transform transition ease-out border-b border-light " + (opened ? " max-h-500 opacity-100 py-25" : "max-h-0 opacity-0")} dangerouslySetInnerHTML={{ __html: content }} />
   </div>);
 }
 

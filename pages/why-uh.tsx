@@ -1,11 +1,15 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { kitsFAQs } from '../core/data/faqs';
 import { Layout } from '../components/layout/layout';
 import useConsultationService from '../core/app-services/consultation-service';
+import { Accordion } from '../components/ui-kit/misc/accordion';
 
 export default function WhyUH() {
   const consultationService = useConsultationService();
+  const kitsFaqs = kitsFAQs;
   const features = [
     {
       image: '/assets/images/landing-pages/why-uh/features/onsite-consultation.svg',
@@ -85,7 +89,11 @@ export default function WhyUH() {
         <section className="bg-light-50 py-80">
           <div className="container mx-auto">
             <h3 className="text-32 text-primary text-center mb-50">FAQs</h3>
-            {/* TODO: FAQ section */}
+            <div className="rounded-2xl border border-b-0 border-light mb-60 overflow-hidden mx-0 lg:mx-50 xl:mx-200">
+              {kitsFaqs.map(faq => {
+                return (<Accordion content={faq.content} name={faq.title} />);
+              })}
+            </div>
             <div className="flex justify-center">
               <Link href={'/faqs'}>
                 <button className="btn btn-warning btn-lg w-full md:w-auto mt-15 md:mt-0">Go To FAQs</button>
