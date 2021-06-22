@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Layout } from '../components/layout/layout';
 import { howItWorksContents, HowItWorksType } from '../core/data/how-it-works';
 import useConsultationService from '../core/app-services/consultation-service';
+import { shimmerUrl } from '../components/ui-kit/common/blur-image';
 
 export default function HowItWorks() {
   const consultationService = useConsultationService();
@@ -81,7 +82,7 @@ export default function HowItWorks() {
                       {item.images.map((image: string, imageIndex: number) => (
                         <SwiperSlide key={imageIndex}>
                           <div className="">
-                            <Image className="rounded-lg overflow-hidden cursor-pointer" src={image} width="497" height="364" layout="responsive" alt="Carousel Image" />
+                            <Image className="rounded-lg overflow-hidden cursor-pointer" src={image} width="497" height="364" layout="responsive" alt="Carousel Image" placeholder="blur" blurDataURL={shimmerUrl} />
                           </div>
                         </SwiperSlide>
                       ))}

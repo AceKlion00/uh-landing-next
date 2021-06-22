@@ -8,6 +8,7 @@ import { ideaBoardApiService } from '../../core/api-services/idea-board-api.serv
 import Spinner from '../ui-kit/common/spinner';
 import useImagePreview from '../ui-kit/dialog/use-image-preview';
 import Icon from '../ui-kit/icon';
+import { shimmerUrl } from '../ui-kit/common/blur-image';
 
 const imageCountPerDisplay = 9;
 const projectAccessoryTypes = [
@@ -85,7 +86,7 @@ export function GallerySection({ initialIdeas, homepageType }: Props) {
                   className={ "flex flex-col cursor-pointer rounded-2xl overflow-hidden border-4 " + ((category === projectAccessoryType.value || !projectAccessoryType.value) ? "border-primary" : "border-white") }
                   onClick={() => setCategory(projectAccessoryType.value)}
                 >
-                  {projectAccessoryType.value && <Image src={projectAccessoryType.image} width={165} height={136} layout="responsive" />}
+                  {projectAccessoryType.value && <Image src={projectAccessoryType.image} width={165} height={136} layout="responsive" placeholder="blur" blurDataURL={shimmerUrl} />}
                   {!projectAccessoryType.value && <div className="w-full flex-grow flex justify-center items-center">All Kits</div>}
                   <div className="bg-primary text-center text-white py-5">{projectAccessoryType.label || 'All'}</div>
                 </div>);
@@ -98,7 +99,7 @@ export function GallerySection({ initialIdeas, homepageType }: Props) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
         {ideas.map((idea, index) => (<div className="mb-20 cursor-pointer aspect-w-8 aspect-h-6 relative" key={index}>
           <div className="absolute w-full h-full rounded-xl overflow-hidden" onClick={() => imagePreviewService.preview(idea.url, 'Idea')}>
-            <Image src={idea.url} layout="fill" objectFit="cover" />
+            <Image src={idea.url} layout="fill" objectFit="cover" placeholder="blur" blurDataURL={shimmerUrl} />
             <Icon name="external_link" color="white" size={24} className="absolute bottom-20 right-20 cursor-pointer" />
           </div>
         </div>))}

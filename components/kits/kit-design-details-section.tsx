@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Currency from '../ui-kit/misc/currency';
 import Icon from '../ui-kit/icon';
 import useImagePreview from '../ui-kit/dialog/use-image-preview';
+import { shimmerUrl } from '../ui-kit/common/blur-image';
 
 interface Props {
   design: KitDesign;
@@ -62,7 +63,7 @@ export default function KitDesignDetailsSection({ design }: Props) {
           <div className="grid grid-cols-2 xl:grid-cols-3 gap-20">
             {design.kitColors.map((color, index) => (<div className="mb-20" key={index}>
               <div className="rounded-lg border border-light p-10 shadow-secondary">
-                <Image className="rounded-md overflow-hidden" src={color.image} width={120} height={78} alt={color.name} layout="responsive" />
+                <Image className="rounded-md overflow-hidden" src={color.image} width={120} height={78} alt={color.name} layout="responsive" placeholder="blur" blurDataURL={shimmerUrl} />
                 <p className="text-warning text-center text-10 pt-10 mb-0">{color.name}</p>
                 <p className="text-light-400 text-center text-12 font-medium mb-0">{color.color}</p>
               </div>
@@ -73,7 +74,7 @@ export default function KitDesignDetailsSection({ design }: Props) {
         <div className="w-full lg:w-7/12 order-1 lg:order-2 pl-0 lg:pl-15">
           <div className="sticky top-0 pt-20">
             <div className="relative cursor-pointer" onClick={() => imagePreviewService.preview(design.normalImages[designImageIndex], design.name)}>
-              <Image className="rounded-lg overflow-hidden" src={design.normalImages[designImageIndex]} width={560} height={465} layout="responsive" alt={design.name} />
+              <Image className="rounded-lg overflow-hidden" src={design.normalImages[designImageIndex]} width={560} height={465} layout="responsive" alt={design.name} placeholder="blur" blurDataURL={shimmerUrl} />
               <Icon name="external_link" color="white" size={24} className="absolute bottom-20 right-20 cursor-pointer" />
             </div>
             <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-6 mt-20 gap-20">
@@ -83,7 +84,7 @@ export default function KitDesignDetailsSection({ design }: Props) {
                   className={"border-4 rounded-xl cursor-pointer overflow-hidden" + (designImageIndex === index ? " border-primary" : " border-white")}
                   onClick={() => setDesignImageIndex(index)}
                 >
-                  <Image src={designImage} width={91} height={82} layout="responsive" /></div>
+                  <Image src={designImage} width={91} height={82} layout="responsive" placeholder="blur" blurDataURL={shimmerUrl} /></div>
                 ))}
             </div>
 

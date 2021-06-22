@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { KitDesign } from '../../core/types';
 import Currency from '../ui-kit/misc/currency';
+import { shimmerUrl } from '../ui-kit/common/blur-image';
 
 interface Props {
   kitTypeId: string;
@@ -28,6 +29,8 @@ export default function KitDesignsListSection({ kitTypeId, kitSeriesId, kitTypeN
               height={336}
               alt={design.name}
               layout="responsive"
+              placeholder="blur"
+              blurDataURL={shimmerUrl}
             />
             <div className="flex justify-between items-center pt-10 pb-5">
               <div className="flex flex-col">
