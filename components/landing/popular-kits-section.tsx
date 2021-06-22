@@ -56,7 +56,7 @@ export function PopularKitsSection({ homepageType = HomePageType.Home }) {
       </Swiper>
     </div>
     <div className="flex justify-center mt-100">
-      <Link href="/kits"><button className="btn btn-warning btn-md">View Signature Kits</button></Link>
+      <Link href="/kits"><button className="btn btn-warning btn-lg">View Signature Kits</button></Link>
     </div>
   </section>);
 }

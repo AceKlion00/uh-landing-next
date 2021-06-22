@@ -54,7 +54,7 @@ export default function Home({ ideas }: Props) {
               <h1 className="text-40 mb-30 text-center lg:text-left font-normal">We make it Simple.</h1>
               <p className="text-18 mb-25 lg:max-w-390 text-center lg:text-left">Plan your project, find a contractor, and buy your materials - all with the help of the industry experts.</p>
               <div className="text-center lg:text-left">
-                <button className="btn btn-warning btn-md" onClick={consultationService.showConsultationDialog}>Schedule a Free Consultation </button>
+                <button className="btn btn-warning btn-lg" onClick={consultationService.showConsultationDialog}>Schedule a Free Consultation </button>
               </div>
             </div>
           </div>
@@ -62,14 +62,14 @@ export default function Home({ ideas }: Props) {
 
         <section className="my-90">
           <div className="container mx-auto">
-            <p className="px-0 xl:px-150 text-center text-24">Get started with a Hardscape Architect to design your patio, walkway, poolscape, retaining wall, or stair project - <span className="text-warning">for free.</span></p>
+            <p className="px-0 xl:px-150 text-center text-24 text-light-500">Get started with a Hardscape Architect to design your patio, walkway, poolscape, retaining wall, or stair project - <span className="text-warning">for free.</span></p>
           </div>
         </section>
 
         <section className="pb-80">
           <HowItWorksSection/>
           <div className="flex justify-center mt-70">
-            <button className="btn btn-warning btn-md" onClick={consultationService.showConsultationDialog}>Schedule A Free Consultation </button>
+            <button className="btn btn-warning btn-lg" onClick={consultationService.showConsultationDialog}>Schedule A Free Consultation </button>
           </div>
         </section>
 
