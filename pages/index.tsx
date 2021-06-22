@@ -40,7 +40,7 @@ export default function Home({ ideas }: Props) {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="flex items-center">
                   <div className="text-white">
-                    <h1 className="text-32 font-bold mb-20 text-center lg:text-left">This summer, get the yard<br className="hidden lg:inline-block"/> you've always dreamed of!</h1>
+                    <h1 className="text-32 font-bold mb-20 text-center lg:text-left">This summer, get the yard<br className="hidden lg:inline-block"/> you&apos;ve always dreamed of!</h1>
                     <p className="text-18 mb-50 text-center lg:text-left">Work with a Hardscape Architect<br className="hidden lg:inline-block"/> to redesign your yard - for free.</p>
                     <div className="text-center lg:text-left">
                       <button className="btn btn-warning btn-lg w-full sm:w-auto shadow-warning">Get Started</button>
@@ -69,7 +69,7 @@ export default function Home({ ideas }: Props) {
           <div className="container mx-auto text-center">
             <h4 className="text-32 text-primary max-w-700 mx-auto mb-30">Want to upgrade your outdoor space, but not sure where to get started? </h4>
             <div className="text-18 text-light-500">
-              <p className="mb-30">We've got you covered!</p>
+              <p className="mb-30">We&apos;ve got you covered!</p>
               <p className="mb-30"><b className="text-warning">We are like no other hardscape supplier around</b>, putting the homeowner first and the sale second.</p>
               <p>Just follow our simple online process</p>
             </div>

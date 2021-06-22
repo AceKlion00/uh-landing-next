@@ -34,8 +34,8 @@ export default function HowItWorks3DDesignStepsSection() {
   return (
     <section className="relative">
       <div className="absolute w-full h-full grid grid-cols-1 lg:grid-cols-2">
-        <div className="bg-secondary">{/* Empty Content */}</div>
-        <div className="hidden lg:block bg-light-50">{/* Empty Content */}</div>
+        <div className="bg-secondary" />
+        <div className="hidden lg:block bg-light-50" />
       </div>
       <div className="relative container mx-auto z-10 pt-60 pb-70">
         <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -52,19 +52,19 @@ export default function HowItWorks3DDesignStepsSection() {
                 <span className="rounded-full flex-none w-35 h-35 border-2 flex justify-center items-center mr-20">{stepNumber + 1}</span>
                 <div className="flex-1">
                   <div className="flex items-center">
-                    <p className="font-medium md:flex-none" dangerouslySetInnerHTML={{ __html: step.title }}>{/* InnerHTML rendering */}</p>
+                    <p className="font-medium md:flex-none" dangerouslySetInnerHTML={{ __html: step.title }} />
                     <span
                       className={
                         'hidden xl:block bg-white ml-30 transition-width duration-300 ease-in-out ' +
                         (currentStep === stepNumber ? 'border w-full' : 'w-0')
-                      }>{/* Empty Content */}</span>
+                      } />
                   </div>
                   <p
                     className={
                       'text-14 text-warning max-w-500 xl:max-w-380 2xl:max-w-500 pr-0 lg:pr-30 xl:pr-0  overflow-hidden transition-all duration-300 ease-in-out ' +
                       (currentStep === stepNumber ? 'mt-10 max-h-100' : 'max-h-0')
                     }
-                    dangerouslySetInnerHTML={{ __html: step.description }}>{/* InnerHTML rendering */}</p>
+                    dangerouslySetInnerHTML={{ __html: step.description }} />
                 </div>
               </div>
             ))}
