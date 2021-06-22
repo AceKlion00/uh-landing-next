@@ -8,8 +8,13 @@ interface Props {
 }
 
 export default function Icon({ name, color, size, className }: Props) {
-  const iconHtml = { __html: hardscapesIcons[name](size, color) };
-  return (<span className={ 'inline-block ' + className } dangerouslySetInnerHTML={ iconHtml }></span>);
+  let __html = '';
+  const icons = hardscapesIcons as any;
+  if (icons[name]) {
+    __html = icons[name](size, color);
+  }
+  const iconHtml = { __html };
+  return (<span className={ 'inline-block ' + className } dangerouslySetInnerHTML={iconHtml} />);
 }
 
 Icon.defaultProps = {

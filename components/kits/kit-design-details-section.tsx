@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import { KitDesign } from '../../core/types';
 import { useState } from 'react';
+import Currency from '../ui-kit/misc/currency';
+import Icon from '../ui-kit/icon';
+import useImagePreview from '../ui-kit/dialog/use-image-preview';
 
 interface Props {
   design: KitDesign;
@@ -26,9 +29,10 @@ function parseComponent(design: KitDesign): ComponentType[] {
 
 export default function KitDesignDetailsSection({ design }: Props) {
   const components = parseComponent(design);
+  const imagePreviewService = useImagePreview();
   const [designImageIndex, setDesignImageIndex] = useState<number>(0);
 
-  return (<section className="py-80">
+  return (<section id="details" className="py-80">
     <div className="container mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <h3 className="text-primary font-light mb-30 md:mb-0 text-32">{design.name}</h3>
@@ -68,7 +72,10 @@ export default function KitDesignDetailsSection({ design }: Props) {
 
         <div className="w-full lg:w-7/12 order-1 lg:order-2 pl-0 lg:pl-15">
           <div className="sticky top-0 pt-20">
-            <Image className="rounded-lg overflow-hidden" src={design.normalImages[designImageIndex]} width={560} height={465} layout="responsive" alt={design.name} />
+            <div className="relative cursor-pointer" onClick={() => imagePreviewService.preview(design.normalImages[designImageIndex], design.name)}>
+              <Image className="rounded-lg overflow-hidden" src={design.normalImages[designImageIndex]} width={560} height={465} layout="responsive" alt={design.name} />
+              <Icon name="external_link" color="white" size={24} className="absolute bottom-20 right-20 cursor-pointer" />
+            </div>
             <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-6 mt-20 gap-20">
               {design.thumbnailImages.map((designImage, index) => (
                 <div
@@ -81,7 +88,7 @@ export default function KitDesignDetailsSection({ design }: Props) {
             </div>
 
             <div className="mt-30 md:mt-50 flex flex-col md:flex-row justify-between items-center">
-              <p className="text-24 text-primary mb-20 md:mb-0">{design.price}</p>
+              <p className="text-24 text-primary mb-20 md:mb-0"><Currency value={design.price} /></p>
               <div className="mb-30 md:mb-0">
                 <button className="btn btn-primary btn-md mr-20">Customize Kit</button>
                 <button className="btn btn-warning btn-md">Buy Now</button>

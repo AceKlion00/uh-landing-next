@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { KitDesign } from '../../core/types';
+import Currency from '../ui-kit/misc/currency';
 
 interface Props {
   kitTypeId: string;
@@ -20,13 +21,20 @@ export default function KitDesignsListSection({ kitTypeId, kitSeriesId, kitTypeN
       <div className="grid grid-cols-1 md:grid-cols-2 gap-30">
         {kitDesigns.map((design, index) => (<Link href={`/kits/${kitTypeId}/${kitSeriesId}/${design.designId}`} key={index}>
           <div className={"border-4 bg0white rounded-lg p-10 mb-30 cursor-pointer shadow-secondary " + (design.designId === designId ? "border-primary" : "border-white")}>
-            <Image className="rounded-md overflow-hidden" src={design.coverImage} width={510} height={336} alt={design.name} layout="responsive" />
+            <Image
+              className="rounded-md overflow-hidden"
+              src={design.coverImage}
+              width={510}
+              height={336}
+              alt={design.name}
+              layout="responsive"
+            />
             <div className="flex justify-between items-center pt-10 pb-5">
               <div className="flex flex-col">
                 <span className="font-medium text-light-400 text-14">{kitTypeName}</span>
                 <span className="text-18">Kit #{design.name}</span>
               </div>
-              <span className="text-24 text-primary">{design.price}</span>
+              <span className="text-24 text-primary"><Currency value={design.price} /></span>
             </div>
           </div>
         </Link>))}
