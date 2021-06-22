@@ -2,13 +2,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 import { Layout } from '../components/layout/layout';
-import { PopularKitsSection } from '../components/landing/popular-kits-section';
-import { HowItWorksSection } from '../components/landing/how-it-works-section';
-import { WhyUhKitsSection } from '../components/landing/why-uh-kits-section';
 import { GallerySection } from '../components/landing/gallery-section';
 import { TestimonialSection } from '../components/landing/testimonial-section';
 import useConsultationService from '../core/app-services/consultation-service';
-import { Idea } from '../core/types';
+import { HomePageType, Idea } from '../core/types';
 import { doGet } from '../core/api-services/http';
 import JoinCustomerSection from '../components/landing/join-customer-section';
 import BlueOval from '../components/misc/blue-oval';
@@ -96,8 +93,8 @@ export default function Home({ ideas }: Props) {
           </div>
         </section>
         <TestimonialSection showDesignAvatar={true} />
-        <GallerySection initialIdeas={ideas} />
-        <JoinCustomerSection/>
+        <GallerySection initialIdeas={ideas} homepageType={HomePageType.Consultation} />
+        <JoinCustomerSection buttonLabel="Get Started Now" eventHandler={() => console.log('outside')}/>
       </Layout>
     </>
   );
