@@ -16,7 +16,7 @@ export default function ChangeKitSeriesSection({ kitTypeId, seriesId, kitSeries 
           <p className="text-14 text-warning-100 mb-0">Go to another series</p>
         </div>
         <div className="flex flex-col sm:flex-row">
-          {kitSeries.map((series, index) => (<Link href={`/kits/${kitTypeId}/${series.kitSeriesId}`} key={index} passHref>
+          {kitSeries.map((series, index) => (<Link href={`/kits/${kitTypeId}/${series.kitSeriesId}`} key={index}>
             <div className={"relative flex items-center px-20 py-15 border-light shadow secondary rounded-lg cursor-pointer text-center mb-30 sm:mb-0 mx-10" + (series.kitSeriesId === seriesId ? " bg-primary border-white text-white" : " bg-white border-primary")}>
               {series.name}
               {series.isBestSeller && <span className="-bottom-20 absolute text-12 text-primary w-full left-0">Best seller</span>}

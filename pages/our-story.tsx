@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 import { Layout } from '../components/layout/layout';
-import { shimmerUrl } from '../components/ui-kit/common/blur-image';
 
 export default function OurStory() {
 
@@ -32,12 +31,12 @@ export default function OurStory() {
             <div className="flex flex-col lg:flex-row">
               <div className="w-full lg:w-1/2 text-center lg:text-left">
                 <h2 className="text-45 text-secondary mb-60">Our Story</h2>
-                <p className="text-18 font-bold mb-15">Taking the &apos;Hard&apos; out of Hardscaping since 2005 <br className="hidden lg:block" />and loving every second of it.</p>
+                <p className="text-18 font-bold mb-15">Taking the 'Hard' out of Hardscaping since 2005 <br className="hidden lg:block" />and loving every second of it.</p>
                 <p className="text-18 text-light-400">Creating beautiful yards and functional solutions has been a passion of ours since the beginning and now more than ever we bring our passion for Hardscapes to life by providing homeowners a better way to plan, visualize and purchase materials for their projects.</p>
               </div>
               <div className="w-full lg:w-1/2 mt-20 lg:mt-0">
                 <div className="text-center lg:text-right">
-                  <Image src="/assets/images/landing-pages/our-story-page/about-mission.png" height={314} width={442} alt="background" placeholder="blur" blurDataURL={shimmerUrl} />
+                  <Image src="/assets/images/landing-pages/our-story-page/about-mission.png" height={314} width={442} alt="background" />
                 </div>
               </div>
             </div>
@@ -52,7 +51,7 @@ export default function OurStory() {
             <div className="grid md:grid-cols-5 overflow-hidden">
               {dreamImages.map((image, index) => {
                 return (<div key={index}>
-                  <Image src={image} width={1090} height={817} alt="dream-image" placeholder="blur" blurDataURL={shimmerUrl} />
+                  <Image src={image} width={1090} height={817} alt="dream-image" />
                 </div>);
               })}
             </div>
@@ -67,7 +66,7 @@ export default function OurStory() {
             <div className="grid md:grid-cols-4 overflow-hidden mb-60 rounded-2xl">
               {workStepImages.map((image, index) => {
                 return (<div key={index}>
-                  <Image src={image} width={273} height={165} layout="responsive" alt="work-step" placeholder="blur" blurDataURL={shimmerUrl} />
+                  <Image src={image} width={273} height={165} layout="responsive" alt="work-step" />
                 </div>);
               })}
             </div>

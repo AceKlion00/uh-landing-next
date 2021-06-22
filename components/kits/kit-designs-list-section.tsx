@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { KitDesign } from '../../core/types';
 import Currency from '../ui-kit/misc/currency';
-import { shimmerUrl } from '../ui-kit/common/blur-image';
 
 interface Props {
   kitTypeId: string;
@@ -20,7 +19,7 @@ export default function KitDesignsListSection({ kitTypeId, kitSeriesId, kitTypeN
         <button className="btn btn-warning btn-md shadow-warning mt-10 sm:mt-0">How To Choose The Right Kit</button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-30">
-        {kitDesigns.map((design, index) => (<Link href={`/kits/${kitTypeId}/${kitSeriesId}/${design.designId}`} key={index} passHref>
+        {kitDesigns.map((design, index) => (<Link href={`/kits/${kitTypeId}/${kitSeriesId}/${design.designId}`} key={index}>
           <div className={"border-4 bg0white rounded-lg p-10 mb-30 cursor-pointer shadow-secondary " + (design.designId === designId ? "border-primary" : "border-white")}>
             <Image
               className="rounded-md overflow-hidden"
@@ -29,8 +28,6 @@ export default function KitDesignsListSection({ kitTypeId, kitSeriesId, kitTypeN
               height={336}
               alt={design.name}
               layout="responsive"
-              placeholder="blur"
-              blurDataURL={shimmerUrl}
             />
             <div className="flex justify-between items-center pt-10 pb-5">
               <div className="flex flex-col">

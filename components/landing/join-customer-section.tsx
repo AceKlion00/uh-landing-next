@@ -10,7 +10,7 @@ export default function JoinCustomerSection({ buttonLabel }: Props) {
   return (<section className="relative">
     <div className="container mx-auto flex flex-col lg:flex-row justify-between z-10 relative py-80">
       <div className="w-full lg:w-2/3 text-white">
-        <h2 className="text-36 font-bold mb-5 text-center lg:text-left">Now it&apos;s your turn</h2>
+        <h2 className="text-36 font-bold mb-5 text-center lg:text-left">Now it's your turn</h2>
         <h2 className="text-36 font-bold mb-15 text-center lg:text-left">to build the yard of your dreams.</h2>
         <p className="text-18 mb-0 text-center lg:text-left">Join over 2,000 of our happy customers.</p>
       </div>
@@ -24,4 +24,4 @@ export default function JoinCustomerSection({ buttonLabel }: Props) {
 
 JoinCustomerSection.defaultProps = {
   buttonLabel: 'Schedule A Free Consultation',
-};
+}

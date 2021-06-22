@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { shimmerUrl } from '../common/blur-image';
 import Icon from '../icon';
 
 
@@ -17,7 +18,13 @@ export function ImagePreviewDialog({ src, alt, closeDialog }: Props) {
       </button>
     </div>
     <div className="absolute top-0 w-full h-full flex items-center">
-      <Image src={src} layout="fill" objectFit="cover" alt={alt} />
+      <Image
+        src={src}
+        layout="fill"
+        objectFit="cover"
+        alt={alt}
+        placeholder="blur"
+        blurDataURL={shimmerUrl}/>
     </div>
   </div>);
 }
