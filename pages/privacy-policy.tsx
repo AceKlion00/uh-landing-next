@@ -11,6 +11,7 @@ export default function PrivacyPolicy() {
       <Layout>
         <section className="py-90">
           <div className="container mx-auto text-light-500 text-16">
+            <h1 className="text-32 text-center text-secondary font-medium mb-40">United Hardscapes PRIVACY POLICY</h1>
             <p className="mb-15">This Privacy Policy explains how United Hardscapes Inc. (“United Hardscapes”) collects, uses, and discloses
               information about you through its website and services (collectively, the "Services") or when you otherwise
               interact with us.</p>
