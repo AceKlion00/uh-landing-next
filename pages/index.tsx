@@ -43,7 +43,7 @@ export default function Home({ ideas }: Props) {
                     <h1 className="text-32 font-bold mb-20 text-center lg:text-left">This summer, get the yard<br className="hidden lg:inline-block"/> you&apos;ve always dreamed of!</h1>
                     <p className="text-18 mb-50 text-center lg:text-left">Work with a Hardscape Architect<br className="hidden lg:inline-block"/> to redesign your yard - for free.</p>
                     <div className="text-center lg:text-left">
-                      <button className="btn btn-warning btn-lg w-full sm:w-auto shadow-warning">Get Started</button>
+                      <button className="btn btn-warning btn-lg btn-sm-block shadow-warning">Get Started</button>
                     </div>
                   </div>
                 </div>
