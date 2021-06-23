@@ -17,3 +17,11 @@ export interface ContactUs {
   sourceFoundUs: string;
   message: string;
 }
+
+export interface JoinSupplier {
+  firstName: string;
+  lastName: string;
+  companyName: string;
+  email: string;
+  phone: string;
+}

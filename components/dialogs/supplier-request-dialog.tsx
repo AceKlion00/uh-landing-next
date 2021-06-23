@@ -8,6 +8,7 @@ import { PhoneInput } from '../ui-kit/input/phone-input';
 import Spinner from '../ui-kit/common/spinner';
 import useAlert from '../ui-kit/dialog/use-alert';
 import Icon from '../ui-kit/icon';
+import { leadApiService } from '../../core/api-services/lead-api.service';
 
 interface Props {
   onClose: () => void,
@@ -37,7 +38,7 @@ export function SupplierRequestDialog({ onClose, closeDialog }: Props) {
     onSubmit: async values => {
       try {
         setIsLoading(true);
-        // TODO: call supplier request api
+        await leadApiService.joinSuppliers(values);
         alertService.alert(
           'Application Sent!',
           'Thank you for applying for the United Hardscapes Authorized Contractor Network! We will review your company\'s information and contact you within 48 hours with any additional questions.',

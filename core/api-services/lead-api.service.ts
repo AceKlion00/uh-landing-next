@@ -1,4 +1,4 @@
-import { ContactUs, RequestConsultation } from '../types';
+import { ContactUs, JoinSupplier, RequestConsultation } from '../types';
 import { doPost } from './http';
 
 export const leadApiService = {
@@ -7,5 +7,8 @@ export const leadApiService = {
   },
   contactUs: (body: ContactUs) => {
     return doPost('/contact', body);
+  },
+  joinSuppliers: (body: JoinSupplier) => {
+    return doPost('/join-as-supplier', body);
   }
 };
