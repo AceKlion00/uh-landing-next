@@ -16,7 +16,7 @@ export default function JoinCustomerSection({ buttonLabel, eventHandler }: Props
         <p className="text-18 font-medium mb-0 text-center lg:text-left">Join over 2,000 of our happy customers.</p>
       </div>
       <div className="w-full lg:w-1/3 flex justify-center items-center mt-20 lg:mt-0">
-        <button className="btn btn-warning btn-lg" onClick={() => eventHandler ? eventHandler() : consultationService.showConsultationDialog()}>{buttonLabel}</button>
+        <button className="btn btn-warning btn-lg btn-sm-block" onClick={() => eventHandler ? eventHandler() : consultationService.showConsultationDialog()}>{buttonLabel}</button>
       </div>
     </div>
     <Image src="/assets/images/components/landing/join-customer-section/banner-bg.jpg" layout="fill" objectFit="cover" alt="background" />

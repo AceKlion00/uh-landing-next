@@ -104,9 +104,9 @@ export function GallerySection({ initialIdeas, homepageType }: Props) {
           </div>
         </div>))}
       </div>
-      <div className="flex justify-center mt-30">
-        <button className="btn btn-primary btn-lg mr-20" onClick={() => loadIdeas(true)}>See more</button>
-        <Link href="/kits" passHref><button className="btn btn-warning btn-lg">View Our Signature Kits</button></Link>
+      <div className="btn-sm-block-group mt-30">
+        <button className="btn btn-primary btn-lg btn-sm-block" onClick={() => loadIdeas(true)}>See more</button>
+        <Link href="/kits" passHref><button className="btn btn-warning btn-lg btn-sm-block">View Our Signature Kits</button></Link>
       </div>
     </div>
   </section>);
