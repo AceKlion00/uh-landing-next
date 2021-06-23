@@ -69,7 +69,7 @@ export default function HowItWorks3DDesignStepsSection() {
               </div>
             ))}
             <div className="flex justify-center mt-35">
-              <button className="btn btn-warning btn-lg shadow-warning btn-sm-block">Get Started</button>
+              <button className="btn btn-warning btn-lg shadow-warning w-full md:w-auto">Get Started</button>
             </div>
           </div>
           <div className="hidden lg:block pl-30 xl:pl-0">

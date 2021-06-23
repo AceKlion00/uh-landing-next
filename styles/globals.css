@@ -48,18 +48,6 @@ html {
     @apply px-20 py-5 text-10 rounded-lg;
 }
 
-.btn-sm-block-group {
-    @apply flex flex-col sm:flex-row justify-center;
-}
-
-.btn-sm-block-group button:first-child {
-    @apply mb-20 sm:mb-0 mr-0 sm:mr-20;
-}
-
-.btn-sm-block {
-    @apply w-full sm:w-auto;
-}
-
 /* react modal transition animation */
 .ReactModal__Overlay {
     opacity: 0;
