@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import { Layout } from '../components/layout/layout';
 import { GallerySection } from '../components/landing/gallery-section';
 import { TestimonialSection } from '../components/landing/testimonial-section';
@@ -10,6 +11,7 @@ import JoinCustomerSection from '../components/landing/join-customer-section';
 import BlueOval from '../components/misc/blue-oval';
 import HowItWorks3DDesignStepsSection from '../components/landing/how-it-works-3d-design-steps-section';
 import { shimmerUrl } from '../components/ui-kit/common/blur-image';
+import useFreeDesignConsultationService from '../core/app-services/free-design-consultation-service';
 
 const carouselImages = [
   '/assets/images/landing-pages/home-page/carousel/house-with-patio.jpg',
@@ -23,6 +25,7 @@ interface Props {
 }
 
 export default function Home({ ideas }: Props) {
+  const freeDesignConsultationService = useFreeDesignConsultationService();
   return (
     <>
       <Head>
@@ -43,7 +46,7 @@ export default function Home({ ideas }: Props) {
                     <h1 className="text-32 font-bold mb-20 text-center lg:text-left">This summer, get the yard<br className="hidden lg:inline-block"/> you&apos;ve always dreamed of!</h1>
                     <p className="text-18 mb-50 text-center lg:text-left">Work with a Hardscape Architect<br className="hidden lg:inline-block"/> to redesign your yard - for free.</p>
                     <div className="text-center lg:text-left">
-                      <button className="btn btn-warning btn-lg btn-sm-block shadow-warning">Get Started</button>
+                      <button className="btn btn-warning btn-lg btn-sm-block shadow-warning" onClick={freeDesignConsultationService.showFreeDesignConsultationDialog}>Get Started</button>
                     </div>
                   </div>
                 </div>
