@@ -11,6 +11,8 @@ import { CustomDesignRequestSection } from '../../components/landing/custom-desi
 import useImagePreview from '../../components/ui-kit/dialog/use-image-preview';
 import { shimmerUrl } from '../../components/ui-kit/common/blur-image';
 import Icon from '../../components/ui-kit/icon';
+import useConsultationService from '../../core/app-services/consultation-service';
+import smoothScrollTo from '../../components/ui-kit/services/smooth-scroll-to';
 
 interface Props {
   kits: KitType[];
@@ -18,6 +20,7 @@ interface Props {
 
 export default function Kits({ kits }: Props) {
   const imagePreviewService = useImagePreview();
+  const consultationService = useConsultationService();
   const [seriesSelection, setSeriesSelection] = useState(kits.map(kit => {
     const index = kit.kitSeries.findIndex(k => k.isBestSeller);
     return Math.max(index, 0);
@@ -46,9 +49,9 @@ export default function Kits({ kits }: Props) {
               <div className="pt-70 lg:pt-120 pb-50 lg:pb-110 text-center lg:text-left text-white">
                 <h2 className="mb-20 font-normal text-45">Find your perfect<br/>Hardscape Kit</h2>
                 <p className="text-18 mb-40 pr-0 lg:pr-100">The easiest way to design, purchase and enjoy your new Hardscape project</p>
-                <div className="flex flex-col lg:flex-row justify-center lg:justify-start px-20">
-                  <button className="btn btn-warning btn-lg shadow-warning">Find My Perfect Kit</button>
-                  <button className="btn btn-primary btn-lg shadow-primary ml-0 lg:ml-15 mt-15 lg:mt-0">Free Consultation</button>
+                <div className="btn-sm-block-group">
+                  <button className="btn btn-warning btn-lg shadow-warning" onClick={() => smoothScrollTo('kits', 300)}>Find My Perfect Kit</button>
+                  <button className="btn btn-primary btn-lg shadow-primary" onClick={consultationService.showConsultationDialog}>Free Consultation</button>
                 </div>
               </div>
               <div className="relative">
@@ -62,7 +65,7 @@ export default function Kits({ kits }: Props) {
 
         <section>
           <div className="bg-light-50 pt-110 pb-30">
-            <div className="container mx-auto">
+            <div id="kits" className="container mx-auto">
               <h3 className="text-primary text-center font-light text-32">Hardscaping Simplified &trade;</h3>
               <p className="text-center text-light-500 px-0 lg:px-150 mt-35 mb-0 text-18">United Hardscapes is the Hardscape Kit company that offers a large selection of unique patio, walkway, and retaining wall kits that are both <b>Do It Yourself and contractor friendly</b>. It is simple, just choose a kit, select your materials and enjoy the outdoors.</p>
             </div>

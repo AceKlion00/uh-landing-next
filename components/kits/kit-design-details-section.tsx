@@ -5,6 +5,8 @@ import Currency from '../ui-kit/misc/currency';
 import Icon from '../ui-kit/icon';
 import useImagePreview from '../ui-kit/dialog/use-image-preview';
 import { shimmerUrl } from '../ui-kit/common/blur-image';
+import smoothScrollTo from '../ui-kit/services/smooth-scroll-to';
+import useBuyKitService from '../../core/app-services/buy-kit-service';
 
 interface Props {
   design: KitDesign;
@@ -31,13 +33,14 @@ function parseComponent(design: KitDesign): ComponentType[] {
 export default function KitDesignDetailsSection({ design }: Props) {
   const components = parseComponent(design);
   const imagePreviewService = useImagePreview();
+  const buyKitService = useBuyKitService();
   const [designImageIndex, setDesignImageIndex] = useState<number>(0);
 
   return (<section id="details" className="py-80">
     <div className="container mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <h3 className="text-primary font-light mb-30 md:mb-0 text-32">{design.name}</h3>
-        <button className="btn btn-primary btn-mini">Choose another design</button>
+        <button className="btn btn-primary shadow-primary btn-mini btn-sm-block" onClick={() => smoothScrollTo('kits', 300)}>Choose another design</button>
       </div>
 
       <div className="flex flex-col lg:flex-row mt-40">
@@ -90,9 +93,11 @@ export default function KitDesignDetailsSection({ design }: Props) {
 
             <div className="mt-30 md:mt-50 flex flex-col md:flex-row justify-between items-center">
               <p className="text-24 text-primary mb-20 md:mb-0"><Currency value={design.price} /></p>
-              <div className="mb-30 md:mb-0">
-                <button className="btn btn-primary btn-md mr-20">Customize Kit</button>
-                <button className="btn btn-warning btn-md">Buy Now</button>
+              <div className="w-full md:w-auto btn-sm-block-group mb-30 md:mb-0">
+                <button className="hidden btn btn-primary btn-md mr-20" onClick={() => {
+                  // TODO: navigate to customize kit section
+                }}>Customize Kit</button>
+                <button className="btn btn-warning btn-md" onClick={() => buyKitService.buy(design.name)}>Buy Now</button>
               </div>
             </div>
           </div>

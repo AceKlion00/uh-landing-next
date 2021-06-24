@@ -49,7 +49,7 @@ html {
 }
 
 .btn-sm-block-group {
-    @apply flex flex-col sm:flex-row justify-center;
+    @apply flex flex-col sm:flex-row;
 }
 
 .btn-sm-block-group button:first-child {
