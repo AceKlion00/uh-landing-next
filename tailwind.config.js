@@ -81,11 +81,15 @@ module.exports = {
       ...range(minSpacingPixel, maxSpacingPixel, spacingPixelIncrement).reduce((merged, f) => ({ ...merged, [f]: `${f}px` }), {})
     },
     maxWidth: {
-      ...range(minSpacingPixel, maxSpacingPixel, spacingPixelIncrement).reduce((merged, f) => ({ ...merged, [f]: `${f}px` }), {}),
-      ...vhs.reduce((merged, vh) => ({ ...merged, [vh]: vh }), {})
+      ...range(minSpacingPixel, maxSpacingPixel, spacingPixelIncrement).reduce((merged, f) => ({ ...merged, [f]: `${f}px` }), {})
     },
     minWidth: {
-      ...range(minSpacingPixel, maxSpacingPixel, spacingPixelIncrement).reduce((merged, f) => ({ ...merged, [f]: `${f}px` }), {}),
+      ...range(minSpacingPixel, maxSpacingPixel, spacingPixelIncrement).reduce((merged, f) => ({ ...merged, [f]: `${f}px` }), {})
+    },
+    maxHeight: {
+      ...vhs.reduce((merged, vh) => ({ ...merged, [vh]: vh }), {})
+    },
+    minHeight: {
       ...vhs.reduce((merged, vh) => ({ ...merged, [vh]: vh }), {})
     },
     fontFamily: {
