@@ -38,7 +38,7 @@ export default function KitDesignDetailsSection({ design }: Props) {
     <div className="container mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <h3 className="text-primary font-light mb-30 md:mb-0 text-32">{design.name}</h3>
-        <button className="btn btn-primary btn-mini" onClick={() => smoothScrollTo('kits', 300)}>Choose another design</button>
+        <button className="btn btn-primary shadow-primary btn-mini btn-sm-block" onClick={() => smoothScrollTo('kits', 300)}>Choose another design</button>
       </div>
 
       <div className="flex flex-col lg:flex-row mt-40">
@@ -91,7 +91,7 @@ export default function KitDesignDetailsSection({ design }: Props) {
 
             <div className="mt-30 md:mt-50 flex flex-col md:flex-row justify-between items-center">
               <p className="text-24 text-primary mb-20 md:mb-0"><Currency value={design.price} /></p>
-              <div className="mb-30 md:mb-0">
+              <div className="w-full md:w-auto btn-sm-block-group mb-30 md:mb-0">
                 <button className="hidden btn btn-primary btn-md mr-20" onClick={() => {
                   // TODO: navigate to customize kit section
                 }}>Customize Kit</button>

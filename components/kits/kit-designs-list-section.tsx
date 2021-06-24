@@ -20,7 +20,7 @@ export default function KitDesignsListSection({ kitTypeId, kitSeriesId, kitTypeN
     <div className="container mx-auto">
       <div className="block md:flex justify-between items-center text-center mb-50">
         <h3 className="text-primary font-light text-32">Choose your kit design</h3>
-        <button className="btn btn-warning btn-md shadow-warning mt-10 sm:mt-0" onClick={chooseKitTipDialogService.showChooseKitTipDialog}>How To Choose The Right Kit</button>
+        <button className="btn btn-warning btn-mini shadow-warning btn-sm-block mt-20 sm:mt-0" onClick={chooseKitTipDialogService.showChooseKitTipDialog}>How To Choose The Right Kit</button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-30">
         {kitDesigns.map((design, index) => (<Link href={`/kits/${kitTypeId}/${kitSeriesId}/${design.designId}`} key={index} passHref>

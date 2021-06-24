@@ -49,9 +49,9 @@ export default function Kits({ kits }: Props) {
               <div className="pt-70 lg:pt-120 pb-50 lg:pb-110 text-center lg:text-left text-white">
                 <h2 className="mb-20 font-normal text-45">Find your perfect<br/>Hardscape Kit</h2>
                 <p className="text-18 mb-40 pr-0 lg:pr-100">The easiest way to design, purchase and enjoy your new Hardscape project</p>
-                <div className="flex flex-col lg:flex-row justify-center lg:justify-start px-20">
+                <div className="btn-sm-block-group">
                   <button className="btn btn-warning btn-lg shadow-warning" onClick={() => smoothScrollTo('kits', 300)}>Find My Perfect Kit</button>
-                  <button className="btn btn-primary btn-lg shadow-primary ml-0 lg:ml-15 mt-15 lg:mt-0" onClick={consultationService.showConsultationDialog}>Free Consultation</button>
+                  <button className="btn btn-primary btn-lg shadow-primary" onClick={consultationService.showConsultationDialog}>Free Consultation</button>
                 </div>
               </div>
               <div className="relative">

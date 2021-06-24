@@ -18,9 +18,9 @@ export default function KitsJumbotronSection({ kitTypeName, kitSeriesName, serie
         <div className="pt-20 lg:pt-80 xl:pt-120 pb-50 lg:pb-60 xl:pb-100 text-center lg:text-left text-white">
           <h3 className="mb-20 font-normal text-32">{kitTypeName}<br />{kitSeriesName}</h3>
           <p className="text-14">{seriesComment}</p>
-          <div className="block sm:flex justify-center lg:justify-start mt-50">
-            <button className="btn btn-warning btn-md shadow-warning" onClick={() => smoothScrollTo('kits', 300)}>Choose your kit design</button>
-            <button className="btn btn-primary btn-md shadow-primary sm:ml-20 mt-10 sm:mt-0" onClick={consultationService.showConsultationDialog}>Free Consultation</button>
+          <div className="btn-sm-block-group mt-50">
+            <button className="btn btn-warning btn-lg shadow-warning" onClick={() => smoothScrollTo('kits', 300)}>Choose your kit design</button>
+            <button className="btn btn-primary btn-lg shadow-primary" onClick={consultationService.showConsultationDialog}>Free Consultation</button>
           </div>
         </div>
         <div className="relative">
