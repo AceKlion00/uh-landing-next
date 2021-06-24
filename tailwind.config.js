@@ -10,6 +10,8 @@ const minSpacingPixel = 0;
 const maxSpacingPixel = 1200;
 const spacingPixelIncrement = 5;
 
+const vhs = ['10vh', '20vh', '30vh', '40vh', '50vh', '60vh', '70vh', '80vh', '90vh', '100vh'];
+
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
@@ -83,6 +85,14 @@ module.exports = {
     },
     minWidth: {
       ...range(minSpacingPixel, maxSpacingPixel, spacingPixelIncrement).reduce((merged, f) => ({ ...merged, [f]: `${f}px` }), {})
+    },
+    maxHeight: {
+      ...range(minSpacingPixel, maxSpacingPixel, spacingPixelIncrement).reduce((merged, f) => ({ ...merged, [f]: `${f}px` }), {}),
+      ...vhs.reduce((merged, vh) => ({ ...merged, [vh]: vh }), {})
+    },
+    minHeight: {
+      ...range(minSpacingPixel, maxSpacingPixel, spacingPixelIncrement).reduce((merged, f) => ({ ...merged, [f]: `${f}px` }), {}),
+      ...vhs.reduce((merged, vh) => ({ ...merged, [vh]: vh }), {})
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],

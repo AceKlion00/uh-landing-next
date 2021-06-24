@@ -5,11 +5,10 @@ interface Props {
   name: string;
   label: string;
   value: boolean;
-  readonly?: boolean;
   onChange: (v: any) => void;
 }
 
-export function CheckBox({ id, name, label, value, onChange, readonly }: Props) {
+export function CheckBox({ id, name, label, value, onChange }: Props) {
   return (<label className="flex items-center cursor-pointer relative">
     <input
       id={id || name}
@@ -17,7 +16,6 @@ export function CheckBox({ id, name, label, value, onChange, readonly }: Props) 
       type="checkbox"
       value={String(value)}
       onChange={onChange}
-      readOnly={readonly}
       className="opacity-0"
     />
     <span className={"w-15 h-15 bg-white absolute left-0" + (value ? " border-primary bg-primary" : " border-2 border-light-400")} />
@@ -31,5 +29,4 @@ CheckBox.defaultProps = {
   label: '',
   value: false,
   onChange: noop,
-  readonly: false,
 };

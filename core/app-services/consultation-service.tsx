@@ -10,7 +10,7 @@ export default function useConsultationService(): ConsultationService {
 
   const showConsultationDialog = () => {
     dialog.openDialog(<ScheduleConsultationDialog/>);
-  };
+  }
 
   return { showConsultationDialog };
 }

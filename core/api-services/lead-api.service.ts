@@ -1,5 +1,6 @@
-import { BuyKit, ContactUs, JoinSupplier, RequestConsultation } from '../types';
+import { ContactUs, JoinSupplier, RequestConsultation } from '../types';
 import { doPost } from './http';
+import { FreeDesignConsultationForm } from '../../components/dialogs/free-design-consultation-form/type';
 
 export const leadApiService = {
   requestConsultation: (body: RequestConsultation) => {
@@ -11,7 +12,7 @@ export const leadApiService = {
   joinSuppliers: (body: JoinSupplier) => {
     return doPost('/join-as-supplier', body);
   },
-  buyKit: (body: BuyKit) => {
-    return doPost('/buy-kit', body);
+  requestFreeDesignConsultation: (body: FreeDesignConsultationForm) => {
+    return doPost('/tell-about-project', body);
   }
 };

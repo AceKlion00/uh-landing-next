@@ -1,4 +1,4 @@
-import { HomePageType, Workflow } from '../types';
+import { HomePageType, ProjectAccessoryType, Workflow } from '../types';
 
 export const homeContent = {
   kitSeries: [
@@ -79,3 +79,36 @@ export const galleryDescription = {
   [HomePageType.Home] : 'Get inspired with the photos of our clients\' completed projects.',
   [HomePageType.Consultation]: 'Get inspired with hundreds of completed projects, view photos, get ideas and customize your project.'
 };
+
+export const accessoryTypes = [
+  {
+    image: 'https://assets.unitedhardscapes.com/accessory-types/steps.png',
+    value: ProjectAccessoryType.Steps,
+    label: 'Steps'
+  },
+  {
+    image: 'https://assets.unitedhardscapes.com/accessory-types/fire-pit.png',
+    value: ProjectAccessoryType.FirePit,
+    label: 'Fire Pit'
+  },
+  {
+    image: 'https://assets.unitedhardscapes.com/accessory-types/sitting-wall.png',
+    value: ProjectAccessoryType.SittingWall,
+    label: 'Sitting wall'
+  },
+  {
+    image: 'https://assets.unitedhardscapes.com/accessory-types/pillars.png',
+    value: ProjectAccessoryType.Pillars,
+    label: 'Pillars'
+  },
+  {
+    image: 'https://assets.unitedhardscapes.com/accessory-types/lighting.png',
+    value: ProjectAccessoryType.Lighting,
+    label: 'Lighting'
+  },
+  {
+    image: 'https://assets.unitedhardscapes.com/accessory-types/other.png',
+    value: ProjectAccessoryType.Other,
+    label: 'Other'
+  },
+];
