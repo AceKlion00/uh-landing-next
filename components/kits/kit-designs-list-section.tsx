@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function KitDesignsListSection({ kitTypeId, kitSeriesId, kitTypeName, kitDesigns, designId }: Props) {
-  return (<section className="pt-110 pb-80 bg-light-50">
+  return (<section id="kits" className="pt-110 pb-80 bg-light-50">
     <div className="container mx-auto">
       <div className="block md:flex justify-between items-center text-center mb-50">
         <h3 className="text-primary font-light text-32">Choose your kit design</h3>
