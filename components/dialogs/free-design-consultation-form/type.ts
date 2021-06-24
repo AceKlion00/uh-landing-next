@@ -16,7 +16,7 @@ export interface FreeDesignConsultationForm {
   longitude?: number;
   accessories: ProjectAccessoryType[];
   projectLocation: ProjectLocationType;
-  projectType: any;
+  projectType: string;
   projectComment: string;
   yardComment: string;
   attachments: string[];

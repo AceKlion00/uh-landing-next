@@ -58,15 +58,17 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
     }
   }
 
-  return (<div className="max-w-500 py-20 mx-15 md:mx-0">
-    <div className="flex justify-end">
-      <button className="px-25 pt-5" onClick={() => { onClose(); closeDialog(); }}><Icon name="close" color="#2c2c2c" size={14} /></button>
+  return (
+    <div className="max-w-500 py-20 mx-15 md:mx-0">
+      <div className="flex justify-end">
+        <button className="px-25 pt-5" onClick={() => { onClose(); closeDialog(); }}><Icon name="close" color="#2c2c2c" size={14} /></button>
+      </div>
+      {step === FreeDesignConsultationStep.PersonalInformation && <PersonalInformationForm next={next} consultationValue={consultationValue}/>}
+      {step === FreeDesignConsultationStep.ProjectBrief && <ProjectBriefForm next={next} consultationValue={consultationValue}/>}
+      {step === FreeDesignConsultationStep.ProjectSummary && <ProjectSummaryForm next={next} consultationValue={consultationValue}/>}
+      <Spinner isLoading={loading} />
     </div>
-    {step === FreeDesignConsultationStep.PersonalInformation && <PersonalInformationForm next={next} consultationValue={consultationValue}/>}
-    {step === FreeDesignConsultationStep.ProjectBrief && <ProjectBriefForm next={next} consultationValue={consultationValue}/>}
-    {step === FreeDesignConsultationStep.ProjectSummary && <ProjectSummaryForm next={next} consultationValue={consultationValue}/>}
-    <Spinner isLoading={loading} />
-  </div>);
+  );
 }
 
 FreeDesignConsultationDialog.defaultProps = {

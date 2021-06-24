@@ -5,6 +5,7 @@ import { Input } from '../../ui-kit/input/input';
 import { PhoneInput } from '../../ui-kit/input/phone-input';
 import { AddressInput } from '../../ui-kit/input/address-input';
 import { FreeDesignConsultationForm } from './type';
+import { noop } from '../../../core/types';
 
 interface Props {
   consultationValue: FreeDesignConsultationForm,
@@ -36,28 +37,34 @@ export function PersonalInformationForm({ consultationValue, next }: Props) {
       next(values);
     }
   });
-  return (<div>
-    <h5 className="text-primary text-center text-22 font-medium mt-20 px-0 md:px-50">Tell us about yourself</h5>
-    <form className="mx-auto mt-30" onSubmit={form.handleSubmit}>
-      <div className="pretty-scroll max-h-70vh overflow-y-auto px-20">
-        <Input name="firstName" label="First Name" placeholder="John" value={form.values.firstName} onChange={form.handleChange} />
-        <Input name="lastName" label="Last Name" placeholder="Doe" value={form.values.lastName} onChange={form.handleChange} />
-        <PhoneInput name="phone" label="Phone Number" placeholder="(123) 456 7890" value={form.values.phone} onChange={form.handleChange} />
-        <Input name="email" label="Email Address" placeholder="someone@example.com" value={form.values.email} onChange={form.handleChange} />
-        <AddressInput
-          name="address"
-          label="Address (at least city/town)"
-          placeholder="Select your address"
-          value={form.values.address}
-          onChange={form.handleChange}
-          onLatLngChange={(latitude, longitude) => {
-            form.setFieldValue('latitude', latitude);
-            form.setFieldValue('longitude', longitude);
-          }} />
-      </div>
-      <div className="flex justify-center py-10">
-        <button className="btn btn-warning btn-md px-30" disabled={!(form.isValid && form.dirty)}>Next</button>
-      </div>
-    </form>
-  </div>);
+  return (
+    <div>
+      <h5 className="text-primary text-center text-22 font-medium mt-20 px-0 md:px-50">Tell us about yourself</h5>
+      <form className="mt-30" onSubmit={form.handleSubmit}>
+        <div className="pretty-scroll max-h-70vh overflow-y-auto px-20">
+          <Input name="firstName" label="First Name" placeholder="John" value={form.values.firstName} onChange={form.handleChange} />
+          <Input name="lastName" label="Last Name" placeholder="Doe" value={form.values.lastName} onChange={form.handleChange} />
+          <PhoneInput name="phone" label="Phone Number" placeholder="(123) 456 7890" value={form.values.phone} onChange={form.handleChange} />
+          <Input name="email" label="Email Address" placeholder="someone@example.com" value={form.values.email} onChange={form.handleChange} />
+          <AddressInput
+            name="address"
+            label="Address (at least city/town)"
+            placeholder="Select your address"
+            value={form.values.address}
+            onChange={form.handleChange}
+            onLatLngChange={(latitude, longitude) => {
+              form.setFieldValue('latitude', latitude);
+              form.setFieldValue('longitude', longitude);
+            }} />
+        </div>
+        <div className="flex justify-center py-10">
+          <button className="btn btn-warning btn-md btn-sm-block px-30" disabled={!(form.isValid && form.dirty)}>Next</button>
+        </div>
+      </form>
+    </div>
+  );
+}
+
+PersonalInformationForm.defaultProps = {
+  next: noop
 }
