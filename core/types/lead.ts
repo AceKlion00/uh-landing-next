@@ -25,13 +25,3 @@ export interface JoinSupplier {
   email: string;
   phone: string;
 }
-
-export interface BuyKit {
-  kitName: string;
-  fullName: string;
-  email: string;
-  phone: string;
-  address: string;
-  latitude: number;
-  longitude: number;
-}

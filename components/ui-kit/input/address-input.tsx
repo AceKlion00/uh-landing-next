@@ -7,12 +7,11 @@ interface Props {
   label: string;
   placeholder: string;
   value: string;
-  readonly?: boolean;
   onChange: (v: any) => void;
   onLatLngChange: (latitude: number, longitude: number) => void;
 }
 
-export function AddressInput({ id, name, label, placeholder, value, onChange, onLatLngChange, readonly }: Props) {
+export function AddressInput({ id, name, label, placeholder, value, onChange, onLatLngChange }: Props) {
   const { ref } = usePlacesWidget<HTMLInputElement>({
     apiKey: process.env.googleApiKey,
     options: {
@@ -38,7 +37,6 @@ export function AddressInput({ id, name, label, placeholder, value, onChange, on
         value={value}
         className="w-full text-12 leading-7 focus:outline-none"
         onChange={onChange}
-        readOnly={readonly}
       />
     </label>
   </div>);
@@ -51,5 +49,4 @@ AddressInput.defaultProps = {
   placeholder: '',
   onChange: noop,
   onLatLngChange: noop,
-  readonly: false,
 };
