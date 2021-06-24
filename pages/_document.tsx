@@ -10,14 +10,14 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+          <FacebookPixel />
+          <GoogleAnalytics />
+          <GoogleAds />
+          <MouseFlow />
         </Head>
         <body>
         <Main />
         <NextScript />
-        <FacebookPixel />
-        <GoogleAnalytics />
-        <GoogleAds />
-        <MouseFlow />
         </body>
       </Html>
     );
