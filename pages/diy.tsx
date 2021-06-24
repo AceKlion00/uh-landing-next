@@ -63,7 +63,7 @@ export default function DIY() {
             <h3 className="text-32 text-primary text-center mb-5">FAQs</h3>
             <div className="max-w-865 mx-auto rounded-2xl border border-b-0 border-light overflow-hidden mb-50">
               {FAQS[FAQCategory.DIYInstallation].map((item: { title: string, content: string }, index: number) => (
-                <Accordion content={item.content} name={item.title} />
+                <Accordion content={item.content} name={item.title} key={index} />
               ))}
             </div>
             <div className="flex justify-center">
