@@ -9,6 +9,7 @@ import { enumToOptions } from '../../ui-kit/utils';
 import { accessoryTypes } from '../../../core/data/home';
 import { TextArea } from '../../ui-kit/input/textarea';
 import { ImageCardSelector } from '../../ui-kit/input/image-card-selector';
+import Tooltip from '../../ui-kit/misc/tooltip';
 
 interface Props {
   consultationValue: FreeDesignConsultationForm,
@@ -22,7 +23,7 @@ export function ProjectBriefForm({ consultationValue, next }: Props) {
   const schema = Yup.object().shape({
     projectType: Yup.string().required('Required'),
     projectLocation: Yup.string().required('Required'),
-    accessories: Yup.string().required('Required'),
+    accessories: Yup.array().required('Required'),
     projectComment: Yup.string().required('Required')
   });
   const form = useFormik({
@@ -37,20 +38,21 @@ export function ProjectBriefForm({ consultationValue, next }: Props) {
       next(values);
     }
   });
-  return (<div className="pretty-scroll">
+  return (<div>
     <h5 className="text-primary text-center text-22 font-medium mt-20 px-0 md:px-50">Tell us about your project</h5>
     <form className="mx-auto mt-30" onSubmit={form.handleSubmit}>
-      <DropdownSelect name="projectType" options={projectAccessoryTypes} label="Project Type" placeholder="Patio" value={form.values.projectType} onChange={form.handleChange} />
-      <DropdownSelect name="projectLocation" options={projectLocationTypes} label="Areas of focus (Eg: Front/Back)" placeholder="Backyard" value={form.values.projectLocation} onChange={form.handleChange} />
-      <div className="relative">
-        <p className="text-center">Select what will be included in your hardscaping project</p>
-        // TODO: Information tooltip missed
+      <div className="pretty-scroll max-h-70vh overflow-y-auto">
+        <DropdownSelect name="projectType" options={projectAccessoryTypes} label="Project Type" placeholder="Patio" value={form.values.projectType} onChange={form.handleChange} />
+        <DropdownSelect name="projectLocation" options={projectLocationTypes} label="Areas of focus (Eg: Front/Back)" placeholder="Backyard" value={form.values.projectLocation} onChange={form.handleChange} />
+        <div className="relative flex justify-between items-center overflow-hidden">
+          <p className="text-center">Select what will be included in your hardscaping project</p>
+          <Tooltip content={''} />
+        </div>
+        <ImageCardSelector name="accessories" value={form.values.accessories} options={accessoryTypes} onChange={form.handleChange}/>
+        <TextArea name="projectComment" label="Tell us about your dream project" rows={4} value={form.values.projectComment} onChange={form.handleChange} />
       </div>
-      <ImageCardSelector name="accessories" options={accessoryTypes} onChange={form.handleChange}/>
-      <TextArea name="projectComment" label="Tell us about your dream project" rows={4} value={form.values.projectComment} onChange={form.handleChange} />
-
-      <div className="flex justify-center">
-        <button className="btn btn-warning btn-md" disabled={!(form.isValid && form.dirty)}>Next</button>
+      <div className="flex justify-center py-10">
+        <button className="btn btn-warning btn-md px-30" disabled={!(form.isValid && form.dirty)}>Next</button>
       </div>
     </form>
   </div>);

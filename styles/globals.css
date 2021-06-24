@@ -117,3 +117,18 @@ html {
         stroke-dashoffset: -124;
     }
 }
+
+/* tooltip */
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.has-tooltip:hover .tooltip {
+    visibility: visible;
+    z-index: 100;
+}

@@ -43,7 +43,8 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
     if (step === FreeDesignConsultationStep.ProjectSummary) {
       try {
         setLoading(true);
-        await leadApiService.requestFreeDesignConsultation(values);
+        console.log('result = ', _consultationValue);
+        await leadApiService.requestFreeDesignConsultation(_consultationValue);
         alertService.alert('Thank You!', 'One of our Hardscape Consultants will be in touch soon to schedule the consultation.', 'View Our Signature Kits')
           .then(() => {
             closeDialog();
@@ -70,7 +71,7 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
     }
   }
 
-  return (<div className="w-410 p-20">
+  return (<div className="w-510 p-20">
     <div className="flex justify-end">
       <button className="px-5 pt-5" onClick={() => { onClose(); closeDialog(); }}><Icon name="close" color="#2c2c2c" size={14} /></button>
     </div>
