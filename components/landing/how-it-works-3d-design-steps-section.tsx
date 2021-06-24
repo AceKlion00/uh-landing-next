@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
+import useFreeDesignConsultationService from '../../core/app-services/free-design-consultation-service';
+
 const steps = [
   {
     title: 'Tell us about your project',
@@ -30,6 +32,7 @@ const steps = [
 ];
 
 export default function HowItWorks3DDesignStepsSection() {
+  const freeDesignConsultationService = useFreeDesignConsultationService();
   const [currentStep, setCurrentStep] = useState(0);
   return (
     <section className="relative">
@@ -69,7 +72,7 @@ export default function HowItWorks3DDesignStepsSection() {
               </div>
             ))}
             <div className="flex justify-center mt-35">
-              <button className="btn btn-warning btn-lg shadow-warning btn-sm-block">Get Started</button>
+              <button className="btn btn-warning btn-lg shadow-warning btn-sm-block" onClick={freeDesignConsultationService.showFreeDesignConsultationDialog}>Get Started</button>
             </div>
           </div>
           <div className="hidden lg:block pl-30 xl:pl-0">

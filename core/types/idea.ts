@@ -20,6 +20,14 @@ export enum ProjectAccessoryType {
   Other = 'OTHER'
 }
 
+export enum ProjectLocationType {
+  FrontYard = "FRONT_YARD",
+  BackYard = "BACK_YARD",
+  SideYard = "SIDE_YARD",
+  PartOfPatioDesign = "PART_OF_PATIO_DESIGN",
+  Other = "OTHER"
+}
+
 export enum MaterialType {
   Pavers = 'PAVERS',
   NaturalStone = 'NATURAL_STONE',
