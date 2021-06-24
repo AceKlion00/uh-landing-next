@@ -9,7 +9,6 @@ import { enumToOptions } from '../../ui-kit/utils';
 import { accessoryTypes } from '../../../core/data/home';
 import { TextArea } from '../../ui-kit/input/textarea';
 import { ImageCardSelector } from '../../ui-kit/input/image-card-selector';
-import Tooltip from '../../ui-kit/misc/tooltip';
 
 interface Props {
   consultationValue: FreeDesignConsultationForm,
@@ -44,9 +43,8 @@ export function ProjectBriefForm({ consultationValue, next }: Props) {
       <div className="pretty-scroll max-h-70vh overflow-y-auto px-20">
         <DropdownSelect name="projectType" options={projectAccessoryTypes} label="Project Type" placeholder="Patio" value={form.values.projectType} onChange={form.handleChange} />
         <DropdownSelect name="projectLocation" options={projectLocationTypes} label="Areas of focus (Eg: Front/Back)" placeholder="Backyard" value={form.values.projectLocation} onChange={form.handleChange} />
-        <div className="relative flex justify-between items-center overflow-hidden">
-          <p className="text-center">Select what will be included in your hardscaping project</p>
-          <Tooltip content={''} />
+        <div className="flex justify-center items-center">
+          <p className="text-center my-10">Select what will be included in your hardscaping project</p>
         </div>
         <ImageCardSelector name="accessories" value={form.values.accessories} options={accessoryTypes} onChange={form.handleChange}/>
         <TextArea name="projectComment" label="Tell us about your dream project" rows={4} value={form.values.projectComment} onChange={form.handleChange} />
