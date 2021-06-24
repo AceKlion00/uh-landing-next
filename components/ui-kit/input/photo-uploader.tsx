@@ -52,6 +52,7 @@ export function PhotoUploader({ id, name, value, align, readonly, onChange }: Pr
   }
 
   useEffect(() => {
+    console.log('files updated ', files);
     onChange({ target: { name, value: files.map(file => file.url) } });
   }, [files]);
 

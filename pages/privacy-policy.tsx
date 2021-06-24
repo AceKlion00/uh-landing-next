@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
           <div className="container mx-auto text-light-500 text-16">
             <h1 className="text-32 text-center text-secondary font-medium mb-40">United Hardscapes PRIVACY POLICY</h1>
             <p className="mb-15">This Privacy Policy explains how United Hardscapes Inc. (“United Hardscapes”) collects, uses, and discloses
-              information about you through its website and services (collectively, the "Services") or when you otherwise
+              information about you through its website and services (collectively, the “Services“) or when you otherwise
               interact with us.</p>
             <p className="mb-30">We may change this Privacy Policy from time to time. If we make changes, we will notify you by revising the
               date at the top of the policy and, in some cases, we may provide you with additional notice (such as adding
@@ -39,14 +39,14 @@ export default function PrivacyPolicy() {
                 mobile network information.
               </li>
               <li className="mb-15">Location Information: We may collect information about the precise location of your device. For more
-                details, please see "Your Choices" below.
+                details, please see “Your Choices“ below.
               </li>
               <li className="mb-15">Information Collected by Cookies and Other Tracking Technologies We use various technologies to collect
                 information, including cookies and web beacons. Cookies are small data files stored on your hard drive or
                 in device memory that help us improve our Services and your experience, see which areas and features of
                 our Services are popular, and count visits. Web beacons are electronic images that may be used in our
                 Services or emails and help deliver cookies, count visits and understand usage and campaign effectiveness.
-                For more information about cookies and how to disable them, please see "Your Choices" below.
+                For more information about cookies and how to disable them, please see “Your Choices“ below.
               </li>
             </ul>
             <h5 className="text-28 text-center text-secondary mb-30">Use of Information</h5>
@@ -97,7 +97,7 @@ export default function PrivacyPolicy() {
               you.</p>
 
             <h5 className="text-28 text-center text-secondary mb-30">Social Sharing Features</h5>
-            <p className="mb-30">The Services may offer social sharing features and other integrated tools (such as the Facebook "Like"
+            <p className="mb-30">The Services may offer social sharing features and other integrated tools (such as the Facebook “Like“
               button). Your use of such features enables the sharing of information with your friends or the public,
               depending on the settings you establish with the entity that provides the social sharing feature. For more
               information about the purpose and scope of data collection and processing in connection with social sharing
