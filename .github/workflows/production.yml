@@ -37,8 +37,6 @@ jobs:
 
       - name: Install Node Modules
         run: npm install
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GHP_PAT}}
 
       - name: Lint Test
         run: npm run lint
