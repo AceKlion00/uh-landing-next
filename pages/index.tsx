@@ -92,8 +92,9 @@ export default function Home({ ideas }: Props) {
                 </div>
               </div>
               <div>
-                <div className="max-w-430 mx-auto mt-60 xl:mt-0">
-                  <Image src="/assets/images/landing-pages/home-page/joe.jpg" width="434" height="426" alt="Joe" layout="responsive" />
+                <div>
+                  Video
+                  {/* TODO: video should be embeded here */}
                 </div>
               </div>
             </div>
