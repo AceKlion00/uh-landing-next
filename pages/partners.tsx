@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Layout } from '../components/layout/layout';
 import usePartnerRequestService from '../core/app-services/partner-request-service';
 
@@ -37,7 +38,7 @@ export default function Partners() {
                   <p className="text-14 mb-20">Do you have a passion for hardscaping, provide great customer service, and can handle more work?</p>
                   <p className="text-14 mb-20">We are looking for passionate hard-working hardscapers to provide estimates and serve our customers&apos; installation needs.</p>
                   <p className="text-14 mb-50">If you are interested in <b>learning more and applying</b>, check out our Authorized Contractors section.</p>
-                  <button className="btn btn-warning btn-lg">Apply Now</button>
+                  <Link href="/contact-us" passHref><button className="btn btn-warning btn-lg">Apply Now</button></Link>
                 </div>
                 <div className="absolute top-0 left-0 right-0 bottom-0 z-0">
                   <div className="absolute top-0 left-0 right-0 bottom-0 bg-secondary bg-opacity-90 z-10">{/* Overlay */}</div>
