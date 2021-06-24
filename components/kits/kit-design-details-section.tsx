@@ -6,6 +6,7 @@ import Icon from '../ui-kit/icon';
 import useImagePreview from '../ui-kit/dialog/use-image-preview';
 import { shimmerUrl } from '../ui-kit/common/blur-image';
 import smoothScrollTo from '../ui-kit/services/smooth-scroll-to';
+import useBuyKitService from '../../core/app-services/buy-kit-service';
 
 interface Props {
   design: KitDesign;
@@ -32,6 +33,7 @@ function parseComponent(design: KitDesign): ComponentType[] {
 export default function KitDesignDetailsSection({ design }: Props) {
   const components = parseComponent(design);
   const imagePreviewService = useImagePreview();
+  const buyKitService = useBuyKitService();
   const [designImageIndex, setDesignImageIndex] = useState<number>(0);
 
   return (<section id="details" className="py-80">
@@ -95,7 +97,7 @@ export default function KitDesignDetailsSection({ design }: Props) {
                 <button className="hidden btn btn-primary btn-md mr-20" onClick={() => {
                   // TODO: navigate to customize kit section
                 }}>Customize Kit</button>
-                <button className="btn btn-warning btn-md">Buy Now</button>
+                <button className="btn btn-warning btn-md" onClick={() => buyKitService.buy(design.name)}>Buy Now</button>
               </div>
             </div>
           </div>
