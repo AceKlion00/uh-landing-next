@@ -13,6 +13,6 @@ export const leadApiService = {
     return doPost('/join-as-supplier', body);
   },
   requestFreeDesignConsultation: (body: FreeDesignConsultationForm) => {
-    return doPost('/contact/tell-about-project', body);
+    return doPost('/tell-about-project', body);
   }
 };
