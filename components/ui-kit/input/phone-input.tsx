@@ -8,9 +8,10 @@ interface Props {
   placeholder: string;
   value: string;
   onChange: (v: any) => void;
+  readonly?: boolean;
 }
 
-export function PhoneInput({ id, name, label, placeholder, value, onChange }: Props) {
+export function PhoneInput({ id, name, label, placeholder, value, onChange, readonly }: Props) {
   return (<div className="rounded-md pt-10 pb-5 py-0 border border-light-75 shadow mb-20">
     <label className="w-full text-10 text-light-500 font-medium px-15 inline-block">
       {label}
@@ -23,6 +24,7 @@ export function PhoneInput({ id, name, label, placeholder, value, onChange }: Pr
         mask="(999) 999-9999"
         type="tel"
         onChange={onChange}
+        readOnly={readonly}
       />
     </label>
   </div>);
@@ -34,4 +36,5 @@ PhoneInput.defaultProps = {
   value: '',
   placeholder: '',
   onChange: noop,
+  readonly: false,
 };
