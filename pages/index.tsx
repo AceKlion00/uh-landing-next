@@ -105,7 +105,7 @@ export default function Home({ ideas }: Props) {
         </section>
         <TestimonialSection showDesignAvatar={true} />
         <GallerySection initialIdeas={ideas} homepageType={HomePageType.Consultation} />
-        <JoinCustomerSection buttonLabel="Get Started Now" eventHandler={() => console.log('outside')}/>
+        <JoinCustomerSection buttonLabel="Get Started Now" eventHandler={freeDesignConsultationService.showFreeDesignConsultationDialog}/>
       </Layout>
     </>
   );
