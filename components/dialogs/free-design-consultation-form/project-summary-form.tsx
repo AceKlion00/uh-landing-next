@@ -15,8 +15,8 @@ interface Props {
 
 export function ProjectSummaryForm({ consultationValue, next, back }: Props) {
   const schema = Yup.object().shape({
-    yardComment: Yup.string().required('Required'),
-    attachments: Yup.array().required('Required'),
+    yardComment: Yup.string(),
+    attachments: Yup.array(),
   });
   const form = useFormik({
     initialValues: {

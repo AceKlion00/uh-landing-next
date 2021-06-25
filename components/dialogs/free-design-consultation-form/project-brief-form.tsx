@@ -25,7 +25,7 @@ export function ProjectBriefForm({ consultationValue, next, back }: Props) {
     projectType: Yup.string().required('Required'),
     projectLocation: Yup.string().required('Required'),
     accessories: Yup.array().required('Required'),
-    projectComment: Yup.string().required('Required')
+    projectComment: Yup.string()
   });
   const form = useFormik({
     initialValues: {
