@@ -29,7 +29,7 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
     longitude: undefined,
     accessories: [ProjectAccessoryType.CleaningSanding],
     projectLocation: ProjectLocationType.BackYard,
-    projectType: null as any,
+    projectType: null,
     projectComment: '',
     yardComment: '',
     attachments: [],
