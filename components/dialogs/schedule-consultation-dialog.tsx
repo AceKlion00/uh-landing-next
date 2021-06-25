@@ -43,13 +43,13 @@ export function ScheduleConsultationDialog({ onClose, closeDialog }: Props) {
       try {
         setIsLoading(true);
         await leadApiService.requestConsultation(values as any);
-        alertService.alert('Thank You!', 'One of our Hardscape Consultants will be in touch soon to schedule the consultation.', 'View Our Signature Kits')
+        alertService.notify('Thank You!', 'One of our Hardscape Consultants will be in touch soon to schedule the consultation.', 'View Our Signature Kits')
           .then(() => {
             closeDialog();
             router.push('/kits');
           });
       } catch (e) {
-        alertService.alert('Request Failed', e.message || 'Request failed. Please try again.', 'Ok');
+        alertService.notify('Request Failed', e.message || 'Request failed. Please try again.', 'Ok');
       } finally {
         setIsLoading(false);
       }

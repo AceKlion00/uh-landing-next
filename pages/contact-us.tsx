@@ -46,9 +46,9 @@ export default function ContactUs() {
       try {
         setIsLoading(true);
         await leadApiService.contactUs(values);
-        alertService.alert('Thank You!', 'Thank you for contacting United Hardscapes, we will respond to your inquiry within 24 hours. Thank you for your patience.', 'Ok');
+        alertService.notify('Thank You!', 'Thank you for contacting United Hardscapes, we will respond to your inquiry within 24 hours. Thank you for your patience.', 'Ok');
       } catch (e) {
-        alertService.alert('Message not sent!', `We are unable to connect to customer service at this moment. Please try again later.`, 'Ok');
+        alertService.notify('Message not sent!', `We are unable to connect to customer service at this moment. Please try again later.`, 'Ok');
       } finally {
         setIsLoading(false);
       }

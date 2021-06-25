@@ -3,10 +3,14 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Autoplay, Pagination } from 'swiper/core';
+
 import { Layout } from '../components/layout/layout';
 import { howItWorksContents, HowItWorksType } from '../core/data/how-it-works';
 import useConsultationService from '../core/app-services/consultation-service';
 import { shimmerUrl } from '../components/ui-kit/common/blur-image';
+
+SwiperCore.use([Autoplay, Pagination]);
 
 export default function HowItWorks() {
   const consultationService = useConsultationService();
@@ -75,10 +79,18 @@ export default function HowItWorks() {
                 <div className={itemIndex % 2 ? 'order-1' : 'order-2'}>
                   <div
                     className={
-                      'max-w-full lg:max-w-400 xl:max-w-500 shadow-primary rounded-lg bg-white mt-50 lg:mt-100 xl:mt-50 ' +
+                      'relative max-w-full lg:max-w-400 xl:max-w-500 shadow-primary rounded-lg bg-white mt-50 lg:mt-100 xl:mt-50 ' +
                       (itemIndex % 2 ? 'ml-0 mr-auto' : 'mr-0 ml-auto')
                     }>
-                    <Swiper spaceBetween={20} slidesPerView={1} navigation>
+                    <Swiper
+                      spaceBetween={20}
+                      slidesPerView={1}
+                      autoplay={{ delay: 4000 }}
+                      pagination={{
+                        el: `.swiper-pagination-${itemIndex}`,
+                        type: 'bullets',
+                      }}
+                    >
                       {item.images.map((image: string, imageIndex: number) => (
                         <SwiperSlide key={imageIndex}>
                           <div className="">
@@ -87,6 +99,7 @@ export default function HowItWorks() {
                         </SwiperSlide>
                       ))}
                     </Swiper>
+                    <div className={`swiper-pagination-${itemIndex}` + " absolute w-full h-40 bottom-0 left-0 flex justify-center items-center z-10 bg-secondary bg-opacity-10"} />
                   </div>
                 </div>
               </div>

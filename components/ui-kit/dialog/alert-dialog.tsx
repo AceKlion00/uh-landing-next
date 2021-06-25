@@ -4,7 +4,7 @@ import Icon from '../icon';
 export interface AlertAction {
   caption: string;
   onClick: () => void;
-  class: 'btn-warning' | 'btn-primary' | 'btn-danger' | 'btn-secondary' | 'btn-info';
+  className: 'btn-warning' | 'btn-primary' | 'btn-danger' | 'btn-secondary' | 'btn-info';
 }
 
 interface Props {
@@ -38,7 +38,11 @@ export function AlertDialog({ title, message, type, okCaption, onClose, closeDia
         <button className="btn btn-info btn-md" onClick={() => closeWithResult(DialogResult.No)}>No</button>
       </>)}
       {type === DialogType.Custom && (<>
-        {actions?.map((action, index) => <button key={index} className={'btn btn-md mx-15 ' + action.class} onClick={action.onClick}>{action.caption}</button>)}
+        {actions?.map((action, index) => <button
+          key={index}
+          className={'btn btn-md mx-15 ' + action.className}
+          onClick={action.onClick}
+        >{action.caption}</button>)}
       </>)}
     </div>
   </div>);

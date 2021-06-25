@@ -39,7 +39,7 @@ export function SupplierRequestDialog({ onClose, closeDialog }: Props) {
       try {
         setIsLoading(true);
         await leadApiService.joinSuppliers(values);
-        alertService.alert(
+        alertService.notify(
           'Application Sent!',
           'Thank you for applying for the United Hardscapes Authorized Contractor Network! We will review your company\'s information and contact you within 48 hours with any additional questions.',
           'View Our Signature Kits')
@@ -48,7 +48,7 @@ export function SupplierRequestDialog({ onClose, closeDialog }: Props) {
             router.push('/kits');
           });
       } catch (e) {
-        alertService.alert('Request Failed', e.message || 'Request failed. Please try again.', 'Ok');
+        alertService.notify('Request Failed', e.message || 'Request failed. Please try again.', 'Ok');
       } finally {
         setIsLoading(false);
       }

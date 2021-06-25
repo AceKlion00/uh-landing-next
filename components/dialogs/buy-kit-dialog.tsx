@@ -44,12 +44,12 @@ export function BuyKitDialog({ kitName, onClose, closeDialog }: Props) {
       try {
         setIsLoading(true);
         await leadApiService.buyKit(values as any);
-        alertService.alert('Thank You!', 'One of our Hardscape Consultants will be in touch soon to schedule the consultation.', 'Ok')
+        alertService.notify('Thank You!', 'One of our Hardscape Consultants will be in touch soon to schedule the consultation.', 'Ok')
           .then(() => {
             closeDialog();
           });
       } catch (e) {
-        alertService.alert('Request Failed', e.message || 'Request failed. Please try again.', 'Ok');
+        alertService.notify('Request Failed', e.message || 'Request failed. Please try again.', 'Ok');
       } finally {
         setIsLoading(false);
       }

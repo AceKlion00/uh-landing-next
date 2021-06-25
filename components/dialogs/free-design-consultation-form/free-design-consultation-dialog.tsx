@@ -47,20 +47,22 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
         const actions: AlertAction[] = [
           {
             caption: 'No, thank you',
-            class: 'btn-warning',
-            onClick: () => {closeDialog();}
+            className: 'btn-warning',
+            onClick: closeDialog
           },
           {
             caption: 'View Our Signature Kits',
-            class: 'btn-primary',
+            className: 'btn-primary',
             onClick: () => {closeDialog(); router.push('/kits');}
           }
         ];
-        alertService.custom('Thank You!', 'One of our Hardscape Consultants will be in touch soon to discuss your project. In the meantime, would you like to have a look at our Signature Hardscape Kits?', actions).then((event) => {
-          console.log('event = ', event);
-        });
+        alertService.alert(
+          'Thank You!',
+          'One of our Hardscape Consultants will be in touch soon to discuss your project. In the meantime, would you like to have a look at our Signature Hardscape Kits?',
+          actions
+        );
       } catch (e) {
-        await alertService.alert('Request Failed', e.message || 'Request failed. Please try again.', 'Ok');
+        await alertService.notify('Request Failed', e.message || 'Request failed. Please try again.', 'Ok');
       } finally {
         setLoading(false);
       }

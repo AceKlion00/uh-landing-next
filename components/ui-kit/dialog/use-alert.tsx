@@ -3,31 +3,29 @@ import { AlertAction, AlertDialog } from './alert-dialog';
 import { DialogResult, DialogType } from './types';
 
 interface AlertService {
-  alert: (title: string, message: string, okCaption: string) => Promise<DialogResult>,
-  yesNo: (title: string, message: string) => Promise<DialogResult>,
-  custom: (title: string, message: string, actions: AlertAction[]) => Promise<DialogResult>,
+  notify: (title: string, message: string, okCaption: string) => Promise<DialogResult>,
+  confirm: (title: string, message: string) => Promise<DialogResult>,
+  alert: (title: string, message: string, actions: AlertAction[]) => void,
 }
 
 export default function useAlert(): AlertService {
   const dialog = useDialog();
 
-  const alert = (title: string, message: string, okCaption: string): Promise<DialogResult> => {
+  const notify = (title: string, message: string, okCaption: string): Promise<DialogResult> => {
     return new Promise(resolve => {
       dialog.openDialog(<AlertDialog message={message} title={title} okCaption={okCaption} onClose={res => resolve(res)} />);
     });
   };
 
-  const yesNo = (title: string, message: string): Promise<DialogResult> => {
+  const confirm = (title: string, message: string): Promise<DialogResult> => {
     return new Promise(resolve => {
       dialog.openDialog(<AlertDialog message={message} title={title} onClose={res => resolve(res)} type={DialogType.Confirmation} />);
     });
   };
 
-  const custom = (title: string, message: string, actions: AlertAction[]): Promise<DialogResult> => {
-    return new Promise(resolve => {
-      dialog.openDialog(<AlertDialog message={message} title={title} actions={actions} onClose={res => resolve(res)} type={DialogType.Custom} />);
-    });
+  const alert = (title: string, message: string, actions: AlertAction[]): void => {
+    dialog.openDialog(<AlertDialog message={message} title={title} actions={actions} type={DialogType.Custom} />);
   };
 
-  return { alert, yesNo, custom };
+  return { notify, confirm, alert };
 }
