@@ -18,7 +18,7 @@ export function Navbar() {
           <button className="px-10" onClick={() => setNavbarOpen(false)}><Icon name="close" color="white" size={25} /></button>
         </div>
         <ul className="flex flex-col xl:flex-row font-medium text-16 xl:text-14 pl-30 xl:pl-0">
-          <li className="py-15 nav-link"><Link href="/kits"><a className="relative xl:px-25 xl:py-10">Hardscape Kits</a></Link></li>
+          <li className="py-15 nav-link"><Link href="/kits"><a className="relative xl:px-25 xl:py-10">Signature Kits</a></Link></li>
           <li className="py-15 nav-link"><Link href="/how-it-works"><a className="relative xl:px-25 xl:py-10">How It Works</a></Link></li>
           <li className="py-15 nav-link"><Link href="/our-story"><a className="relative xl:px-25 xl:py-10">Our Story</a></Link></li>
           <li className="py-15 nav-link"><Link href="/contact-us"><a className="relative xl:px-25 xl:py-10">Contact Us</a></Link></li>

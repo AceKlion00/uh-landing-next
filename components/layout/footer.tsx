@@ -18,7 +18,7 @@ export function Footer() {
             <div>
               <p className="text-18 font-medium text-white mb-20 mt-30 lg:mt-0">Services</p>
               <ul className="flex flex-col">
-                <li className="py-10"><Link href="/kits"><a>Hardscape Kits</a></Link></li>
+                <li className="py-10"><Link href="/kits"><a>Signature Kits</a></Link></li>
                 <li className="py-10"><Link href="/contact-us"><a>Contact Us</a></Link></li>
               </ul>
             </div>

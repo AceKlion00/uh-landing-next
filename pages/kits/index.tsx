@@ -39,7 +39,7 @@ export default function Kits({ kits }: Props) {
 
   return (<>
       <Head>
-        <title>Hardscape Kits by United Hardscapes</title>
+        <title>Signature Kits by United Hardscapes</title>
         <meta name="description" content="Choose from a variety of patio, walkway, driveway, retaining wall, and stair kits for any budget and taste to create the perfect outdoor living space." />
       </Head>
       <Layout>
