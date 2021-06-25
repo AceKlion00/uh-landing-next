@@ -43,7 +43,7 @@ export function ProjectBriefForm({ consultationValue, next }: Props) {
       <form className="mt-30" onSubmit={form.handleSubmit}>
         <div className="pretty-scroll max-h-70vh overflow-y-auto px-20">
           <DropdownSelect name="projectType" options={projectAccessoryTypes} label="Project Type" placeholder="Patio" value={form.values.projectType} onChange={form.handleChange} />
-          <DropdownSelect name="projectLocation" options={projectLocationTypes} label="Areas of focus (Eg: Front/Back)" placeholder="Backyard" value={form.values.projectLocation} onChange={form.handleChange} />
+          <DropdownSelect name="projectLocation" options={projectLocationTypes} label="Areas of focus" placeholder="Backyard" value={form.values.projectLocation} onChange={form.handleChange} />
           <div className="flex justify-center items-center">
             <p className="text-center my-10">Select what will be included in your hardscaping project</p>
           </div>

@@ -48,7 +48,7 @@ export function PersonalInformationForm({ consultationValue, next }: Props) {
           <Input name="email" label="Email Address" placeholder="someone@example.com" value={form.values.email} onChange={form.handleChange} />
           <AddressInput
             name="address"
-            label="Address (at least city/town)"
+            label="Address (please mention at least your city or town)"
             placeholder="Select your address"
             value={form.values.address}
             onChange={form.handleChange}
