@@ -37,8 +37,8 @@ export default function HowItWorks3DDesignStepsSection() {
   return (
     <section className="relative">
       <div className="absolute w-full h-full grid grid-cols-1 lg:grid-cols-2">
-        <div className="bg-secondary" />
-        <div className="hidden lg:block bg-light-50" />
+        <div className="absolute w-full h-full lg:w-1/2 bg-secondary" />
+        <div className="hidden lg:block absolute left-1/2 w-1/2 h-full bg-light-50" />
       </div>
       <div className="relative container mx-auto z-10 pt-60 pb-70">
         <div className="grid grid-cols-1 lg:grid-cols-2">
