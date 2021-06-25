@@ -9,6 +9,7 @@ import { enumToOptions } from '../../ui-kit/utils';
 import { accessoryTypes } from '../../../core/data/home';
 import { TextArea } from '../../ui-kit/input/textarea';
 import { ImageCardSelector } from '../../ui-kit/input/image-card-selector';
+import { useEffect } from 'react';
 
 interface Props {
   consultationValue: FreeDesignConsultationForm,
@@ -38,9 +39,13 @@ export function ProjectBriefForm({ consultationValue, next, back }: Props) {
       next(values);
     }
   });
+  useEffect(() => {
+    form.validateForm();
+  }, []);
+
   return (
     <div>
-      <h5 className="text-primary text-center text-22 font-medium mt-20 px-0 md:px-50">Tell us about your project</h5>
+      <h5 className="text-light-500 text-center text-18 font-medium mt-20 px-0 md:px-50">Step 2: Tell us about your project</h5>
       <form className="mt-30" onSubmit={form.handleSubmit}>
         <div className="pretty-scroll max-h-70vh overflow-y-auto px-20">
           <DropdownSelect name="projectType" options={projectAccessoryTypes} label="Project Type" placeholder="Patio" value={form.values.projectType} onChange={form.handleChange} />

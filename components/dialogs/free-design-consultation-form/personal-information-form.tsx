@@ -6,6 +6,7 @@ import { PhoneInput } from '../../ui-kit/input/phone-input';
 import { AddressInput } from '../../ui-kit/input/address-input';
 import { FreeDesignConsultationForm } from './type';
 import { noop } from '../../../core/types';
+import { useEffect } from 'react';
 
 interface Props {
   consultationValue: FreeDesignConsultationForm,
@@ -37,9 +38,14 @@ export function PersonalInformationForm({ consultationValue, next }: Props) {
       next(values);
     }
   });
+
+  useEffect(() => {
+    form.validateForm();
+  }, []);
+
   return (
     <div>
-      <h5 className="text-primary text-center text-22 font-medium mt-20 px-0 md:px-50">Tell us about yourself</h5>
+      <h5 className="text-light-500 text-center text-18 font-medium mt-20 px-0 sm:px-50">Step 1: Tell us about yourself</h5>
       <form className="mt-30" onSubmit={form.handleSubmit}>
         <div className="pretty-scroll max-h-70vh overflow-y-auto px-20">
           <Input name="firstName" label="First Name" placeholder="John" value={form.values.firstName} onChange={form.handleChange} />

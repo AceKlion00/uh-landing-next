@@ -63,6 +63,7 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
       <div className="flex justify-end">
         <button className="px-25 pt-5" onClick={() => { onClose(); closeDialog(); }}><Icon name="close" color="#2c2c2c" size={14} /></button>
       </div>
+      <h3 className="text-primary font-medium text-24 text-center mb-15 px-10 md:px-20">Get started with a Hardscape Architect</h3>
       {step === FreeDesignConsultationStep.PersonalInformation && <PersonalInformationForm next={next} consultationValue={consultationValue}/>}
       {step === FreeDesignConsultationStep.ProjectBrief && <ProjectBriefForm next={next} consultationValue={consultationValue} back={() => setStep(FreeDesignConsultationStep.PersonalInformation)}/>}
       {step === FreeDesignConsultationStep.ProjectSummary && <ProjectSummaryForm next={next} consultationValue={consultationValue} back={() => setStep(FreeDesignConsultationStep.ProjectBrief)}/>}
