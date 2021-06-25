@@ -43,7 +43,7 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
       try {
         setLoading(true);
         await leadApiService.requestFreeDesignConsultation(consultationValue);
-        alertService.alert('Thank You!', 'One of our Hardscape Consultants will be in touch soon to schedule the consultation.', 'View Our Signature Kits')
+        alertService.alert('Thank You!', 'One of our Hardscape Consultants will be in touch soon to discuss your project. In the meantime, would you like to have a look at our Signature Hardscape Kits?', 'View Our Signature Kits')
           .then(() => {
             closeDialog();
             router.push('/kits');
