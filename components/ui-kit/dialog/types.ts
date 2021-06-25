@@ -24,5 +24,4 @@ export enum DialogResult {
 export enum DialogType {
   Alert = 'ALERT',
   Confirmation = 'CONFIRMATION',
-  Custom = 'CUSTOM',
 }

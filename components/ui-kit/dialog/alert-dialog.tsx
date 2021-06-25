@@ -1,12 +1,6 @@
 import { DialogResult, DialogType } from './types';
 import Icon from '../icon';
 
-interface AlertAction {
-  caption: string;
-  onClick: () => void;
-  color: 'warning' | 'primary' | 'danger';
-}
-
 interface Props {
   title: string,
   okCaption: string,
@@ -14,10 +8,9 @@ interface Props {
   type: DialogType,
   onClose: (res: DialogResult) => void,
   closeDialog: () => void, // DO NOT USE THIS. INTERNAL USE ONLY
-  actions?: AlertAction[];
 }
 
-export function AlertDialog({ title, message, type, okCaption, onClose, closeDialog, actions }: Props) {
+export function AlertDialog({ title, message, type, okCaption, onClose, closeDialog }: Props) {
   const closeWithResult = (result: DialogResult) => {
     closeDialog();
     onClose(result);
@@ -37,9 +30,6 @@ export function AlertDialog({ title, message, type, okCaption, onClose, closeDia
         <button className="btn btn-danger btn-md mr-30" onClick={() => closeWithResult(DialogResult.Yes)}>Yes</button>
         <button className="btn btn-info btn-md" onClick={() => closeWithResult(DialogResult.No)}>No</button>
       </>)}
-      {type === DialogType.Custom && (<>
-        {actions.map((action, index) => <button className=""></button>)}
-      </>)}
     </div>
   </div>);
 }
@@ -49,5 +39,4 @@ AlertDialog.defaultProps = {
   type: DialogType.Alert,
   onClose: () => {},
   closeDialog: () => {},
-  actions: [],
 }
