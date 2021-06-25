@@ -12,10 +12,11 @@ import { ImageCardSelector } from '../../ui-kit/input/image-card-selector';
 
 interface Props {
   consultationValue: FreeDesignConsultationForm,
-  next: (values: any) => void
+  next: (values: any) => void,
+  back: () => void,
 }
 
-export function ProjectBriefForm({ consultationValue, next }: Props) {
+export function ProjectBriefForm({ consultationValue, next, back }: Props) {
   const projectAccessoryTypes: Option<ProjectAccessoryType>[] = enumToOptions<ProjectAccessoryType>(ProjectAccessoryType);
   const projectLocationTypes: Option<ProjectLocationType>[] = enumToOptions<ProjectLocationType>(ProjectLocationType);
 
@@ -51,7 +52,8 @@ export function ProjectBriefForm({ consultationValue, next }: Props) {
           <TextArea name="projectComment" label="Tell us about your dream project" rows={4} value={form.values.projectComment} onChange={form.handleChange} />
         </div>
         <div className="flex justify-center py-10">
-          <button className="btn btn-warning btn-md btn-sm-block px-30" disabled={!(form.isValid && form.dirty)}>Next</button>
+          <button className="text-warning bg-white border-0 focus:ring-0 focus:outline-none font-medium cursor-pointer btn-sm-block px-30 mr-20" onClick={back}>Back</button>
+          <button className="btn btn-warning btn-md btn-sm-block px-30" disabled={!form.isValid}>Next</button>
         </div>
       </form>
     </div>

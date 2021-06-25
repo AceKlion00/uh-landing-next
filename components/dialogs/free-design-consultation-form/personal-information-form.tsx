@@ -58,7 +58,7 @@ export function PersonalInformationForm({ consultationValue, next }: Props) {
             }} />
         </div>
         <div className="flex justify-center py-10">
-          <button className="btn btn-warning btn-md btn-sm-block px-30" disabled={!(form.isValid && form.dirty)}>Next</button>
+          <button className="btn btn-warning btn-md btn-sm-block px-30" disabled={!form.isValid}>Next</button>
         </div>
       </form>
     </div>

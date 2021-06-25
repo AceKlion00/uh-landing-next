@@ -8,10 +8,11 @@ import { noop } from '../../../core/types';
 
 interface Props {
   consultationValue: FreeDesignConsultationForm,
-  next: (values: any) => void
+  next: (values: any) => void,
+  back: () => void,
 }
 
-export function ProjectSummaryForm({ consultationValue, next }: Props) {
+export function ProjectSummaryForm({ consultationValue, next, back }: Props) {
   const schema = Yup.object().shape({
     yardComment: Yup.string().required('Required'),
     attachments: Yup.array().required('Required'),
@@ -37,7 +38,8 @@ export function ProjectSummaryForm({ consultationValue, next }: Props) {
           <PhotoUploader name="attachments" align="center" value={form.values.attachments} onChange={form.handleChange}/>
         </div>
         <div className="flex justify-center py-10">
-          <button className="btn btn-warning btn-md btn-sm-block px-30" disabled={!(form.isValid && form.dirty)}>Next</button>
+          <button className="text-warning bg-white border-0 focus:ring-0 focus:outline-none font-medium cursor-pointer btn-sm-block px-30 mr-20" onClick={back}>Back</button>
+          <button className="btn btn-warning btn-md btn-sm-block px-30" disabled={!form.isValid}>Next</button>
         </div>
       </form>
     </div>

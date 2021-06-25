@@ -29,7 +29,7 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
     longitude: undefined,
     accessories: [ProjectAccessoryType.CleaningSanding],
     projectLocation: ProjectLocationType.BackYard,
-    projectType: null as any,
+    projectType: ProjectAccessoryType.Patio,
     projectComment: '',
     yardComment: '',
     attachments: [],
@@ -64,8 +64,8 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
         <button className="px-25 pt-5" onClick={() => { onClose(); closeDialog(); }}><Icon name="close" color="#2c2c2c" size={14} /></button>
       </div>
       {step === FreeDesignConsultationStep.PersonalInformation && <PersonalInformationForm next={next} consultationValue={consultationValue}/>}
-      {step === FreeDesignConsultationStep.ProjectBrief && <ProjectBriefForm next={next} consultationValue={consultationValue}/>}
-      {step === FreeDesignConsultationStep.ProjectSummary && <ProjectSummaryForm next={next} consultationValue={consultationValue}/>}
+      {step === FreeDesignConsultationStep.ProjectBrief && <ProjectBriefForm next={next} consultationValue={consultationValue} back={() => setStep(FreeDesignConsultationStep.PersonalInformation)}/>}
+      {step === FreeDesignConsultationStep.ProjectSummary && <ProjectSummaryForm next={next} consultationValue={consultationValue} back={() => setStep(FreeDesignConsultationStep.ProjectBrief)}/>}
       <Spinner isLoading={loading} />
     </div>
   );
