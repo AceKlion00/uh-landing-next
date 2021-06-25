@@ -39,9 +39,11 @@ export default function HowItWorks3DDesignStepsSection() {
   currentStepRef.current = currentStep;
   const sectionRef = useRef<HTMLElement>(null);
   const { inViewport } = useInViewport(sectionRef, {}, { disconnectOnLeave: false }, {});
+  const inViewportRef = useRef(inViewport);
+  inViewportRef.current = inViewport;
   useEffect(() => {
     const timer = setInterval(() => {
-      if (inViewport) {
+      if (inViewportRef.current) {
         setCurrentStep((currentStepRef.current + 1) % steps.length);
       }
     }, 3000);
