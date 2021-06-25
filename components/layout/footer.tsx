@@ -57,8 +57,8 @@ export function Footer() {
       <div className="lg:flex justify-between mt-20 leading-10">
         <p>© 2021 United Hardscapes. All rights reserved.</p>
         <div className="cursor-pointer">
-          <Link href="/privacy-policy" passHref><u className="mr-5">Privacy Policy</u></Link>,&nbsp;
-          <Link href="/terms-and-conditions" passHref><u className="mr-5">Terms & Conditions</u></Link>,&nbsp;
+          <Link href="/privacy-policy" passHref><u>Privacy Policy</u></Link><span className="mr-5">,</span>&nbsp;
+          <Link href="/terms-and-conditions" passHref><u>Terms & Conditions</u></Link><span className="mr-5">,</span>&nbsp;
           <Link href="/refund-policy" passHref><u>Refund Policy</u></Link>.
         </div>
       </div>
