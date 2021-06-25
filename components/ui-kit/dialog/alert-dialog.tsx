@@ -1,4 +1,5 @@
 import { DialogResult, DialogType } from './types';
+import Icon from '../icon';
 
 interface Props {
   title: string,
@@ -16,6 +17,9 @@ export function AlertDialog({ title, message, type, okCaption, onClose, closeDia
   }
 
   return (<div className="w-500 py-30 px-20">
+    <div className="flex justify-end">
+      <button className="px-5" onClick={() => { closeDialog(); }}><Icon name="close" color="#2c2c2c" size={14} /></button>
+    </div>
     <h5 className="text-light-500 text-center text-22 font-medium mb-15">{title}</h5>
     <p className="text-light-500 text-16 font-normal text-center mb-30 px-10 lg:px-30">{message}</p>
     <div className="flex justify-center pt-10">
