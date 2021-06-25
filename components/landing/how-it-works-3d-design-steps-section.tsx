@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { useInViewport } from 'react-in-viewport';
 
 import useFreeDesignConsultationService from '../../core/app-services/free-design-consultation-service';
 
@@ -34,8 +35,22 @@ const steps = [
 export default function HowItWorks3DDesignStepsSection() {
   const freeDesignConsultationService = useFreeDesignConsultationService();
   const [currentStep, setCurrentStep] = useState(0);
+  const currentStepRef = useRef(currentStep);
+  currentStepRef.current = currentStep;
+  const sectionRef = useRef<HTMLElement>(null);
+  const { inViewport } = useInViewport(sectionRef, {}, { disconnectOnLeave: false }, {});
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (inViewport) {
+        setCurrentStep((currentStepRef.current + 1) % steps.length);
+      }
+    }, 3000);
+    return () => {
+      clearInterval(timer);
+    }
+  }, []);
   return (
-    <section className="relative">
+    <section ref={sectionRef} className="relative">
       <div className="absolute w-full h-full grid grid-cols-1 lg:grid-cols-2">
         <div className="absolute w-full h-full lg:w-1/2 bg-secondary" />
         <div className="hidden lg:block absolute left-1/2 w-1/2 h-full bg-light-50" />
