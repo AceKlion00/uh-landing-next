@@ -16,7 +16,10 @@ export function AlertDialog({ title, message, type, okCaption, onClose, closeDia
     onClose(result);
   }
 
-  return (<div className="w-500 py-30 px-20">
+  return (<div className="w-500 p-20">
+    <div className="flex justify-end">
+      <button className="px-5 pt-5" onClick={() => { closeDialog(); }}><Icon name="close" color="#2c2c2c" size={14} /></button>
+    </div>
     <div className="flex justify-end">
       <button className="px-5" onClick={() => { closeDialog(); }}><Icon name="close" color="#2c2c2c" size={14} /></button>
     </div>
