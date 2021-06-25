@@ -31,7 +31,7 @@ export default function HowItWorks() {
               </div>
               <div className="relative">
                 <div className="invisible lg:visible lg:-bottom-55 xl:-bottom-70 absolute w-full max-w-530 2xl:max-w-600 px-0 xl:px-30">
-                  <Image src="/assets/images/landing-pages/how-it-works/main.png" width="551" height="495" layout="responsive" alt="kits" placeholder="blur" blurDataURL={shimmerUrl} />
+                  <Image className="rounded-xl overflow-hidden shadow-lg" src="/assets/images/landing-pages/how-it-works/main.png" width="551" height="495" layout="responsive" alt="kits" placeholder="blur" blurDataURL={shimmerUrl} />
                 </div>
               </div>
             </div>
