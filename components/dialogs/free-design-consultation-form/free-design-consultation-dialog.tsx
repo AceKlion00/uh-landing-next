@@ -10,6 +10,7 @@ import { ProjectAccessoryType, ProjectLocationType } from '../../../core/types';
 import { leadApiService } from '../../../core/api-services/lead-api.service';
 import useAlert from '../../ui-kit/dialog/use-alert';
 import Spinner from '../../ui-kit/common/spinner';
+import { AlertAction } from '../../ui-kit/dialog/alert-dialog';
 
 interface Props {
   onClose: () => void,
@@ -43,11 +44,21 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
       try {
         setLoading(true);
         await leadApiService.requestFreeDesignConsultation(consultationValue);
-        alertService.alert('Thank You!', 'One of our Hardscape Consultants will be in touch soon to discuss your project. In the meantime, would you like to have a look at our Signature Hardscape Kits?', 'View Our Signature Kits')
-          .then(() => {
-            closeDialog();
-            router.push('/kits');
-          });
+        const actions: AlertAction[] = [
+          {
+            caption: 'No, thank you',
+            class: 'btn-warning',
+            onClick: () => {closeDialog();}
+          },
+          {
+            caption: 'View Our Signature Kits',
+            class: 'btn-primary',
+            onClick: () => {closeDialog(); router.push('/kits');}
+          }
+        ];
+        alertService.custom('Thank You!', 'One of our Hardscape Consultants will be in touch soon to discuss your project. In the meantime, would you like to have a look at our Signature Hardscape Kits?', actions).then((event) => {
+          console.log('event = ', event);
+        });
       } catch (e) {
         await alertService.alert('Request Failed', e.message || 'Request failed. Please try again.', 'Ok');
       } finally {

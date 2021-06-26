@@ -29,8 +29,8 @@ export function ProjectBriefForm({ consultationValue, next, back }: Props) {
   });
   const form = useFormik({
     initialValues: {
-      projectType: consultationValue.projectType || '',
-      projectLocation: consultationValue.projectLocation || '',
+      projectType: consultationValue.projectType || projectAccessoryTypes[0].value,
+      projectLocation: consultationValue.projectLocation || projectLocationTypes[0].value,
       accessories: consultationValue.accessories || [],
       projectComment: consultationValue.projectComment || ''
     },

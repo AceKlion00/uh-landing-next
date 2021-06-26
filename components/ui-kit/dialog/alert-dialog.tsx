@@ -1,6 +1,12 @@
 import { DialogResult, DialogType } from './types';
 import Icon from '../icon';
 
+export interface AlertAction {
+  caption: string;
+  onClick: () => void;
+  class: 'btn-warning' | 'btn-primary' | 'btn-danger' | 'btn-secondary' | 'btn-info';
+}
+
 interface Props {
   title: string,
   okCaption: string,
@@ -8,9 +14,10 @@ interface Props {
   type: DialogType,
   onClose: (res: DialogResult) => void,
   closeDialog: () => void, // DO NOT USE THIS. INTERNAL USE ONLY
+  actions?: AlertAction[];
 }
 
-export function AlertDialog({ title, message, type, okCaption, onClose, closeDialog }: Props) {
+export function AlertDialog({ title, message, type, okCaption, onClose, closeDialog, actions }: Props) {
   const closeWithResult = (result: DialogResult) => {
     closeDialog();
     onClose(result);
@@ -22,13 +29,16 @@ export function AlertDialog({ title, message, type, okCaption, onClose, closeDia
     </div>
     <h5 className="text-light-500 text-center text-22 font-medium mb-15">{title}</h5>
     <p className="text-light-500 text-16 font-normal text-center mb-30 px-10 lg:px-30">{message}</p>
-    <div className="flex justify-center pt-10">
+    <div className="flex justify-center py-10">
       {type === DialogType.Alert &&
         <button className="btn btn-primary btn-md" onClick={() => closeWithResult(DialogResult.Ok)}>{okCaption}</button>
       }
       {type === DialogType.Confirmation &&(<>
         <button className="btn btn-danger btn-md mr-30" onClick={() => closeWithResult(DialogResult.Yes)}>Yes</button>
         <button className="btn btn-info btn-md" onClick={() => closeWithResult(DialogResult.No)}>No</button>
+      </>)}
+      {type === DialogType.Custom && (<>
+        {actions?.map((action, index) => <button key={index} className={'btn btn-md mx-15 ' + action.class} onClick={action.onClick}>{action.caption}</button>)}
       </>)}
     </div>
   </div>);
@@ -39,4 +49,5 @@ AlertDialog.defaultProps = {
   type: DialogType.Alert,
   onClose: () => {},
   closeDialog: () => {},
+  actions: [],
 }

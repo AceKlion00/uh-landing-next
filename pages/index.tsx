@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay, Pagination } from 'swiper/core';
 
 import { Layout } from '../components/layout/layout';
 import { GallerySection } from '../components/landing/gallery-section';
@@ -13,8 +12,6 @@ import BlueOval from '../components/misc/blue-oval';
 import HowItWorks3DDesignStepsSection from '../components/landing/how-it-works-3d-design-steps-section';
 import { shimmerUrl } from '../components/ui-kit/common/blur-image';
 import useFreeDesignConsultationService from '../core/app-services/free-design-consultation-service';
-
-SwiperCore.use([Autoplay, Pagination]);
 
 const carouselImages = [
   '/assets/images/landing-pages/home-page/carousel/house-with-patio.jpg',
@@ -54,16 +51,8 @@ export default function Home({ ideas }: Props) {
                   </div>
                 </div>
                 <div className="hidden lg:block">
-                  <div className="relative max-w-645">
-                    <Swiper
-                      spaceBetween={20}
-                      slidesPerView={1}
-                      autoplay={{ delay: 4000 }}
-                      pagination={{
-                        el: '.swiper-pagination',
-                        type: 'bullets',
-                      }}
-                    >
+                  <div className="max-w-645 lg:pl-30">
+                    <Swiper spaceBetween={20} slidesPerView={1}>
                       {carouselImages.map((image: string, imageIndex: number) => (
                         <SwiperSlide key={imageIndex}>
                           <div className="">
@@ -72,7 +61,6 @@ export default function Home({ ideas }: Props) {
                         </SwiperSlide>
                       ))}
                     </Swiper>
-                    <div className="swiper-pagination absolute w-full h-40 bottom-0 left-0 flex justify-center items-center z-10" />
                   </div>
                 </div>
               </div>
