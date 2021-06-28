@@ -8,6 +8,7 @@ import ErrorPage from '../components/error-page';
 import FacebookPixel from '../components/3rd-party/facebook-pixel';
 import GoogleAnalytics from '../components/3rd-party/google-analytics';
 import GoogleAds from '../components/3rd-party/google-ads';
+import MouseFlow from '../components/3rd-party/mouse-flow';
 
 function MyApp({ Component, pageProps }: AppProps) {
   if (pageProps.error) {
@@ -18,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <FacebookPixel />
     <GoogleAnalytics />
     <GoogleAds />
-    {/*<MouseFlow />*/}
+    <MouseFlow />
   </DialogProvider>
 }
 export default MyApp;
