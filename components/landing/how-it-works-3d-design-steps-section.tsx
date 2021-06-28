@@ -46,7 +46,7 @@ export default function HowItWorks3DDesignStepsSection() {
       if (inViewportRef.current) {
         setCurrentStep((currentStepRef.current + 1) % steps.length);
       }
-    }, 3000);
+    }, 4000);
     return () => {
       clearInterval(timer);
     }

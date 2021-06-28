@@ -36,8 +36,8 @@ export default function Home({ ideas }: Props) {
         <meta name="description" content="Choose from a variety of patio, walkway, driveway, retaining wall, and stair kits for any budget and taste to create the perfect outdoor living space."/>
       </Head>
       <Layout>
-        <section className="h-555 xl:h-705 2xl:h-805 relative overflow-hidden">
-          <div><Image src="/assets/images/landing-pages/home-page/background.jpg" objectFit="cover" layout="fill" alt="background"/></div>
+        <section className="h-485 xl:h-705 2xl:h-805 relative overflow-hidden">
+          <div className="hidden sm:block"><Image src="/assets/images/landing-pages/home-page/background.jpg" objectFit="cover" layout="fill" alt="background"/></div>
           <div className="absolute left-0 -top-425 lg:-top-325 xl:-top-225 2xl:-top-125 overflow-hidden lg:overflow-visible">
             <BlueOval />
           </div>
@@ -80,7 +80,7 @@ export default function Home({ ideas }: Props) {
           </div>
         </section>
 
-        <section className="my-80">
+        <section className="my-10 sm:my-80">
           <div className="container mx-auto text-center">
             <h4 className="text-32 text-primary max-w-700 mx-auto mb-30">Want to upgrade your outdoor space, but not sure where to get started? </h4>
             <div className="text-18 text-light-500">
