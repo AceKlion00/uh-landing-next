@@ -56,7 +56,7 @@ export default function Kits({ kits }: Props) {
               </div>
               <div className="relative">
                 <div className="invisible lg:visible lg:-bottom-55 xl:-bottom-70 absolute w-full px-0 xl:px-30">
-                  <Image src="/assets/images/landing-pages/kits/main.png" width="571" height="495" layout="responsive" alt="kits" placeholder="blur" blurDataURL={shimmerUrl} />
+                  <Image src="/assets/images/landing-pages/kits/main.png" width="571" height="495" quality={100} layout="responsive" alt="kits" placeholder="blur" blurDataURL={shimmerUrl} />
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@ export default function Kits({ kits }: Props) {
                   </div>
                   <div className="flex flex-col-reverse lg:flex-col pl-0 lg:pl-60">
                     <div className="relative" onClick={() => imagePreviewService.preview(kit.kitSeries[seriesSelection[kitIndex]].image, kit.name)}>
-                      <Image className="rounded-lg overflow-hidden cursor-pointer" src={kit.kitSeries[seriesSelection[kitIndex]].image} width={560} height={379} layout="responsive" alt={kit.name} placeholder="blur" blurDataURL={shimmerUrl} />
+                      <Image className="rounded-lg overflow-hidden cursor-pointer" quality={100} src={kit.kitSeries[seriesSelection[kitIndex]].image} width={560} height={379} layout="responsive" alt={kit.name} placeholder="blur" blurDataURL={shimmerUrl} />
                       <Icon name="external_link" color="white" size={24} className="absolute bottom-20 right-20 cursor-pointer" />
                     </div>
                     <div className="hidden lg:flex justify-center lg:justify-end mt-0 mb-30 lg:mt-40 lg:mb-0">

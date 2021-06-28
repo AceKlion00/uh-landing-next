@@ -94,7 +94,7 @@ export default function HowItWorks3DDesignStepsSection() {
           </div>
           <div className="hidden lg:block pl-30 xl:pl-0">
             <div className="rounded-lg overflow-hidden shadow-primary max-w-670 mt-90 ml-0 xl:-ml-110">
-              <Image src={steps[currentStep].image} width="672" height="423" layout="responsive" alt={steps[currentStep].title} />
+              <Image src={steps[currentStep].image} width="672" height="423" quality={100} layout="responsive" alt={steps[currentStep].title} />
             </div>
           </div>
         </div>

@@ -35,7 +35,7 @@ export default function HowItWorks() {
               </div>
               <div className="relative">
                 <div className="invisible lg:visible lg:-bottom-55 xl:-bottom-70 absolute w-full max-w-530 2xl:max-w-600 px-0 xl:px-30">
-                  <Image className="rounded-xl overflow-hidden shadow-lg" src="/assets/images/landing-pages/how-it-works/main.png" width="551" height="495" layout="responsive" alt="kits" placeholder="blur" blurDataURL={shimmerUrl} />
+                  <Image className="rounded-xl overflow-hidden shadow-lg" src="/assets/images/landing-pages/how-it-works/main.png" width="551" height="495" quality={100} layout="responsive" alt="kits" placeholder="blur" blurDataURL={shimmerUrl} />
                 </div>
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function HowItWorks() {
                       {item.images.map((image: string, imageIndex: number) => (
                         <SwiperSlide key={imageIndex}>
                           <div className="">
-                            <Image className="rounded-lg overflow-hidden cursor-pointer" src={image} width="497" height="364" layout="responsive" alt="Carousel Image" placeholder="blur" blurDataURL={shimmerUrl} />
+                            <Image className="rounded-lg overflow-hidden cursor-pointer" src={image} width="497" height="364" quality={100} layout="responsive" alt="Carousel Image" placeholder="blur" blurDataURL={shimmerUrl} />
                           </div>
                         </SwiperSlide>
                       ))}

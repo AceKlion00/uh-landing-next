@@ -37,7 +37,7 @@ export default function OurStory() {
               </div>
               <div className="w-full lg:w-1/2 mt-20 lg:mt-0">
                 <div className="text-center lg:text-right">
-                  <Image src="/assets/images/landing-pages/our-story-page/about-mission.png" height={314} width={442} alt="background" placeholder="blur" blurDataURL={shimmerUrl} />
+                  <Image src="/assets/images/landing-pages/our-story-page/about-mission.png" height={314} width={442} quality={100} alt="background" placeholder="blur" blurDataURL={shimmerUrl} />
                 </div>
               </div>
             </div>
@@ -52,7 +52,7 @@ export default function OurStory() {
             <div className="grid md:grid-cols-5 overflow-hidden">
               {dreamImages.map((image, index) => {
                 return (<div key={index}>
-                  <Image src={image} width={1090} height={817} alt="dream-image" placeholder="blur" blurDataURL={shimmerUrl} />
+                  <Image src={image} width={1090} height={817} quality={100} alt="dream-image" placeholder="blur" blurDataURL={shimmerUrl} />
                 </div>);
               })}
             </div>
@@ -67,7 +67,7 @@ export default function OurStory() {
             <div className="grid md:grid-cols-4 overflow-hidden mb-60 rounded-2xl">
               {workStepImages.map((image, index) => {
                 return (<div key={index}>
-                  <Image src={image} width={273} height={165} layout="responsive" alt="work-step" placeholder="blur" blurDataURL={shimmerUrl} />
+                  <Image src={image} width={273} height={165} quality={100} layout="responsive" alt="work-step" placeholder="blur" blurDataURL={shimmerUrl} />
                 </div>);
               })}
             </div>

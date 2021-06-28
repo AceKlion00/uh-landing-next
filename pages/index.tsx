@@ -37,7 +37,7 @@ export default function Home({ ideas }: Props) {
       </Head>
       <Layout>
         <section className="h-485 xl:h-705 2xl:h-805 relative overflow-hidden">
-          <div className="hidden sm:block"><Image src="/assets/images/landing-pages/home-page/background.jpg" objectFit="cover" layout="fill" alt="background"/></div>
+          <div className="hidden sm:block"><Image src="/assets/images/landing-pages/home-page/background.jpg" quality={100} objectFit="cover" layout="fill" alt="background"/></div>
           <div className="absolute left-0 -top-425 lg:-top-325 xl:-top-225 2xl:-top-125 overflow-hidden lg:overflow-visible">
             <BlueOval />
           </div>
@@ -67,7 +67,7 @@ export default function Home({ ideas }: Props) {
                       {carouselImages.map((image: string, imageIndex: number) => (
                         <SwiperSlide key={imageIndex}>
                           <div className="">
-                            <Image className="rounded-lg overflow-hidden cursor-pointer" src={image} width="644" height="473" layout="responsive" alt="Carousel Image" placeholder="blur" blurDataURL={shimmerUrl} />
+                            <Image className="rounded-lg overflow-hidden cursor-pointer" src={image} width="644" height="473" quality={100} layout="responsive" alt="Carousel Image" placeholder="blur" blurDataURL={shimmerUrl} />
                           </div>
                         </SwiperSlide>
                       ))}
@@ -108,7 +108,7 @@ export default function Home({ ideas }: Props) {
               </div>
               <div>
                 <div className="max-w-430 mx-auto mt-60 xl:mt-0">
-                  <Image src="/assets/images/landing-pages/home-page/joe.jpg" width="434" height="426" alt="Joe" layout="responsive" />
+                  <Image src="/assets/images/landing-pages/home-page/joe.jpg" width="434" height="426" quality={100} alt="Joe" layout="responsive" />
                 </div>
               </div>
             </div>

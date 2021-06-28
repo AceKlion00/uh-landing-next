@@ -86,7 +86,7 @@ export function GallerySection({ initialIdeas, homepageType }: Props) {
                   className={ "flex flex-col cursor-pointer rounded-2xl overflow-hidden border-4 " + ((category === projectAccessoryType.value || !projectAccessoryType.value) ? "border-primary" : "border-white") }
                   onClick={() => setCategory(projectAccessoryType.value)}
                 >
-                  {projectAccessoryType.value && <Image src={projectAccessoryType.image} width={165} height={136} layout="responsive" placeholder="blur" blurDataURL={shimmerUrl} alt={projectAccessoryType.label}/>}
+                  {projectAccessoryType.value && <Image src={projectAccessoryType.image} width={165} height={136} quality={100} layout="responsive" placeholder="blur" blurDataURL={shimmerUrl} alt={projectAccessoryType.label}/>}
                   {!projectAccessoryType.value && <div className="w-full flex-grow flex justify-center items-center">All Kits</div>}
                   <div className="bg-primary text-center text-white py-5">{projectAccessoryType.label || 'All'}</div>
                 </div>);
@@ -99,7 +99,7 @@ export function GallerySection({ initialIdeas, homepageType }: Props) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
         {ideas.map((idea, index) => (<div className="mb-20 cursor-pointer aspect-w-8 aspect-h-6 relative" key={index}>
           <div className="absolute w-full h-full rounded-xl overflow-hidden" onClick={() => imagePreviewService.preview(idea.url, 'Idea')}>
-            <Image src={idea.url} width={idea.width} height={idea.height} layout="responsive" objectFit="cover" placeholder="blur" blurDataURL={shimmerUrl} alt="Idea" />
+            <Image src={idea.url} width={idea.width} height={idea.height} layout="responsive" quality={100} objectFit="cover" placeholder="blur" blurDataURL={shimmerUrl} alt="Idea" />
             <Icon name="external_link" color="white" size={24} className="absolute bottom-20 right-20 cursor-pointer" />
           </div>
         </div>))}
