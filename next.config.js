@@ -1,4 +1,11 @@
-module.exports = {
+const withPWA = require('next-pwa');
+const runtimeCaching = require('next-pwa/cache');
+
+module.exports = withPWA({
+  pwa: {
+    dest: 'public',
+    runtimeCaching,
+  },
   compress: false, // brotli compress rather than default gzip support of next.js
   env: {
     googleApiKey: 'AIzaSyDocOTLnXB8Kgn46cZSKokpsVHpq6MTORE',
@@ -8,4 +15,4 @@ module.exports = {
   images: {
     domains: ["unitedhardscapes.com", "assets.unitedhardscapes.com", "marketplace-assets.unitedhardscapes.com", "staging-assets.unitedhardscapes.com"],
   }
-}
+});
