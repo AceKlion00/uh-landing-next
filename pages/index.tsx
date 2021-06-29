@@ -10,7 +10,6 @@ import { doGet } from '../core/api-services/http';
 import JoinCustomerSection from '../components/landing/join-customer-section';
 import BlueOval from '../components/misc/blue-oval';
 import HowItWorks3DDesignStepsSection from '../components/landing/how-it-works-3d-design-steps-section';
-import { shimmerUrl } from '../components/ui-kit/common/blur-image';
 import useFreeDesignConsultationService from '../core/app-services/free-design-consultation-service';
 
 SwiperCore.use([Autoplay, Pagination]);
@@ -20,6 +19,12 @@ const carouselImages = [
   '/assets/images/landing-pages/home-page/carousel/pool-patio.jpg',
   '/assets/images/landing-pages/home-page/carousel/stair-with-retaining-wall.jpg',
   '/assets/images/landing-pages/home-page/carousel/house-with-all-kits.jpg',
+];
+const carouselBlurImages = [
+  '/assets/images/landing-pages/home-page/carousel/patio-blur.jpg',
+  '/assets/images/landing-pages/home-page/carousel/pool-patio-blur.jpg',
+  '/assets/images/landing-pages/home-page/carousel/stairs-blur.jpg',
+  '/assets/images/landing-pages/home-page/carousel/all-kits-blur.jpg',
 ];
 
 interface Props {
@@ -67,7 +72,7 @@ export default function Home({ ideas }: Props) {
                       {carouselImages.map((image: string, imageIndex: number) => (
                         <SwiperSlide key={imageIndex}>
                           <div className="">
-                            <Image className="rounded-lg overflow-hidden cursor-pointer" src={image} width="644" height="473" quality={100} layout="responsive" alt="Carousel Image" placeholder="blur" blurDataURL={shimmerUrl} />
+                            <Image className="rounded-lg overflow-hidden cursor-pointer" src={image} width="644" height="473" quality={100} layout="responsive" alt="Carousel Image" placeholder="blur" blurDataURL={carouselBlurImages[imageIndex]} />
                           </div>
                         </SwiperSlide>
                       ))}
