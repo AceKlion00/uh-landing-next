@@ -15,7 +15,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     return <ErrorPage statusCode={pageProps.error.statusCode} message={pageProps.error.message} />
   }
   return <DialogProvider>
-    <link rel='manifest' href='/manifest.json' />
     <Component {...pageProps} />
     <FacebookPixel />
     <GoogleAnalytics />
