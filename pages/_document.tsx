@@ -5,7 +5,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel='manifest' href='/manifest.json' />
           <meta name='theme-color' content='#07A39D' />
           <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet" />
         </Head>
