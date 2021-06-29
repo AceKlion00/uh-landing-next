@@ -28,10 +28,10 @@ export function ImageCardSelector({ name, value, options, onChange }: Props) {
     onChange({ target: { name, value: options.filter(x => x.selected).map(x => x.value) } });
   }
   return (
-    <div className="flex flex-col md:flex-row flex-wrap">
+    <div className="flex flex-wrap">
       {options.map((option, index) => {
         return (
-          <div key={index} className={'w-full md:w-4/12 px-5'}>
+          <div key={index} className="w-1/2 xs:w-4/12 px-5">
             <div
               className={
                 'transition-all duration-300 ease-in-out border border-light relative rounded-lg shadow-lg cursor-pointer px-10 pt-10 mb-20 hover:bg-primary hover:text-white hover:border-primary' +
