@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
               whenever you access the Services or otherwise interact with us to stay informed about our information
               practices and the choices available to you.</p>
             <h5 className="text-28 text-center text-secondary mb-30">Information You Provide to Us</h5>
-            <p className="mb-30">We collect information you provide directly to us. For example, when you open an account or register for
+            <p className="mb-30">We collect the information you provide directly to us. For example, when you open an account or register for
               the Services, we ask you to provide certain information such as your name, address, email address, phone
               number. We also collect information when you participate in any interactive features of the Services, fill
               out a form, make a purchase, request customer support or otherwise communicate with us, or any other

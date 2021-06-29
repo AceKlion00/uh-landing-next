@@ -53,7 +53,7 @@ export default function RefundPolicy() {
               <li className="mb-15">Deliveries may have separate trucks – Dump or Flatbed trucks. One bulk material product per truck
                 delivery.
               </li>
-              <li className="mb-15">Your delivery will arrive on the scheduled day. Customers do not have to be home to accept delivery.
+              <li className="mb-15">Your delivery will arrive on the scheduled day.
               </li>
               <li className="mb-15">We cannot specify an exact time of day for delivery. Due to the high volume of deliveries, unforeseen
                 circumstances, staffing or weather conditions your delivery date may be changed.
