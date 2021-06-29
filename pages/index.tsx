@@ -4,9 +4,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Pagination } from 'swiper/core';
 
 import { Layout } from '../components/layout/layout';
-import { GallerySection } from '../components/landing/gallery-section';
 import { TestimonialSection } from '../components/landing/testimonial-section';
-import { HomePageType, Idea } from '../core/types';
+import { Idea } from '../core/types';
 import { doGet } from '../core/api-services/http';
 import JoinCustomerSection from '../components/landing/join-customer-section';
 import BlueOval from '../components/misc/blue-oval';
@@ -115,7 +114,7 @@ export default function Home({ ideas }: Props) {
           </div>
         </section>
         <TestimonialSection showDesignAvatar={true} />
-        <GallerySection initialIdeas={ideas} homepageType={HomePageType.Consultation} />
+        {/*<GallerySection initialIdeas={ideas} homepageType={HomePageType.Consultation} />*/}
         <JoinCustomerSection buttonLabel="Get Started Now" eventHandler={freeDesignConsultationService.showFreeDesignConsultationDialog}/>
       </Layout>
     </>
