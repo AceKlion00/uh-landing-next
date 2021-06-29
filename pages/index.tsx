@@ -36,8 +36,8 @@ export default function Home({ ideas }: Props) {
       </Head>
       <Layout>
         <section className="h-615 2xl:h-805 relative overflow-hidden">
-          <div className="hidden xs:block"><Image src="/assets/images/landing-pages/home-page/bg-screen.jpg" quality={75} objectFit="cover" layout="fill" alt="background"/></div>
-          <div className="absolute bottom-0 xs:hidden"><Image src="/assets/images/landing-pages/home-page/bg-mobile.jpg" quality={75} width={480} height={304} alt="background"/></div>
+          <div className="hidden xs:block"><Image src="/assets/images/landing-pages/home-page/bg-screen.jpg" quality={75} objectFit="cover" layout="fill" alt="background" placeholder="blur" blurDataURL="/assets/images/landing-pages/home-page/bg-blur.jpg"/></div>
+          <div className="absolute bottom-0 xs:hidden"><Image src="/assets/images/landing-pages/home-page/bg-mobile.jpg" quality={75} width={480} height={304} alt="background" placeholder="blur" blurDataURL="/assets/images/landing-pages/home-page/bg-blur.jpg"/></div>
           <div className="absolute left-0 -top-425 lg:-top-325 xl:-top-225 2xl:-top-125 overflow-hidden lg:overflow-visible">
             <BlueOval />
           </div>
