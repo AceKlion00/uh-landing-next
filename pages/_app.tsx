@@ -1,5 +1,4 @@
 import type { AppProps } from 'next/app';
-import { Head } from 'next/document';
 import 'swiper/swiper.min.css';
 import '../styles/globals.css';
 import '../styles/layout.css';
@@ -16,9 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return <ErrorPage statusCode={pageProps.error.statusCode} message={pageProps.error.message} />
   }
   return <DialogProvider>
-    <Head>
-      <link rel='manifest' href='/manifest.json' />
-    </Head>
+    <link rel='manifest' href='/manifest.json' />
     <Component {...pageProps} />
     <FacebookPixel />
     <GoogleAnalytics />
