@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <FacebookPixel />
     <GoogleAnalytics />
     <GoogleAds />
-    {/*<MouseFlow />*/}
+    <MouseFlow />
   </DialogProvider>
 }
 export default MyApp;
