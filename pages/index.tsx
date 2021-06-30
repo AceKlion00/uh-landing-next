@@ -133,12 +133,12 @@ export default function Home({ ideas }: Props) {
           </div>
         </section>
 
-        <section className="py-10 sm:py-80">
+        <section className="py-10 sm:py-45 bg-white">
           <div className="container mx-auto text-center">
-            <h3 className="text-24 text-secondary mb-60">Ensure long-lasting results with hundreds of options from leading brands.</h3>
-            <div className="flex-row flex-wrap">
+            <h3 className="text-24 text-secondary my-35">Ensure long-lasting results with hundreds of options from leading brands.</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-30">
               {brandsList.map((brand, index) => (
-                  <div className="w-full md:w-1/3 lg:w-1/5" key={index}>
+                  <div className="w-full my-25" key={index}>
                     <Image src={brand.src} height={brand.height} width={brand.width} layout="fixed" alt="brand" />
                   </div>
               ))}
