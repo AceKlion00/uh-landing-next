@@ -31,14 +31,14 @@ export function DialogProvider({ children }: Props) {
     const newOpenStatus = [...openStatus];
     newOpenStatus[index] = false;
     setOpenStatus(newOpenStatus);
-    setTimeout(() => {
-      const openStatusRemoved = [...openStatus];
-      const dialogsRemoved = [...dialogs];
-      openStatusRemoved.splice(index, 1);
-      dialogsRemoved.splice(index, 1);
-      setOpenStatus(openStatusRemoved);
-      setDialogs(dialogsRemoved);
-    }, 300);
+    // setTimeout(() => {
+    //   const openStatusRemoved = [...openStatus];
+    //   const dialogsRemoved = [...dialogs];
+    //   openStatusRemoved.splice(index, 1);
+    //   dialogsRemoved.splice(index, 1);
+    //   setOpenStatus(openStatusRemoved);
+    //   setDialogs(dialogsRemoved);
+    // }, 300);
   };
 
   const value = { openDialog };

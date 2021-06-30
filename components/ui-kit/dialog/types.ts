@@ -16,6 +16,7 @@ export const modalCustomStyles = {
 };
 
 export enum DialogResult {
+  Close = 'CLOSE',
   Ok = 'OK',
   Yes = 'YES',
   No = 'NO',
