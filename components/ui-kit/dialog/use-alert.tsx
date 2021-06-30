@@ -5,7 +5,7 @@ import { DialogResult, DialogType } from './types';
 interface AlertService {
   notify: (title: string, message: string, okCaption: string) => Promise<DialogResult>,
   confirm: (title: string, message: string) => Promise<DialogResult>,
-  alert: (title: string, message: string, actions: AlertAction[]) => Promise<DialogResult>,
+  alert: (title: string, message: string, actions: AlertAction[]) => void,
 }
 
 export default function useAlert(): AlertService {
@@ -23,10 +23,8 @@ export default function useAlert(): AlertService {
     });
   };
 
-  const alert = (title: string, message: string, actions: AlertAction[]): Promise<DialogResult> => {
-    return new Promise(resolve => {
-      dialog.openDialog(<AlertDialog message={message} title={title} actions={actions} onClose={res => resolve(res)} type={DialogType.Custom} />);
-    });
+  const alert = (title: string, message: string, actions: AlertAction[]): void => {
+    dialog.openDialog(<AlertDialog message={message} title={title} actions={actions} type={DialogType.Custom} />);
   };
 
   return { notify, confirm, alert };

@@ -38,7 +38,3 @@ yarn-error.log*
 
 # environment
 .env*.local
-
-# service worker generation
-public/sw.js*
-public/workbox-*

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 import { FreeDesignConsultationForm, FreeDesignConsultationStep } from './type';
 import Icon from '../../ui-kit/icon';
@@ -9,6 +10,7 @@ import { ProjectAccessoryType, ProjectLocationType } from '../../../core/types';
 import { leadApiService } from '../../../core/api-services/lead-api.service';
 import useAlert from '../../ui-kit/dialog/use-alert';
 import Spinner from '../../ui-kit/common/spinner';
+import { AlertAction } from '../../ui-kit/dialog/alert-dialog';
 
 interface Props {
   onClose: () => void,
@@ -35,6 +37,7 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
   });
 
   const alertService = useAlert();
+  const router = useRouter();
   const next = async (values: any) => {
     setConsultationValue({ ...consultationValue, ...values });
     if (step === FreeDesignConsultationStep.ProjectSummary) {
@@ -42,7 +45,23 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
         setLoading(true);
         await leadApiService.requestFreeDesignConsultation(consultationValue);
         closeDialog();
-        onClose();
+        const actions: AlertAction[] = [
+          {
+            caption: 'No, thank you',
+            className: 'btn-warning',
+            onClick: closeDialog
+          },
+          {
+            caption: 'View Our Signature Kits',
+            className: 'btn-primary',
+            onClick: () => {closeDialog(); router.push('/kits');}
+          }
+        ];
+        alertService.alert(
+          'Thank You!',
+          'One of our Hardscape Consultants will be in touch soon to discuss your project. In the meantime, would you like to have a look at our Signature Hardscape Kits?',
+          actions
+        );
       } catch (e) {
         await alertService.notify('Request Failed', e.message || 'Request failed. Please try again.', 'Ok');
       } finally {

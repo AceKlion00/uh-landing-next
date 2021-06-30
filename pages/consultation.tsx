@@ -20,7 +20,7 @@ export default function Consultation({ ideas }: Props) {
   return (
     <>
       <Head>
-        <title>United Hardscapes: Signature Kits</title>
+        <title>United Hardscapes: Hardscape Kits</title>
         <meta name="description" content="Choose from a variety of patio, walkway, driveway, retaining wall, and stair kits for any budget and taste to create the perfect outdoor living space."/>
       </Head>
       <Layout>

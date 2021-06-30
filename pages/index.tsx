@@ -10,6 +10,7 @@ import { doGet } from '../core/api-services/http';
 import JoinCustomerSection from '../components/landing/join-customer-section';
 import BlueOval from '../components/misc/blue-oval';
 import HowItWorks3DDesignStepsSection from '../components/landing/how-it-works-3d-design-steps-section';
+import { shimmerUrl } from '../components/ui-kit/common/blur-image';
 import useFreeDesignConsultationService from '../core/app-services/free-design-consultation-service';
 
 SwiperCore.use([Autoplay, Pagination]);
@@ -20,11 +21,58 @@ const carouselImages = [
   '/assets/images/landing-pages/home-page/carousel/stair-with-retaining-wall.jpg',
   '/assets/images/landing-pages/home-page/carousel/house-with-all-kits.jpg',
 ];
-const carouselBlurImages = [
-  '/assets/images/landing-pages/home-page/carousel/patio-blur.jpg',
-  '/assets/images/landing-pages/home-page/carousel/pool-patio-blur.jpg',
-  '/assets/images/landing-pages/home-page/carousel/stairs-blur.jpg',
-  '/assets/images/landing-pages/home-page/carousel/all-kits-blur.jpg',
+
+const brandsList = [
+  {
+    src: '/assets/images/landing-pages/home-page/brands/cambridge.png',
+    width: 163,
+    height: 56
+  },
+  {
+    src: '/assets/images/landing-pages/home-page/brands/techo-bloc.png',
+    width: 128,
+    height: 49
+  },
+  {
+    src: '/assets/images/landing-pages/home-page/brands/versa-lock.png',
+    width: 169,
+    height: 76
+  },
+  {
+    src: '/assets/images/landing-pages/home-page/brands/belgard.png',
+    width: 145,
+    height: 63
+  },
+  {
+    src: '/assets/images/landing-pages/home-page/brands/uni-lock.png',
+    width: 168,
+    height: 60
+  },
+  {
+    src: '/assets/images/landing-pages/home-page/brands/delgado-stone.png',
+    width: 150,
+    height: 85
+  },
+  {
+    src: '/assets/images/landing-pages/home-page/brands/eldorado-stone.png',
+    width: 197,
+    height: 55
+  },
+  {
+    src: '/assets/images/landing-pages/home-page/brands/rosetta.png',
+    width: 170,
+    height: 31
+  },
+  {
+    src: '/assets/images/landing-pages/home-page/brands/techniseal.png',
+    width: 158,
+    height: 44
+  },
+  {
+    src: '/assets/images/landing-pages/home-page/brands/srw.png',
+    width: 104,
+    height: 48
+  },
 ];
 
 interface Props {
@@ -41,8 +89,8 @@ export default function Home({ ideas }: Props) {
       </Head>
       <Layout>
         <section className="h-615 2xl:h-805 relative overflow-hidden">
-          <div className="hidden xs:block"><Image src="/assets/images/landing-pages/home-page/bg-screen.jpg" quality={75} objectFit="cover" layout="fill" alt="background" placeholder="blur" blurDataURL="/assets/images/landing-pages/home-page/bg-blur.jpg"/></div>
-          <div className="absolute bottom-0 xs:hidden"><Image src="/assets/images/landing-pages/home-page/bg-mobile.jpg" quality={75} width={480} height={304} alt="background" placeholder="blur" blurDataURL="/assets/images/landing-pages/home-page/bg-blur.jpg"/></div>
+          <div className="hidden xs:block"><Image src="/assets/images/landing-pages/home-page/bg-screen.jpg" quality={75} objectFit="cover" layout="fill" alt="background"/></div>
+          <div className="absolute bottom-0 xs:hidden"><Image src="/assets/images/landing-pages/home-page/bg-mobile.jpg" quality={75} width={480} height={304} alt="background"/></div>
           <div className="absolute left-0 -top-425 lg:-top-325 xl:-top-225 2xl:-top-125 overflow-hidden lg:overflow-visible">
             <BlueOval />
           </div>
@@ -72,7 +120,7 @@ export default function Home({ ideas }: Props) {
                       {carouselImages.map((image: string, imageIndex: number) => (
                         <SwiperSlide key={imageIndex}>
                           <div className="">
-                            <Image className="rounded-lg overflow-hidden cursor-pointer" src={image} width="644" height="473" quality={100} layout="responsive" alt="Carousel Image" placeholder="blur" blurDataURL={carouselBlurImages[imageIndex]} />
+                            <Image className="rounded-lg overflow-hidden cursor-pointer" src={image} width="644" height="473" quality={100} layout="responsive" alt="Carousel Image" placeholder="blur" blurDataURL={shimmerUrl} />
                           </div>
                         </SwiperSlide>
                       ))}
@@ -81,6 +129,19 @@ export default function Home({ ideas }: Props) {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-10 sm:py-80">
+          <div className="container mx-auto text-center">
+            <h3 className="text-24 text-secondary mb-60">Ensure long-lasting results with hundreds of options from leading brands.</h3>
+            <div className="flex-row flex-wrap">
+              {brandsList.map((brand, index) => (
+                  <div className="w-full md:w-1/3 lg:w-1/5" key={index}>
+                    <Image src={brand.src} height={brand.height} width={brand.width} layout="fixed" alt="brand" />
+                  </div>
+              ))}
             </div>
           </div>
         </section>
