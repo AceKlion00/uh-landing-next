@@ -5,7 +5,19 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta name='application-name' content='United Hardscapes' />
+          <link rel="apple-touch-icon" href="/icons/icon-512.png" />
+          <meta name='apple-mobile-web-app-capable' content='yes' />
+          <meta name='apple-mobile-web-app-status-bar-style' content='default' />
+          <meta name='apple-mobile-web-app-title' content='United Hardscapes' />
+          <meta name='mobile-web-app-capable' content='yes' />
+          <meta name='msapplication-TileColor' content='white' />
+          <meta name='msapplication-tap-highlight' content='no' />
           <meta name='theme-color' content='#07A39D' />
+          <link rel='manifest' href='/manifest.json' />
+          <link rel='shortcut icon' href='/favicon.ico' />
+          <link rel="apple-touch-startup-image" href="/splash/splash-320.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+          <link rel="apple-touch-startup-image" href="/splash/splash-512.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
           <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet" />
         </Head>
         <body>

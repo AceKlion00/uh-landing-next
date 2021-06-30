@@ -10,7 +10,6 @@ import { doGet } from '../core/api-services/http';
 import JoinCustomerSection from '../components/landing/join-customer-section';
 import BlueOval from '../components/misc/blue-oval';
 import HowItWorks3DDesignStepsSection from '../components/landing/how-it-works-3d-design-steps-section';
-import { shimmerUrl } from '../components/ui-kit/common/blur-image';
 import useFreeDesignConsultationService from '../core/app-services/free-design-consultation-service';
 
 SwiperCore.use([Autoplay, Pagination]);
@@ -20,6 +19,12 @@ const carouselImages = [
   '/assets/images/landing-pages/home-page/carousel/pool-patio.jpg',
   '/assets/images/landing-pages/home-page/carousel/stair-with-retaining-wall.jpg',
   '/assets/images/landing-pages/home-page/carousel/house-with-all-kits.jpg',
+];
+const carouselBlurImages = [
+  '/assets/images/landing-pages/home-page/carousel/patio-blur.jpg',
+  '/assets/images/landing-pages/home-page/carousel/pool-patio-blur.jpg',
+  '/assets/images/landing-pages/home-page/carousel/stairs-blur.jpg',
+  '/assets/images/landing-pages/home-page/carousel/all-kits-blur.jpg',
 ];
 
 const brandsList = [
@@ -89,8 +94,8 @@ export default function Home({ ideas }: Props) {
       </Head>
       <Layout>
         <section className="h-615 2xl:h-805 relative overflow-hidden">
-          <div className="hidden xs:block"><Image src="/assets/images/landing-pages/home-page/bg-screen.jpg" quality={75} objectFit="cover" layout="fill" alt="background"/></div>
-          <div className="absolute bottom-0 xs:hidden"><Image src="/assets/images/landing-pages/home-page/bg-mobile.jpg" quality={75} width={480} height={304} alt="background"/></div>
+          <div className="hidden xs:block"><Image src="/assets/images/landing-pages/home-page/bg-screen.jpg" quality={75} objectFit="cover" layout="fill" alt="background" placeholder="blur" blurDataURL="/assets/images/landing-pages/home-page/bg-blur.jpg"/></div>
+          <div className="absolute bottom-0 xs:hidden"><Image src="/assets/images/landing-pages/home-page/bg-mobile.jpg" quality={75} width={480} height={304} alt="background" placeholder="blur" blurDataURL="/assets/images/landing-pages/home-page/bg-blur.jpg"/></div>
           <div className="absolute left-0 -top-425 lg:-top-325 xl:-top-225 2xl:-top-125 overflow-hidden lg:overflow-visible">
             <BlueOval />
           </div>
@@ -120,7 +125,7 @@ export default function Home({ ideas }: Props) {
                       {carouselImages.map((image: string, imageIndex: number) => (
                         <SwiperSlide key={imageIndex}>
                           <div className="">
-                            <Image className="rounded-lg overflow-hidden cursor-pointer" src={image} width="644" height="473" quality={100} layout="responsive" alt="Carousel Image" placeholder="blur" blurDataURL={shimmerUrl} />
+                            <Image className="rounded-lg overflow-hidden cursor-pointer" src={image} width="644" height="473" quality={100} layout="responsive" alt="Carousel Image" placeholder="blur" blurDataURL={carouselBlurImages[imageIndex]} />
                           </div>
                         </SwiperSlide>
                       ))}
@@ -139,7 +144,7 @@ export default function Home({ ideas }: Props) {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-30">
               {brandsList.map((brand, index) => (
                   <div className="w-full my-25" key={index}>
-                    <Image src={brand.src} height={brand.height} width={brand.width} layout="fixed" alt="brand" />
+                    <Image src={brand.src} height={brand.height} width={brand.width} alt="brand" />
                   </div>
               ))}
             </div>
