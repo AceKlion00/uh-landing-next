@@ -151,7 +151,7 @@ export default function Home({ ideas }: Props) {
           </div>
         </section>
 
-        <section className="my-10 sm:my-80">
+        <section className="py-10 sm:py-80 bg-light-50">
           <div className="container mx-auto text-center">
             <h4 className="text-32 text-primary max-w-700 mx-auto mb-30">Want to upgrade your outdoor space, but not sure where to get started? </h4>
             <div className="text-18 text-light-500">
