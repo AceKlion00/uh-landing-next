@@ -9,6 +9,7 @@ import { ProjectAccessoryType, ProjectLocationType } from '../../../core/types';
 import { leadApiService } from '../../../core/api-services/lead-api.service';
 import useAlert from '../../ui-kit/dialog/use-alert';
 import Spinner from '../../ui-kit/common/spinner';
+import useGAService from '../../../core/app-services/ga-service';
 
 interface Props {
   onClose: (showThankYou: boolean) => void,
@@ -16,6 +17,7 @@ interface Props {
 }
 
 export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
+  const gaService = useGAService();
   const [step, setStep] = useState<FreeDesignConsultationStep>(FreeDesignConsultationStep.PersonalInformation);
   const [loading, setLoading] = useState<boolean>(false);
   const [consultationValue, setConsultationValue] = useState<FreeDesignConsultationForm>({
@@ -41,6 +43,7 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
       try {
         setLoading(true);
         await leadApiService.requestFreeDesignConsultation(consultationValue);
+        gaService.event('Request Submitted', 'Free Design Consultation Form Submitted');
         closeDialog();
         onClose(true);
       } catch (e) {

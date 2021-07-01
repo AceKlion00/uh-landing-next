@@ -9,6 +9,7 @@ import Spinner from '../ui-kit/common/spinner';
 import useAlert from '../ui-kit/dialog/use-alert';
 import Icon from '../ui-kit/icon';
 import { leadApiService } from '../../core/api-services/lead-api.service';
+import useGAService from '../../core/app-services/ga-service';
 
 interface Props {
   onClose: () => void,
@@ -17,6 +18,7 @@ interface Props {
 
 export function SupplierRequestDialog({ onClose, closeDialog }: Props) {
   const alertService = useAlert();
+  const gaService = useGAService();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const schema = Yup.object().shape({
@@ -39,6 +41,7 @@ export function SupplierRequestDialog({ onClose, closeDialog }: Props) {
       try {
         setIsLoading(true);
         await leadApiService.joinSuppliers(values);
+        gaService.event('Request Submitted', 'Supplier Request Form Submitted');
         alertService.notify(
           'Application Sent!',
           'Thank you for applying for the United Hardscapes Authorized Contractor Network! We will review your company\'s information and contact you within 48 hours with any additional questions.',
