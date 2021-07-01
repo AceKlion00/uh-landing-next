@@ -3,8 +3,12 @@ import Image from 'next/image';
 
 import { Layout } from '../components/layout/layout';
 import { shimmerUrl } from '../components/ui-kit/common/blur-image';
+import useGAService from '../core/app-services/ga-service';
 
 export default function OurStory() {
+
+  const gaService = useGAService();
+  gaService.pageView('/our-story');
 
   const dreamImages = [
     'https://assets.unitedhardscapes.com/idea-board/266.jpg',

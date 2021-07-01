@@ -7,8 +7,11 @@ import { Accordion } from '../components/ui-kit/misc/accordion';
 import { enumToOptions } from '../components/ui-kit/utils';
 import SearchInput from '../components/ui-kit/input/search-input';
 import smoothScrollTo from '../components/ui-kit/services/smooth-scroll-to';
+import useGAService from '../core/app-services/ga-service';
 
 export default function Faqs() {
+  const gaService = useGAService();
+  gaService.pageView('/faq');
   const [faqs, setFaqs] = useState(FAQS);
   const [currentCategory, setCurrentCategory] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');

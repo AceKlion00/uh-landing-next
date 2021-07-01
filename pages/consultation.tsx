@@ -10,12 +10,15 @@ import { Idea } from '../core/types';
 import { doGet } from '../core/api-services/http';
 import { TestimonialSection } from '../components/landing/testimonial-section';
 import JoinCustomerSection from '../components/landing/join-customer-section';
+import useGAService from '../core/app-services/ga-service';
 
 interface Props {
   ideas: Idea[];
 }
 
 export default function Consultation({ ideas }: Props) {
+  const gaService = useGAService();
+  gaService.pageView('/consultation');
   const consultationService = useConsultationService();
   return (
     <>
