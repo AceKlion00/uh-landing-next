@@ -18,9 +18,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
   return <DialogProvider>
     <Component {...pageProps} />
+    <MouseFlow />
     <FacebookPixel />
     <GoogleAds />
-    <MouseFlow />
   </DialogProvider>
 }
 export default MyApp;

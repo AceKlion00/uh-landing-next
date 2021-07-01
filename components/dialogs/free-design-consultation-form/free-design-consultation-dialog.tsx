@@ -43,6 +43,8 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
       try {
         setLoading(true);
         await leadApiService.requestFreeDesignConsultation(consultationValue);
+        const w = window as any;
+        w.gtag_report_conversion_free_design_consultation(null);
         gaService.event('Request Submitted', 'Free Design Consultation Form Submitted');
         closeDialog();
         onClose(true);
