@@ -1,7 +1,10 @@
 import Head from 'next/head';
 import { Layout } from '../components/layout/layout';
+import useGAService from '../core/app-services/ga-service';
 
 export default function RefundPolicy() {
+  const gaService = useGAService();
+  gaService.pageView('/refund-policy');
   return (
     <>
       <Head>

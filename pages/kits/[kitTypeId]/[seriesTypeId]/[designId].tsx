@@ -6,6 +6,7 @@ import { KitType } from '../../../../core/types';
 import { Layout } from '../../../../components/layout/layout';
 import KitSeriesPage from '../../../../components/kits/kit-series-page';
 import smoothScrollTo from '../../../../components/ui-kit/services/smooth-scroll-to';
+import useGAService from '../../../../core/app-services/ga-service';
 
 interface Props {
   kitType: KitType;
@@ -14,6 +15,8 @@ interface Props {
 }
 
 export default function DesignDetails({ kitType, seriesTypeId, designId }: Props) {
+  const gaService = useGAService();
+  gaService.pageView(`/kits/${kitType}/${seriesTypeId}/${designId}`);
   useEffect(() => {
     smoothScrollTo('details', 300);
   }, [designId]);

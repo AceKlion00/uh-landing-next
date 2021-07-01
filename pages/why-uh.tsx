@@ -6,8 +6,11 @@ import { kitsFAQs } from '../core/data/faqs';
 import { Layout } from '../components/layout/layout';
 import useConsultationService from '../core/app-services/consultation-service';
 import { Accordion } from '../components/ui-kit/misc/accordion';
+import useGAService from '../core/app-services/ga-service';
 
 export default function WhyUH() {
+  const gaService = useGAService();
+  gaService.pageView('/why-uh');
   const consultationService = useConsultationService();
   const kitsFaqs = kitsFAQs;
   const features = [

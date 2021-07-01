@@ -3,6 +3,7 @@ import { doGet } from '../../../../core/api-services/http';
 import { KitType } from '../../../../core/types';
 import { Layout } from '../../../../components/layout/layout';
 import KitSeriesPage from '../../../../components/kits/kit-series-page';
+import useGAService from '../../../../core/app-services/ga-service';
 
 interface Props {
   kitType: KitType;
@@ -10,6 +11,8 @@ interface Props {
 }
 
 export default function KitSeries({ kitType, seriesTypeId }: Props) {
+  const gaService = useGAService();
+  gaService.pageView(`/kits/${kitType}/${seriesTypeId}`);
   const series = kitType.kitSeries.find(s => s.kitSeriesId === seriesTypeId) as any;
   const design = series.kitDesigns[0];
   return (<>

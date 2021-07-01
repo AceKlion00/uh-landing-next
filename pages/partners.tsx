@@ -3,8 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Layout } from '../components/layout/layout';
 import usePartnerRequestService from '../core/app-services/partner-request-service';
+import useGAService from '../core/app-services/ga-service';
 
 export default function Partners() {
+  const gaService = useGAService();
+  gaService.pageView('/partners');
   const partnerRequestService = usePartnerRequestService();
 
   return (

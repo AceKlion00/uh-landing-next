@@ -14,8 +14,12 @@ import { enumToOptions } from '../components/ui-kit/utils';
 import { PhoneInput } from '../components/ui-kit/input/phone-input';
 import { leadApiService } from '../core/api-services/lead-api.service';
 import useAlert from '../components/ui-kit/dialog/use-alert';
+import useGAService from '../core/app-services/ga-service';
 
 export default function ContactUs() {
+  const gaService = useGAService();
+  gaService.pageView('/contact-us');
+
   const alertService = useAlert();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const sourceFoundUsOptions = enumToOptions<SourceFoundUs>(SourceFoundUs);
