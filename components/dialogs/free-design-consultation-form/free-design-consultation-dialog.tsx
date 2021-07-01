@@ -11,7 +11,7 @@ import useAlert from '../../ui-kit/dialog/use-alert';
 import Spinner from '../../ui-kit/common/spinner';
 
 interface Props {
-  onClose: () => void,
+  onClose: (showThankYou: boolean) => void,
   closeDialog: () => void, // DO NOT USE THIS. INTERNAL USE ONLY
 }
 
@@ -42,7 +42,7 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
         setLoading(true);
         await leadApiService.requestFreeDesignConsultation(consultationValue);
         closeDialog();
-        onClose();
+        onClose(true);
       } catch (e) {
         await alertService.notify('Request Failed', e.message || 'Request failed. Please try again.', 'Ok');
       } finally {
@@ -56,7 +56,7 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
   return (
     <div className="max-w-500 py-20 mx-15 md:mx-0">
       <div className="flex justify-end px-20">
-        <button className="px-5 pt-5" onClick={() => { closeDialog(); onClose(); }}><Icon name="close" color="#2c2c2c" size={14} /></button>
+        <button className="px-5 pt-5" onClick={() => { closeDialog(); onClose(false); }}><Icon name="close" color="#2c2c2c" size={14} /></button>
       </div>
       <h3 className="text-primary font-medium text-24 text-center mb-15 px-10 md:px-20">Get started with a Hardscape Architect</h3>
       {step === FreeDesignConsultationStep.PersonalInformation && <PersonalInformationForm next={next} consultationValue={consultationValue}/>}
@@ -68,6 +68,6 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
 }
 
 FreeDesignConsultationDialog.defaultProps = {
-  onClose: () => {},
+  onClose: (showThankyou: boolean) => {},
   closeDialog: () => {},
 }

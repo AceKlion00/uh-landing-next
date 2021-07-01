@@ -9,13 +9,10 @@ import { Layout } from '../components/layout/layout';
 import { howItWorksContents, HowItWorksType } from '../core/data/how-it-works';
 import useConsultationService from '../core/app-services/consultation-service';
 import { shimmerUrl } from '../components/ui-kit/common/blur-image';
-import useGAService from '../core/app-services/ga-service';
 
 SwiperCore.use([Autoplay, Pagination]);
 
 export default function HowItWorks() {
-  const gaService = useGAService();
-  gaService.pageView('/how-it-works');
   const consultationService = useConsultationService();
   const howItWorkTypes = [HowItWorksType.Designing, HowItWorksType.Installing];
   const [workType, setWorkType] = useState(HowItWorksType.Designing);

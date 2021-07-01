@@ -28,7 +28,10 @@ export default function useFreeDesignConsultationService(): FreeConsultationServ
   ];
 
   const showFreeDesignConsultationDialog = () => {
-    dialog.openDialog(<FreeDesignConsultationDialog onClose={() => {
+    dialog.openDialog(<FreeDesignConsultationDialog onClose={(showThankYou) => {
+      if (!showThankYou) {
+        return;
+      }
       alertService.alert(
         'Thank You!',
         'One of our Hardscape Consultants will be in touch soon to discuss your project. In the meantime, would you like to have a look at our Signature Hardscape Kits?',

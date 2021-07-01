@@ -1,10 +1,7 @@
 import Head from 'next/head';
 import { Layout } from '../components/layout/layout';
-import useGAService from '../core/app-services/ga-service';
 
 export default function PrivacyPolicy() {
-  const gaService = useGAService();
-  gaService.pageView('/privacy-policy');
   return (
     <>
       <Head>

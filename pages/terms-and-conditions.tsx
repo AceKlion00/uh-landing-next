@@ -1,10 +1,7 @@
 import Head from 'next/head';
 import { Layout } from '../components/layout/layout';
-import useGAService from '../core/app-services/ga-service';
 
 export default function TermsAndConditions() {
-  const gaService = useGAService();
-  gaService.pageView('/terms-and-conditions');
   return (
     <>
       <Head>

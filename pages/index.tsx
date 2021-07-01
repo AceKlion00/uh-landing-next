@@ -11,7 +11,6 @@ import JoinCustomerSection from '../components/landing/join-customer-section';
 import BlueOval from '../components/misc/blue-oval';
 import HowItWorks3DDesignStepsSection from '../components/landing/how-it-works-3d-design-steps-section';
 import useFreeDesignConsultationService from '../core/app-services/free-design-consultation-service';
-import useGAService from '../core/app-services/ga-service';
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -86,8 +85,6 @@ interface Props {
 }
 
 export default function Home({ ideas }: Props) {
-  const gaService = useGAService();
-  gaService.pageView('/');
   const freeDesignConsultationService = useFreeDesignConsultationService();
   return (
     <>

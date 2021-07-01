@@ -13,15 +13,12 @@ import { shimmerUrl } from '../../components/ui-kit/common/blur-image';
 import Icon from '../../components/ui-kit/icon';
 import useConsultationService from '../../core/app-services/consultation-service';
 import smoothScrollTo from '../../components/ui-kit/services/smooth-scroll-to';
-import useGAService from '../../core/app-services/ga-service';
 
 interface Props {
   kits: KitType[];
 }
 
 export default function Kits({ kits }: Props) {
-  const gaService = useGAService();
-  gaService.pageView('/kits');
   const imagePreviewService = useImagePreview();
   const consultationService = useConsultationService();
   const [seriesSelection, setSeriesSelection] = useState(kits.map(kit => {

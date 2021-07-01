@@ -9,12 +9,8 @@ import { WhyUhKitsSection } from '../components/landing/why-uh-kits-section';
 import JoinCustomerSection from '../components/landing/join-customer-section';
 import { FAQS, FAQCategory } from '../core/data/faqs';
 import { Accordion } from '../components/ui-kit/misc/accordion';
-import useGAService from '../core/app-services/ga-service';
 
 export default function DIY() {
-  const gaService = useGAService();
-  gaService.pageView('/diy');
-
   const consultationService = useConsultationService();
 
   return (
