@@ -146,9 +146,9 @@ export default function Home({ ideas }: Props) {
             <h3 className="text-24 text-secondary my-35">Ensure long-lasting results with hundreds of options from leading brands.</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-30">
               {brandsList.map((brand, index) => (
-                  <div className="w-full my-25" key={index}>
-                    <Image src={brand.src} height={brand.height} width={brand.width} alt="brand" />
-                  </div>
+                <div className="w-full my-25" key={index}>
+                  <Image src={brand.src} height={brand.height} width={brand.width} alt="brand" />
+                </div>
               ))}
             </div>
           </div>
@@ -181,8 +181,11 @@ export default function Home({ ideas }: Props) {
                 </div>
               </div>
               <div>
-                <div className="max-w-430 mx-auto mt-60 xl:mt-0">
-                  <Image src="/assets/images/landing-pages/home-page/joe.jpg" width="434" height="426" quality={100} alt="Joe" layout="responsive" />
+                <div className="max-w-645 mx-auto mt-60 xl:mt-0">
+                  <iframe className="w-full" width="560" height="315" src="https://www.youtube.com/embed/a77-kdSOpIs?autoplay=0&rel=0"
+                          title="YouTube video player" frameBorder="0"
+                          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen />
                 </div>
               </div>
             </div>
