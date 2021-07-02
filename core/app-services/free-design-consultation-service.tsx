@@ -4,7 +4,6 @@ import { FreeDesignConsultationDialog } from '../../components/dialogs/free-desi
 import useAlert from '../../components/ui-kit/dialog/use-alert';
 import { AlertAction } from '../../components/ui-kit/dialog/alert-dialog';
 import { noop } from '../types';
-import useGAService from './ga-service';
 
 interface FreeConsultationService {
   showFreeDesignConsultationDialog: () => void,
@@ -14,7 +13,6 @@ export default function useFreeDesignConsultationService(): FreeConsultationServ
   const router = useRouter();
   const dialog = useDialog();
   const alertService = useAlert();
-  const gaService= useGAService();
 
   const actions: AlertAction[] = [
     {
@@ -30,12 +28,7 @@ export default function useFreeDesignConsultationService(): FreeConsultationServ
   ];
 
   const showFreeDesignConsultationDialog = () => {
-    gaService.event('Dialog Opened', 'Free Design Consultation Dialog Opened');
-    gaService.modalView('Free Design Consultation Dialog');
-    dialog.openDialog(<FreeDesignConsultationDialog onClose={(showThankYou) => {
-      if (!showThankYou) {
-        return;
-      }
+    dialog.openDialog(<FreeDesignConsultationDialog onClose={() => {
       alertService.alert(
         'Thank You!',
         'One of our Hardscape Consultants will be in touch soon to discuss your project. In the meantime, would you like to have a look at our Signature Hardscape Kits?',

@@ -10,7 +10,6 @@ import { accessoryTypes } from '../../../core/data/home';
 import { TextArea } from '../../ui-kit/input/textarea';
 import { ImageCardSelector } from '../../ui-kit/input/image-card-selector';
 import { useEffect } from 'react';
-import useGAService from '../../../core/app-services/ga-service';
 
 interface Props {
   consultationValue: FreeDesignConsultationForm,
@@ -19,8 +18,6 @@ interface Props {
 }
 
 export function ProjectBriefForm({ consultationValue, next, back }: Props) {
-  const gaService = useGAService();
-  gaService.event('Free Design Consultation', 'Step 2: Project Brief Information');
   const projectAccessoryTypes: Option<ProjectAccessoryType>[] = enumToOptions<ProjectAccessoryType>(ProjectAccessoryType);
   const projectLocationTypes: Option<ProjectLocationType>[] = enumToOptions<ProjectLocationType>(ProjectLocationType);
 

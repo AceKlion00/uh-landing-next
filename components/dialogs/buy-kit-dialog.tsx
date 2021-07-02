@@ -9,7 +9,6 @@ import Spinner from '../ui-kit/common/spinner';
 import { leadApiService } from '../../core/api-services/lead-api.service';
 import useAlert from '../ui-kit/dialog/use-alert';
 import Icon from '../ui-kit/icon';
-import useGAService from '../../core/app-services/ga-service';
 
 interface Props {
   kitName: string;
@@ -18,7 +17,6 @@ interface Props {
 }
 
 export function BuyKitDialog({ kitName, onClose, closeDialog }: Props) {
-  const gaService = useGAService();
   const alertService = useAlert();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const schema = Yup.object().shape({
@@ -46,7 +44,6 @@ export function BuyKitDialog({ kitName, onClose, closeDialog }: Props) {
       try {
         setIsLoading(true);
         await leadApiService.buyKit(values as any);
-        gaService.event('Request Submitted', 'Buy Kit Form Submitted');
         alertService.notify('Thank You!', 'One of our Hardscape Consultants will be in touch soon to schedule the consultation.', 'Ok')
           .then(() => {
             closeDialog();

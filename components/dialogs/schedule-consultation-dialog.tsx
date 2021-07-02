@@ -10,7 +10,6 @@ import Spinner from '../ui-kit/common/spinner';
 import { leadApiService } from '../../core/api-services/lead-api.service';
 import useAlert from '../ui-kit/dialog/use-alert';
 import Icon from '../ui-kit/icon';
-import useGAService from '../../core/app-services/ga-service';
 
 interface Props {
   onClose: () => void,
@@ -18,7 +17,6 @@ interface Props {
 }
 
 export function ScheduleConsultationDialog({ onClose, closeDialog }: Props) {
-  const gaService = useGAService();
   const alertService = useAlert();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -45,7 +43,6 @@ export function ScheduleConsultationDialog({ onClose, closeDialog }: Props) {
       try {
         setIsLoading(true);
         await leadApiService.requestConsultation(values as any);
-        gaService.event('Request Submitted', 'Schedule Consultation Form Submitted');
         alertService.notify('Thank You!', 'One of our Hardscape Consultants will be in touch soon to schedule the consultation.', 'View Our Signature Kits')
           .then(() => {
             closeDialog();

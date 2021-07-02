@@ -146,9 +146,9 @@ export default function Home({ ideas }: Props) {
             <h3 className="text-24 text-secondary my-35">Ensure long-lasting results with hundreds of options from leading brands.</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-30">
               {brandsList.map((brand, index) => (
-                <div className="w-full my-25" key={index}>
-                  <Image src={brand.src} height={brand.height} width={brand.width} alt="brand" />
-                </div>
+                  <div className="w-full my-25" key={index}>
+                    <Image src={brand.src} height={brand.height} width={brand.width} alt="brand" />
+                  </div>
               ))}
             </div>
           </div>
@@ -174,18 +174,15 @@ export default function Home({ ideas }: Props) {
                 <div className="max-w-full xl:max-w-550 text-light-500">
                   <p className="mb-20">United Hardscapes has been on a mission of creating beautiful yards and functional spaces for years. And now more than ever we bring our passion for Hardscapes to life by <b>providing homeowners a better way to plan, visualize</b> and <b>purchase materials</b> for their projects.</p>
                   <p className="mb-20"><b className="text-primary">We are like no other hardscape supplier around</b>, putting the homeowner first and the sale second. Having been in the shoes of a contractor and designing thousands of projects firsthand, we know exactly what goes into each project to make it complete and what it really takes to plan a project correctly. From ideas to design and material kits - we have everything you or your contractor will need to <b>get your project completed sooner, with less expense, and done right the first time.</b></p>
-                  <p className="mb-20">This season, we offer homeowners our hardscape design services absolutely for free.</p>
+                  <p className="mb-20">This June, we offer homeowners our hardscape design services absolutely for free.</p>
                   <p className="mb-20"><b>Get started now to build the yard of your dreams!</b> See you on the other side!</p>
                   <p>Joe Masciovecchio,</p>
                   <p>CEO of United Hardscapes</p>
                 </div>
               </div>
               <div>
-                <div className="max-w-645 mx-auto mt-60 xl:mt-0">
-                  <iframe className="w-full" width="560" height="315" src="https://www.youtube.com/embed/a77-kdSOpIs?autoplay=0&rel=0"
-                          title="YouTube video player" frameBorder="0"
-                          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen />
+                <div className="max-w-430 mx-auto mt-60 xl:mt-0">
+                  <Image src="/assets/images/landing-pages/home-page/joe.jpg" width="434" height="426" quality={100} alt="Joe" layout="responsive" />
                 </div>
               </div>
             </div>
