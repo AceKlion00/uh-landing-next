@@ -183,7 +183,7 @@ export default function Home({ ideas }: Props) {
                 </div>
               </div>
               <div>
-                <div className="max-w-430 mx-auto mt-60 xl:mt-0 relative">
+                <div className="mx-auto mt-60 xl:mt-0 xl:ml-20 relative">
                   <div className="hidden sm:block">
                     <Image src="/assets/images/landing-pages/home-page/joe-with-hat-desktop.jpg" width="642" height="445" quality={100} alt="Joe" layout="responsive" />
                   </div>
