@@ -6,6 +6,7 @@ import { PhoneInput } from '../../ui-kit/input/phone-input';
 import { FreeDesignConsultationForm } from './type';
 import { noop } from '../../../core/types';
 import { useEffect } from 'react';
+import useGAService from '../../../core/app-services/ga-service';
 
 interface Props {
   consultationValue: FreeDesignConsultationForm,
@@ -13,6 +14,8 @@ interface Props {
 }
 
 export function PersonalInformationForm({ consultationValue, next }: Props) {
+  const gaService = useGAService();
+  gaService.event('Free Design Consultation', 'Step 1: Personal Information');
   const schema = Yup.object().shape({
     firstName: Yup.string().required('Required'),
     lastName: Yup.string().required('Required'),

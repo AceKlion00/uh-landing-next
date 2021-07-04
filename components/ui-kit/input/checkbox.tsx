@@ -20,9 +20,9 @@ export function CheckBox({ id, name, label, value, onChange, readonly }: Props) 
       readOnly={readonly}
       className="opacity-0"
     />
-    <span className={"w-15 h-15 bg-white absolute left-0" + (value ? " border-primary bg-primary" : " border-2 border-light-400")} />
-    {value && <span className="absolute left-5 top-5 w-5 h-10 border-white border-r-2 border-b-2 transform rotate-45" />}
-    <span className="pl-10">{label}</span>
+    <span className={"w-25 h-25 bg-white rounded-md absolute left-0 border-primary" + (value ? " bg-primary" : "bg-none border-2")} />
+    {value && <span className="absolute left-10 top-9 w-5 h-10 border-white border-r-2 border-b-2 transform rotate-45" />}
+    <span className="pl-20">{label}</span>
   </label>);
 }
 

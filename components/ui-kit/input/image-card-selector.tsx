@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import { noop, ProjectAccessoryType } from '../../../core/types';
 import { shimmerUrl } from '../common/blur-image';
+import { CheckBox } from './checkbox';
 
 interface Props {
   name: string;
@@ -34,12 +35,22 @@ export function ImageCardSelector({ name, value, options, onChange }: Props) {
           <div key={index} className="w-1/2 xs:w-4/12 px-5">
             <div
               className={
-                'transition-all duration-300 ease-in-out border border-light relative rounded-lg shadow-lg cursor-pointer px-10 pt-10 mb-20 hover:bg-primary hover:text-white hover:border-primary' +
+                'hidden sm:block transition-all duration-300 ease-in-out border border-light relative rounded-lg shadow-lg cursor-pointer px-10 pt-10 mb-20 hover:bg-primary hover:text-white hover:border-primary' +
                 (option.selected ? ' bg-primary text-white border-primary' : ' text-light-400')} onClick={() => {selectCard(option);}}>
               <div className="rounded-md overflow-hidden">
                 <Image src={option.image} width={70} height={45} layout="responsive" objectFit="cover" placeholder="blur" blurDataURL={shimmerUrl} alt="Idea" />
               </div>
               <div className="font-medium text-center my-10">{option.label}</div>
+            </div>
+            <div className="sm:hidden transition-all duration-300 ease-in-out text-primary px-10 pt-10 mb-20" onClick={() => {selectCard(option);}}>
+              <CheckBox name={option.value} label={option.label} onChange={event => {
+                const updated = [...options];
+                const updatedOption = updated.find(opt => opt.value === option.value);
+                if (updatedOption) {
+                  updatedOption.selected = event.target.value === 'true';
+                }
+                onChange({ target: { name, value: updated } });
+              }} value={option.selected} />
             </div>
           </div>
         );

@@ -174,7 +174,7 @@ export default function Home({ ideas }: Props) {
                 <div className="max-w-full xl:max-w-550 text-light-500">
                   <p className="mb-20">United Hardscapes has been on a mission of creating beautiful yards and functional spaces for years. And now more than ever we bring our passion for Hardscapes to life by <b>providing homeowners a better way to plan, visualize</b> and <b>purchase materials</b> for their projects.</p>
                   <p className="mb-20"><b className="text-primary">We are like no other hardscape supplier around</b>, putting the homeowner first and the sale second. Having been in the shoes of a contractor and designing thousands of projects firsthand, we know exactly what goes into each project to make it complete and what it really takes to plan a project correctly. From ideas to design and material kits - we have everything you or your contractor will need to <b>get your project completed sooner, with less expense, and done right the first time.</b></p>
-                  <p className="mb-20">This June, we offer homeowners our hardscape design services absolutely for free.</p>
+                  <p className="mb-20">This season, we offer homeowners our hardscape design services absolutely for free.</p>
                   <p className="mb-20"><b>Get started now to build the yard of your dreams!</b> See you on the other side!</p>
                   <p>Joe Masciovecchio,</p>
                   <p>CEO of United Hardscapes</p>

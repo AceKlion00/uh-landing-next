@@ -6,6 +6,7 @@ import { TextArea } from '../../ui-kit/input/textarea';
 import { PhotoUploader } from '../../ui-kit/input/photo-uploader';
 import { noop } from '../../../core/types';
 import { useEffect } from 'react';
+import useGAService from '../../../core/app-services/ga-service';
 
 interface Props {
   consultationValue: FreeDesignConsultationForm,
@@ -14,6 +15,8 @@ interface Props {
 }
 
 export function ProjectSummaryForm({ consultationValue, next, back }: Props) {
+  const gaService = useGAService();
+  gaService.event('Free Design Consultation', 'Step 3: Project Summary');
   const schema = Yup.object().shape({
     yardComment: Yup.string(),
     attachments: Yup.array(),

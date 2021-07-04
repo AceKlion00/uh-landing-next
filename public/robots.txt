@@ -1,0 +1,17 @@
+Sitemap: https://unitedhardscapes.com/sitemap.xml
+
+User-agent: *
+Allow: /
+Allow: /diy
+Allow: /consultation
+Allow: /kits
+Allow: /how-it-works
+Allow: /why-uh
+Allow: /partners
+Allow: /faqs
+
+Disallow: /contact-us
+Disallow: /kits/custom-design-request
+Disallow: /partners/contractor-application/step-1
+Disallow: /partners/contractor-application/step-2
+Disallow: /partners/contractor-application/step-3
