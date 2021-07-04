@@ -190,7 +190,7 @@ export default function Home({ ideas }: Props) {
                   <div className="block sm:hidden">
                     <Image src="/assets/images/landing-pages/home-page/joe-with-hat-mobile.jpg" width="375" height="445" quality={100} alt="Joe" layout="responsive" />
                   </div>
-                  <div className="absolute top-1/2 left-1/2 -mt-30 -ml-30 cursor-pointer" onClick={() => {playVideoDialog.play('')}}>
+                  <div className="absolute top-1/2 left-1/2 -mt-30 -ml-30 cursor-pointer" onClick={() => {playVideoDialog.play('https://www.youtube.com/embed/a77-kdSOpIs')}}>
                     <Image src="/assets/images/landing-pages/home-page/youtube-icon.svg" width="60" height="60" quality={100} alt="Joe" />
                   </div>
                 </div>

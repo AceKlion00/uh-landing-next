@@ -11,8 +11,8 @@ export default function useVideoDialogService(): VideoDialogService {
   const dialog = useDialog();
 
   const play = (videoPath: string) => {
-    gaService.event('Dialog Opened', 'Buy Kit Dialog Opened');
-    gaService.modalView('Buy Kit Dialog');
+    gaService.event('Dialog Opened', 'About Us Video Dialog Opened');
+    gaService.modalView('About Us Video Dialog');
     dialog.openDialog(<VideoDialog videoPath={videoPath} />);
   };
 
