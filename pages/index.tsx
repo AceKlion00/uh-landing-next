@@ -12,6 +12,7 @@ import BlueOval from '../components/misc/blue-oval';
 import HowItWorks3DDesignStepsSection from '../components/landing/how-it-works-3d-design-steps-section';
 import useFreeDesignConsultationService from '../core/app-services/free-design-consultation-service';
 import useGAService from '../core/app-services/ga-service';
+import useVideoDialogService from '../core/app-services/video-dialog-service';
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -86,6 +87,7 @@ interface Props {
 }
 
 export default function Home({ ideas }: Props) {
+  const playVideoDialog = useVideoDialogService();
   const gaService = useGAService();
   gaService.pageView('/');
   const freeDesignConsultationService = useFreeDesignConsultationService();
@@ -181,8 +183,16 @@ export default function Home({ ideas }: Props) {
                 </div>
               </div>
               <div>
-                <div className="max-w-430 mx-auto mt-60 xl:mt-0">
-                  <Image src="/assets/images/landing-pages/home-page/joe.jpg" width="434" height="426" quality={100} alt="Joe" layout="responsive" />
+                <div className="max-w-430 mx-auto mt-60 xl:mt-0 relative">
+                  <div className="hidden sm:block">
+                    <Image src="/assets/images/landing-pages/home-page/joe-with-hat-desktop.jpg" width="642" height="445" quality={100} alt="Joe" layout="responsive" />
+                  </div>
+                  <div className="block sm:hidden">
+                    <Image src="/assets/images/landing-pages/home-page/joe-with-hat-mobile.jpg" width="375" height="445" quality={100} alt="Joe" layout="responsive" />
+                  </div>
+                  <div className="absolute top-1/2 left-1/2 -mt-30 -ml-30 cursor-pointer" onClick={() => {playVideoDialog.play('')}}>
+                    <Image src="/assets/images/landing-pages/home-page/youtube-icon.svg" width="60" height="60" quality={100} alt="Joe" />
+                  </div>
                 </div>
               </div>
             </div>
