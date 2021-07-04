@@ -14,6 +14,7 @@ class MyDocument extends Document {
           <meta name='msapplication-TileColor' content='white' />
           <meta name='msapplication-tap-highlight' content='no' />
           <meta name='theme-color' content='#07A39D' />
+          <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
           <link rel='manifest' href='/manifest.json' />
           <link rel='shortcut icon' href='/favicon.ico' />
           <link rel="apple-touch-startup-image" href="/splash/splash-320.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />

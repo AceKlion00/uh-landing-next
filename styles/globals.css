@@ -7,10 +7,6 @@ html {
     font-family: Poppins, sans-serif;
 }
 
-body {
-    touch-action: pan-x pan-y;
-}
-
 .btn {
     @apply focus:outline-none focus:ring disabled:opacity-50 font-bold rounded-lg disabled:cursor-not-allowed;
 }
