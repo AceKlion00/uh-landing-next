@@ -42,14 +42,14 @@ export function ImageCardSelector({ name, value, options, onChange }: Props) {
               </div>
               <div className="font-medium text-center my-10">{option.label}</div>
             </div>
-            <div className="sm:hidden transition-all duration-300 ease-in-out text-primary px-10 pt-10 mb-20" onClick={() => {selectCard(option);}}>
+            <div className="sm:hidden transition-all duration-300 ease-in-out text-primary px-10 pt-10 mb-20">
               <CheckBox name={option.value} label={option.label} onChange={event => {
-                const updated = [...options];
-                const updatedOption = updated.find(opt => opt.value === option.value);
+                const update = [...options];
+                const updatedOption = options.find(opt => opt.value === option.value);
                 if (updatedOption) {
-                  updatedOption.selected = event.target.value === 'true';
+                  updatedOption.selected = !updatedOption.selected;
                 }
-                onChange({ target: { name, value: updated } });
+                onChange({ target: { name, value: update.filter(x => x.selected).map(x => x.value) } });
               }} value={option.selected} />
             </div>
           </div>

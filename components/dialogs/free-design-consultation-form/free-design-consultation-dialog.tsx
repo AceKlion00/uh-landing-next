@@ -36,11 +36,12 @@ export function FreeDesignConsultationDialog({ onClose, closeDialog }: Props) {
 
   const alertService = useAlert();
   const next = async (values: any) => {
-    setConsultationValue({ ...consultationValue, ...values });
+    const mergedValue =  { ...consultationValue, ...values };
+    setConsultationValue(mergedValue);
     if (step === FreeDesignConsultationStep.ProjectSummary) {
       try {
         setLoading(true);
-        await leadApiService.requestFreeDesignConsultation(consultationValue);
+        await leadApiService.requestFreeDesignConsultation(mergedValue);
         const w = window as any;
         w.gtag_report_conversion_free_design_consultation(null);
         gaService.event('Request Submitted', 'Free Design Consultation Form Submitted');
