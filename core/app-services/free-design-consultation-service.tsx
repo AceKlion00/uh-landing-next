@@ -30,9 +30,6 @@ export default function useFreeDesignConsultationService(): FreeConsultationServ
   ];
 
   const showFreeDesignConsultationDialog = () => {
-    const w = window as any;
-    w.gtag_report_conversion_free_design_consultation(null);
-    gaService.event('Dialog Opened', 'Free Design Consultation Dialog Opened');
     gaService.modalView('Free Design Consultation Dialog');
     dialog.openDialog(<FreeDesignConsultationDialog onClose={(showThankYou) => {
       if (!showThankYou) {
