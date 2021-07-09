@@ -32,7 +32,11 @@ const steps = [
   },
 ];
 
-export default function HowItWorks3DDesignStepsSection() {
+interface Props {
+  buttonLabel: string
+}
+
+export default function HowItWorks3DDesignStepsSection({ buttonLabel }: Props) {
   const freeDesignConsultationService = useFreeDesignConsultationService();
   const [currentStep, setCurrentStep] = useState(0);
   const currentStepRef = useRef(currentStep);
@@ -80,7 +84,7 @@ export default function HowItWorks3DDesignStepsSection() {
               </div>
             ))}
             <div className="flex justify-center mt-35">
-              <button className="btn btn-warning btn-lg shadow-warning btn-sm-block" onClick={freeDesignConsultationService.showFreeDesignConsultationDialog}>Get Started</button>
+              <button className="btn btn-warning btn-lg shadow-warning btn-sm-block" onClick={freeDesignConsultationService.showFreeDesignConsultationDialog}>{buttonLabel}</button>
             </div>
           </div>
           <div className="hidden lg:block pl-30 xl:pl-0">
@@ -93,3 +97,7 @@ export default function HowItWorks3DDesignStepsSection() {
     </section>
   );
 }
+
+HowItWorks3DDesignStepsSection.defaultProps = {
+  buttonLabel: 'Get Started',
+};
