@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import { useInViewport } from 'react-in-viewport';
 
@@ -41,16 +41,6 @@ export default function HowItWorks3DDesignStepsSection() {
   const { inViewport } = useInViewport(sectionRef, {}, { disconnectOnLeave: false }, {});
   const inViewportRef = useRef(inViewport);
   inViewportRef.current = inViewport;
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (inViewportRef.current) {
-        setCurrentStep((currentStepRef.current + 1) % steps.length);
-      }
-    }, 4000);
-    return () => {
-      clearInterval(timer);
-    }
-  }, []);
   return (
     <section ref={sectionRef} className="relative">
       <div className="absolute w-full h-full grid grid-cols-1 lg:grid-cols-2">
@@ -68,6 +58,7 @@ export default function HowItWorks3DDesignStepsSection() {
                   'text-18 py-15 flex items-center cursor-pointer transition-all duration-300 ease-in-out ' +
                   (currentStep === stepNumber ? 'text-warning' : 'text-white')
                 }
+                onMouseOver={() => setCurrentStep(stepNumber)}
                 onClick={() => setCurrentStep(stepNumber)}>
                 <span className="rounded-full flex-none w-35 h-35 border-2 flex justify-center items-center mr-20">{stepNumber + 1}</span>
                 <div className="flex-1">
