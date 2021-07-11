@@ -92,7 +92,7 @@ export default function Home({ ideas }: Props) {
           </div>
           <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
             <div className="text-center text-white flex flex-col items-center justify-center">
-              <h1 className="text-38 sm:text-45 font-medium mb-40 px-15">The Northeast's Largest Online Retailer<br className="hidden lg:block" /> of Hardscape Materials</h1>
+              <h1 className="text-38 sm:text-45 font-medium mb-40 px-15">The Northeast&apos;s Largest Online Retailer<br className="hidden lg:block" /> of Hardscape Materials</h1>
               <p className="text-18 mb-40 px-15">Helping Homeowners plan and complete projects faster with DIY and Contractor friendly solutions.</p>
               <div className="flex flex-col md:flex-row mx-30">
                 <button className="btn btn-warning btn-lg btn-sm-block m-15" onClick={freeDesignConsultationService.showFreeDesignConsultationDialog}>Get a Free Project Design</button>
