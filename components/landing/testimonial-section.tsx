@@ -39,13 +39,14 @@ const swiperBreakPoints = {
 };
 
 interface Props {
-  showDesignAvatar: boolean
+  showDesignAvatar: boolean;
+  showBackground: boolean;
 }
 
-export function TestimonialSection({ showDesignAvatar }: Props) {
-  return (<section className="pt-110 pb-20 bg-gradient-to-r from-primary-100 to-primary-75">
+export function TestimonialSection({ showDesignAvatar, showBackground }: Props) {
+  return (<section className={showBackground ? 'pt-110 pb-20 bg-gradient-to-r from-primary-100 to-primary-75' : 'pt-110 pb-20 bg-light-50'}>
     <div className="container mx-auto">
-      <h3 className="text-white text-32 text-center">Check out what our customers have to say</h3>
+      <h3 className={showBackground ? 'text-white text-32 text-center' : 'text-primary text-32 text-center'}>Check out what our customers have to say</h3>
     </div>
     <div className="px-10 sm:px-20 md:px-30 lg:px-40 xl:px-50 pb-50 pt-20">
       <Swiper className="w-full" breakpoints={swiperBreakPoints } spaceBetween={20}>
@@ -76,5 +77,6 @@ export function TestimonialSection({ showDesignAvatar }: Props) {
 }
 
 TestimonialSection.defaultProps = {
-  showDesignAvatar: false
+  showDesignAvatar: false,
+  showBackground: true
 }

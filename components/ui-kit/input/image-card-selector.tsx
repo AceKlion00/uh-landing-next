@@ -59,7 +59,7 @@ export function ImageCardSelector({ name, value, options, onChange }: Props) {
   );
 }
 
-ImageCardSelector.defaultProps = {
-  value: [],
-  onChange: noop,
-}
+  ImageCardSelector.defaultProps = {
+    value: [],
+    onChange: noop,
+  }
