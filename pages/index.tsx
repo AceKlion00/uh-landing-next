@@ -6,12 +6,11 @@ import Link from 'next/link';
 import { Layout } from '../components/layout/layout';
 import { TestimonialSection } from '../components/landing/testimonial-section';
 import { Idea } from '../core/types';
-import { doGet } from '../core/api-services/http';
 import JoinCustomerSection from '../components/landing/join-customer-section';
 import useFreeDesignConsultationService from '../core/app-services/free-design-consultation-service';
 import useGAService from '../core/app-services/ga-service';
-import { shimmerUrl } from '../components/ui-kit/common/blur-image';
 import { WhyChooseUhSection } from '../components/landing/why-choose-uh-section';
+import { shimmerUrl } from '../components/ui-kit/common/blur-image';
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -72,7 +71,7 @@ interface Props {
   ideas: Idea[];
 }
 
-export default function Home({ ideas }: Props) {
+export default function Home() {
   const gaService = useGAService();
   gaService.pageView('/');
   const freeDesignConsultationService = useFreeDesignConsultationService();
@@ -85,10 +84,10 @@ export default function Home({ ideas }: Props) {
       <Layout>
         <section className="relative">
           <div className="h-700 overflow-hidden hidden sm:block">
-            <Image src="/assets/images/landing-pages/home-page/bg-with-all-steps.png" quality={75} objectFit="cover" layout="fill" alt="HomePage" placeholder="blur" blurDataURL={shimmerUrl} />
+            <Image src="/assets/images/landing-pages/home-page/bg-with-all-steps.png" quality={75} objectFit="cover" layout="fill" alt="HomePage" placeholder="blur" blurDataURL="/assets/images/landing-pages/home-page/bg-with-all-steps-blur.png" />
           </div>
           <div className="h-700 overflow-hidden block sm:hidden">
-            <Image src="/assets/images/landing-pages/home-page/bg-with-all-steps-mobile.png" quality={75} objectFit="cover" layout="fill" alt="HomePage" placeholder="blur" blurDataURL={shimmerUrl} />
+            <Image src="/assets/images/landing-pages/home-page/bg-with-all-steps-mobile.png" quality={75} objectFit="cover" layout="fill" alt="HomePage" placeholder="blur" blurDataURL="/assets/images/landing-pages/home-page/bg-with-all-steps-mobile-blur.png" />
           </div>
           <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
             <div className="text-center text-white flex flex-col items-center justify-center">
@@ -96,7 +95,7 @@ export default function Home({ ideas }: Props) {
               <p className="text-18 mb-40 px-15">Helping Homeowners plan and complete projects faster with DIY and Contractor friendly solutions.</p>
               <div className="flex flex-col md:flex-row mx-30">
                 <button className="btn btn-warning btn-lg btn-sm-block m-15" onClick={freeDesignConsultationService.showFreeDesignConsultationDialog}>Get a Free Project Design</button>
-                <Link href="/kits" passHref><button className="btn bg-transparent border border-white btn-lg btn-sm-block m-15">View Signature Kits</button></Link>
+                <Link href="/kits" passHref><button className="btn bg-transparent border border-white btn-lg btn-sm-block m-15 hover:bg-white hover:text-light-500 transition-colors duration-75">View Signature Kits</button></Link>
               </div>
             </div>
           </div>
@@ -108,7 +107,7 @@ export default function Home({ ideas }: Props) {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-30">
               {brandsList.map((brand, index) => (
                   <div className="w-full my-25" key={index}>
-                    <Image src={brand.src} height={brand.height} width={brand.width} alt="brand" />
+                    <Image src={brand.src} height={brand.height} width={brand.width} alt="brand" placeholder="blur" blurDataURL={shimmerUrl} />
                   </div>
               ))}
             </div>
@@ -130,6 +129,8 @@ export default function Home({ ideas }: Props) {
   );
 }
 
+/*
+// TODO: uncomment when ideas data is needed
 export async function getServerSideProps() {
   let ideas: Idea[] = [];
   try {
@@ -139,6 +140,7 @@ export async function getServerSideProps() {
   }
 
   return {
-    props: { ideas }, // will be passed to the page component as props
+    props: { ideas },
   }
 }
+*/

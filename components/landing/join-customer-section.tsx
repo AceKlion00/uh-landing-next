@@ -19,7 +19,7 @@ export default function JoinCustomerSection({ buttonLabel, eventHandler }: Props
         <button className="btn btn-warning btn-lg btn-sm-block" onClick={() => eventHandler ? eventHandler() : consultationService.showConsultationDialog()}>{buttonLabel}</button>
       </div>
     </div>
-    <Image src="/assets/images/components/landing/join-customer-section/banner-bg.jpg" layout="fill" objectFit="cover" alt="background" />
+    <Image src="/assets/images/components/landing/join-customer-section/banner-bg.jpg" layout="fill" objectFit="cover" alt="background" placeholder="blur" blurDataURL="/assets/images/components/landing/join-customer-section/banner-bg-blur.jpg" />
   </section>);
 }
 
